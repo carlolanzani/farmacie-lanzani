@@ -427,3 +427,226 @@ footer {
         gap: 15px;
     }
 }
+/* --- Header con Dropdown --- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.dropdown .dropbtn i {
+    font-size: 0.8em;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropbtn i {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white-color);
+    min-width: 220px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
+    z-index: 1;
+    border-radius: 5px;
+    padding: 10px 0;
+    border: 1px solid var(--border-color);
+}
+
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    margin-left: 0; /* Reset margin */
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light-blue);
+    color: var(--primary-green);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* --- Hero con Immagine di Sfondo --- */
+#hero {
+    position: relative;
+    background-image: url('https://via.placeholder.com/1920x1080/AEE2FF/333333?text=Interno+di+una+farmacia+moderna'); /* SOSTITUIRE CON FOTO REALE */
+    background-size: cover;
+    background-position: center;
+    color: var(--white-color);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(44, 62, 80, 0.6); /* Overlay scuro per leggibilità */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    color: var(--white-color);
+}
+
+/* --- Sezione Chi Siamo Migliorata --- */
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* --- Servizi Dettagliati (Homepage) --- */
+.servizi-grid-detailed {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.servizio-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.servizio-card i {
+    font-size: 3rem;
+    color: var(--primary-green);
+    margin-bottom: 20px;
+}
+
+.servizio-card h3 {
+    color: var(--heading-color);
+    font-size: 1.4rem;
+}
+
+.servizio-card p {
+    flex-grow: 1; /* Fa in modo che il testo occupi lo spazio per allineare i bottoni */
+    margin-bottom: 20px;
+}
+
+.btn-discover {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: auto; /* Spinge il bottone in fondo alla card */
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-discover:hover {
+    background-color: rgba(46, 139, 87, 0.1);
+}
+
+/* --- Sedi con Immagine --- */
+.farmacia-card {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.farmacia-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.farmacia-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.farmacia-content .card-links {
+    margin-top: auto;
+}
+
+/* --- Stili Pagine Interne (es. autoanalisi.html) --- */
+.page-header {
+    background-color: var(--primary-green);
+    color: var(--white-color);
+    padding: 40px 0;
+    text-align: center;
+}
+.page-header h1 {
+    color: var(--white-color);
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.content-page {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 50px;
+}
+
+.content-main h2, .content-main h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.content-main ul, .content-main ol {
+    padding-left: 20px;
+}
+.content-main li {
+    margin-bottom: 10px;
+}
+
+.content-main ul li i {
+    color: var(--primary-green);
+    margin-right: 10px;
+}
+
+.content-sidebar .card {
+    position: sticky;
+    top: 100px; /* Altezza header + un po' di spazio */
+}
+
+.btn.full-width {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+/* --- Media Queries Aggiuntive --- */
+@media (max-width: 992px) {
+    .about-section, .content-page {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .about-image {
+        max-width: 250px;
+        margin: 0 auto 30px auto;
+    }
+    .content-sidebar {
+        margin-top: 40px;
+    }
+}
