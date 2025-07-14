@@ -173,9 +173,13 @@ header nav a:hover {
     transform: translateY(-100%); /* Sposta l'onda verso l'alto, fuori dal suo contenitore */
 }
 
-
-/* --- Altre sezioni... --- */
-.sedi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.sedi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    position: relative; /* Necessario per far funzionare z-index */
+    z-index: 2;         /* Porta la griglia delle card IN PRIMO PIANO */
+}
 .farmacia-card h3 { color: var(--primary-green); font-size: 1.4rem; }
 .farmacia-card .location { font-style: italic; color: #777; margin-bottom: 15px; }
 .farmacia-card p { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
