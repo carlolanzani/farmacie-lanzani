@@ -1,12 +1,17 @@
+/* =============================================== */
+/* CODICE CSS DEFINITIVO E COMPLETO                */
+/* Ultimo aggiornamento: 14/07/2025                */
+/* Include tutte le correzioni e migliorie grafiche */
+/* =============================================== */
+
 /* --- Variabili e Reset Globale --- */
 :root {
-    --primary-green: #2E8B57; /* Verde farmacia */
-    --light-blue: #F0F8FF;   /* Azzurro chiaro rassicurante */
+    --primary-green: #2E8B57; 
+    --light-blue: #F0F8FF;
     --text-color: #333333;
     --heading-color: #2c3e50;
     --white-color: #ffffff;
     --border-color: #dddddd;
-    /* NUOVA VARIABILE: Un grigio chiarissimo per alternare gli sfondi */
     --background-light-gray: #f7f9fa; 
     --font-family: 'Inter', sans-serif;
 }
@@ -25,7 +30,7 @@ body {
     font-family: var(--font-family);
     color: var(--text-color);
     line-height: 1.6;
-    background-color: var(--white-color); /* Assicura uno sfondo di base */
+    background-color: var(--white-color);
 }
 
 .container {
@@ -45,7 +50,7 @@ h2 {
 }
 
 .section-padding {
-    padding: 80px 0; /* Aumentiamo un po' il padding per più respiro */
+    padding: 80px 0;
 }
 
 .bg-light {
@@ -131,8 +136,9 @@ header nav a:hover {
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding-bottom: 50px;
+    box-sizing: border-box;
 }
-
 .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(44, 62, 80, 0.6); z-index: 1; }
 .hero-content { position: relative; z-index: 2; }
 .hero-content h1 { font-size: 2.8rem; font-weight: 700; color: var(--white-color); }
@@ -141,32 +147,19 @@ header nav a:hover {
 .btn { display: inline-block; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: 600; transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease; border: 2px solid transparent; }
 .btn-primary { background-color: var(--primary-green); color: var(--white-color); border-color: var(--primary-green); }
 .btn-primary:hover { background-color: #257247; border-color: #257247; transform: translateY(-2px); }
+.btn-secondary { background-color: rgba(255, 255, 255, 0.9); color: var(--primary-green); border-color: transparent; }
+.btn-secondary:hover { background-color: var(--white-color); color: var(--primary-green); transform: translateY(-2px); }
 
-/* MODIFICA GRAFICA PULSANTE SECONDARIO */
-.btn-secondary {
-    background-color: rgba(255, 255, 255, 0.9); /* Sfondo bianco semi-trasparente per leggibilità */
-    color: var(--primary-green); /* Testo verde */
-    border-color: transparent; /* Nessun bordo iniziale */
-}
-.btn-secondary:hover {
-    background-color: var(--white-color); /* Diventa bianco pieno al passaggio */
-    color: var(--primary-green);
-    transform: translateY(-2px);
-}
-
-/* --- Sezione Chi Siamo e Sedi --- */
-/* NUOVA REGOLA: Applichiamo il nuovo sfondo grigio per alternare */
-#chi-siamo, #sedi {
+/* --- Sfondi Sezioni --- */
+#chi-siamo, #sedi, #contatti {
     background-color: var(--background-light-gray);
 }
 .intro-text { max-width: 750px; margin: 0 auto; font-size: 1.1rem; }
 
-/* --- Sezione Sedi con Wave Divider --- */
+/* --- Wave Divider --- */
 #sedi {
-    position: relative; /* Necessario per posizionare la wave */
-    padding-top: 150px; /* Aumenta lo spazio sopra per far posto alla wave */
+    position: relative;
 }
-/* NUOVA REGOLA: Transizione a onda */
 #sedi::before {
     content: '';
     position: absolute;
@@ -174,14 +167,15 @@ header nav a:hover {
     left: 0;
     width: 100%;
     height: 100px;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3e%3cpath fill='%23f0f8ff' fill-opacity='1' d='M0,160L80,176C160,192,320,224,480,218.7C640,213,800,171,960,149.3C1120,128,1280,128,1360,128L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z'%3e%3c/path%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3e%3cpath fill='%23f0f8ff' fill-opacity='1' d='M0,128L80,144C160,160,320,192,480,197.3C640,203,800,181,960,154.7C1120,128,1280,96,1360,80L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z'%3e%3c/path%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-size: cover;
-    transform: scaleX(-1) rotate(180deg); /* Specchia e ruota la wave per l'effetto desiderato */
+    transform: translateY(-100%); /* Sposta l'onda verso l'alto, fuori dal suo contenitore */
 }
-.sedi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 
-/* --- Sezioni Servizi, Contatti, etc (stili perlopiù invariati) --- */
+
+/* --- Altre sezioni... --- */
+.sedi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 .farmacia-card h3 { color: var(--primary-green); font-size: 1.4rem; }
 .farmacia-card .location { font-style: italic; color: #777; margin-bottom: 15px; }
 .farmacia-card p { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
@@ -259,6 +253,7 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
     header nav a, .dropdown .dropbtn { margin: 5px 10px; }
     .sedi-grid, .consigli-grid { grid-template-columns: 1fr; }
     .contatti-wrapper { grid-template-columns: 1fr; gap: 40px; }
+    .hero-content { padding: 0 15px; }
     .hero-content h1 { font-size: 2.5rem; }
     #hero { height: 60vh; }
     .dropdown-content {
