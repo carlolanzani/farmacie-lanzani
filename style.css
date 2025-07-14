@@ -6,6 +6,8 @@
     --heading-color: #2c3e50;
     --white-color: #ffffff;
     --border-color: #dddddd;
+    /* NUOVA VARIABILE: Un grigio chiarissimo per alternare gli sfondi */
+    --background-light-gray: #f7f9fa; 
     --font-family: 'Inter', sans-serif;
 }
 
@@ -23,6 +25,7 @@ body {
     font-family: var(--font-family);
     color: var(--text-color);
     line-height: 1.6;
+    background-color: var(--white-color); /* Assicura uno sfondo di base */
 }
 
 .container {
@@ -42,7 +45,7 @@ h2 {
 }
 
 .section-padding {
-    padding: 60px 0;
+    padding: 80px 0; /* Aumentiamo un po' il padding per più respiro */
 }
 
 .bg-light {
@@ -106,74 +109,23 @@ header nav a:hover {
 }
 
 /* --- Header con Dropdown --- */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown .dropbtn {
-    cursor: pointer;
-    border: none;
-    background: none;
-    font-size: 1rem; /* Eredita la dimensione del font */
-    font-family: inherit;
-    font-weight: 600;
-    color: var(--text-color);
-    padding: 0; /* Rimuoviamo il padding per allinearlo agli altri link */
-    margin-left: 20px; /* Manteniamo il margine come gli altri link */
-}
-
-.dropdown .dropbtn:hover {
-    color: var(--primary-green);
-}
-
-.dropdown .dropbtn i {
-    font-size: 0.8em;
-    margin-left: 5px;
-    transition: transform 0.3s ease;
-}
-
-.dropdown-content {
-    display: none; /* Nascosto di default */
-    position: absolute;
-    background-color: var(--white-color);
-    min-width: 220px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
-    z-index: 1001; /* Assicuriamoci che sia sopra tutto */
-    border-radius: 5px;
-    padding: 10px 0;
-    border: 1px solid var(--border-color);
-    margin-top: 10px; /* Aggiunge un po' di spazio dal pulsante */
-}
-
-/* MODIFICA CHIAVE: Mostra il menu solo quando ha la classe .show */
-.dropdown-content.show {
-    display: block;
-}
-
-/* Ruota la freccia quando il menu è aperto */
-.dropdown .dropbtn.open i {
-    transform: rotate(180deg);
-}
-
-.dropdown-content a {
-    color: var(--text-color);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    margin-left: 0; /* Resetta il margine per i link nel dropdown */
-    font-weight: 400; /* Reset del font-weight */
-}
-
-.dropdown-content a:hover {
-    background-color: var(--light-blue);
-    color: var(--primary-green);
-}
+.dropdown { position: relative; display: inline-block; }
+.dropdown .dropbtn { cursor: pointer; border: none; background: none; font-size: 1rem; font-family: inherit; font-weight: 600; color: var(--text-color); padding: 0; margin-left: 20px; }
+.dropdown .dropbtn:hover { color: var(--primary-green); }
+.dropdown .dropbtn i { font-size: 0.8em; margin-left: 5px; transition: transform 0.3s ease; }
+.dropdown-content { display: none; position: absolute; background-color: var(--white-color); min-width: 220px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1); z-index: 1001; border-radius: 5px; padding: 10px 0; border: 1px solid var(--border-color); margin-top: 10px; }
+.dropdown-content.show { display: block; }
+.dropdown .dropbtn.open i { transform: rotate(180deg); }
+.dropdown-content a { color: var(--text-color); padding: 12px 16px; text-decoration: none; display: block; margin-left: 0; font-weight: 400; }
+.dropdown-content a:hover { background-color: var(--light-blue); color: var(--primary-green); }
 
 /* --- Hero Section --- */
 #hero {
-    background: linear-gradient(rgba(240, 248, 255, 0.9), rgba(240, 248, 255, 0.9)), url('https://via.placeholder.com/1920x1080/E0F7FA/FFFFFF?text= ') center/cover no-repeat;
-    color: var(--heading-color);
+    position: relative;
+    background-image: url('images/hero-background.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: var(--white-color);
     height: 70vh;
     display: flex;
     align-items: center;
@@ -181,57 +133,55 @@ header nav a:hover {
     text-align: center;
 }
 
-.hero-content h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-}
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(44, 62, 80, 0.6); z-index: 1; }
+.hero-content { position: relative; z-index: 2; }
+.hero-content h1 { font-size: 2.8rem; font-weight: 700; color: var(--white-color); }
+.hero-content p { font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+.hero-buttons .btn { margin: 0 10px; }
+.btn { display: inline-block; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: 600; transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease; border: 2px solid transparent; }
+.btn-primary { background-color: var(--primary-green); color: var(--white-color); border-color: var(--primary-green); }
+.btn-primary:hover { background-color: #257247; border-color: #257247; transform: translateY(-2px); }
 
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.hero-buttons .btn {
-    margin: 0 10px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 25px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-primary {
-    background-color: var(--primary-green);
-    color: var(--white-color);
-}
-
-.btn-primary:hover {
-    background-color: #257247;
-    transform: translateY(-2px);
-}
-
+/* MODIFICA GRAFICA PULSANTE SECONDARIO */
 .btn-secondary {
-    background-color: transparent;
-    color: var(--primary-green);
-    border: 2px solid var(--primary-green);
+    background-color: rgba(255, 255, 255, 0.9); /* Sfondo bianco semi-trasparente per leggibilità */
+    color: var(--primary-green); /* Testo verde */
+    border-color: transparent; /* Nessun bordo iniziale */
 }
-
 .btn-secondary:hover {
-    background-color: var(--primary-green);
-    color: var(--white-color);
+    background-color: var(--white-color); /* Diventa bianco pieno al passaggio */
+    color: var(--primary-green);
     transform: translateY(-2px);
 }
 
-/* --- Altre sezioni (invariate) --- */
+/* --- Sezione Chi Siamo e Sedi --- */
+/* NUOVA REGOLA: Applichiamo il nuovo sfondo grigio per alternare */
+#chi-siamo, #sedi {
+    background-color: var(--background-light-gray);
+}
 .intro-text { max-width: 750px; margin: 0 auto; font-size: 1.1rem; }
+
+/* --- Sezione Sedi con Wave Divider --- */
+#sedi {
+    position: relative; /* Necessario per posizionare la wave */
+    padding-top: 150px; /* Aumenta lo spazio sopra per far posto alla wave */
+}
+/* NUOVA REGOLA: Transizione a onda */
+#sedi::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3e%3cpath fill='%23f0f8ff' fill-opacity='1' d='M0,160L80,176C160,192,320,224,480,218.7C640,213,800,171,960,149.3C1120,128,1280,128,1360,128L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z'%3e%3c/path%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: scaleX(-1) rotate(180deg); /* Specchia e ruota la wave per l'effetto desiderato */
+}
 .sedi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+
+/* --- Sezioni Servizi, Contatti, etc (stili perlopiù invariati) --- */
 .farmacia-card h3 { color: var(--primary-green); font-size: 1.4rem; }
 .farmacia-card .location { font-style: italic; color: #777; margin-bottom: 15px; }
 .farmacia-card p { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
@@ -266,10 +216,6 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
 .footer-links a, .footer-legal a { color: var(--white-color); text-decoration: none; margin: 0 10px; }
 .footer-links a:hover, .footer-legal a:hover { text-decoration: underline; }
 .footer-social a { font-size: 1.5rem; color: var(--white-color); margin: 0 10px; }
-#hero { position: relative; background-image: url('images/hero-background.jpg'); background-size: cover; background-position: center; color: var(--white-color); }
-.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(44, 62, 80, 0.6); z-index: 1; }
-.hero-content { position: relative; z-index: 2; }
-.hero-content h1 { color: var(--white-color); }
 .about-section { display: grid; grid-template-columns: 1fr 2fr; gap: 50px; align-items: center; }
 .about-image img { width: 100%; border-radius: 50%; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 .servizi-grid-detailed { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
@@ -305,17 +251,25 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
 @media (max-width: 768px) {
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.8rem; }
+    .section-padding { padding: 60px 0; }
+    #sedi { padding-top: 100px; }
+    #sedi::before { height: 60px; }
     header .container { flex-direction: column; gap: 10px; }
     header nav { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; }
-    header nav a { margin: 5px 10px; }
-    .dropdown .dropbtn { margin: 5px 10px; } 
-    .dropdown-content { left: 50%; transform: translateX(-50%); min-width: 220px; }
+    header nav a, .dropdown .dropbtn { margin: 5px 10px; }
     .sedi-grid, .consigli-grid { grid-template-columns: 1fr; }
     .contatti-wrapper { grid-template-columns: 1fr; gap: 40px; }
     .hero-content h1 { font-size: 2.5rem; }
     #hero { height: 60vh; }
+    .dropdown-content {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 220px;
+        max-width: 85vw;
+    }
 }
 
 @media (max-width: 480px) {
     .hero-buttons { display: flex; flex-direction: column; gap: 15px; }
+    .sedi-grid, .consigli-grid { grid-template-columns: 1fr; }
 }
