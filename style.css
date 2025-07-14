@@ -1,10 +1,3 @@
-/* =============================================== */
-/* CODICE CSS DEFINITIVO E COMPLETO                */
-/* Ultimo aggiornamento: 14/07/2025                */
-/* Include tutte le correzioni e migliorie grafiche */
-/* =============================================== */
-
-/* --- Variabili e Reset Globale --- */
 :root {
     --primary-green: #2E8B57; 
     --light-blue: #F0F8FF;
@@ -137,7 +130,6 @@ header nav a:hover {
     justify-content: center;
     text-align: center;
     padding-bottom: 50px;
-    box-sizing: border-box;
 }
 .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(44, 62, 80, 0.6); z-index: 1; }
 .hero-content { position: relative; z-index: 2; }
@@ -156,30 +148,27 @@ header nav a:hover {
 }
 .intro-text { max-width: 750px; margin: 0 auto; font-size: 1.1rem; }
 
-/* --- Wave Divider --- */
-#sedi {
-    position: relative;
+/* --- Wave Divider (Versione Definitiva e Corretta) --- */
+#servizi {
+    position: relative; /* Necessario per posizionare l'onda 'figlia' */
+    padding-bottom: 150px; /* Aggiunge spazio sotto per l'onda, senza che copra il contenuto */
+    background-color: var(--light-blue); /* Usa la variabile bg-light */
 }
-#sedi::before {
+#servizi::after {
     content: '';
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
     height: 100px;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3e%3cpath fill='%23f0f8ff' fill-opacity='1' d='M0,128L80,144C160,160,320,192,480,197.3C640,203,800,181,960,154.7C1120,128,1280,96,1360,80L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z'%3e%3c/path%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3e%3cpath fill='%23f7f9fa' fill-opacity='1' d='M0,128L80,144C160,160,320,192,480,197.3C640,203,800,181,960,154.7C1120,128,1280,96,1360,80L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z'%3e%3c/path%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-size: cover;
-    transform: translateY(-100%); /* Sposta l'onda verso l'alto, fuori dal suo contenitore */
+    background-position: center;
 }
 
-.sedi-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    position: relative; /* Necessario per far funzionare z-index */
-    z-index: 2;         /* Porta la griglia delle card IN PRIMO PIANO */
-}
+/* --- Altre sezioni... --- */
+.sedi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 .farmacia-card h3 { color: var(--primary-green); font-size: 1.4rem; }
 .farmacia-card .location { font-style: italic; color: #777; margin-bottom: 15px; }
 .farmacia-card p { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
@@ -250,8 +239,6 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.8rem; }
     .section-padding { padding: 60px 0; }
-    #sedi { padding-top: 100px; }
-    #sedi::before { height: 60px; }
     header .container { flex-direction: column; gap: 10px; }
     header nav { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; }
     header nav a, .dropdown .dropbtn { margin: 5px 10px; }
@@ -266,9 +253,14 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
         width: 220px;
         max-width: 85vw;
     }
+    #servizi {
+        padding-bottom: 90px;
+    }
+    #servizi::after {
+        height: 60px;
+    }
 }
 
 @media (max-width: 480px) {
     .hero-buttons { display: flex; flex-direction: column; gap: 15px; }
-    .sedi-grid, .consigli-grid { grid-template-columns: 1fr; }
 }
