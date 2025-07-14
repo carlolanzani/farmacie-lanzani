@@ -246,6 +246,7 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
     h2 { font-size: 1.8rem; }
     .section-padding { padding: 60px 0; }
     header .container { flex-direction: column; gap: 10px; }
+    header {position: static; }
     header nav { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; }
     header nav a, .dropdown .dropbtn { margin: 5px 10px; }
     .sedi-grid, .consigli-grid { grid-template-columns: 1fr; }
