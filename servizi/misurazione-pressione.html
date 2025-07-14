@@ -16,20 +16,28 @@
 </head>
 <body>
 
+    <!-- =============================================== -->
+    <!-- HEADER CORRETTO E DEFINITIVO PER TUTTE LE PAGINE DI SERVIZIO -->
+    <!-- =============================================== -->
     <header>
         <div class="container">
+            <!-- Il link del logo torna a index.html nella cartella principale -->
             <a href="../index.html" class="logo">Farmacie <strong>Lanzani</strong></a>
             <nav>
+                <!-- I link alle sezioni puntano a index.html -->
                 <a href="../index.html#chi-siamo">Chi Siamo</a>
                 <a href="../index.html#sedi">Le Sedi</a>
+                <!-- Il menu a tendina ora usa il bottone e ha i link corretti -->
                 <div class="dropdown">
-                    <a href="../index.html#servizi" class="dropbtn">Servizi <i class="fa-solid fa-chevron-down"></i></a>
-                    <div class="dropdown-content">
+                    <button class="dropbtn" id="servizi-toggle">
+                        Servizi <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="servizi-menu">
                         <a href="autoanalisi.html">Autoanalisi del Sangue</a>
                         <a href="misurazione-pressione.html">Misurazione Pressione</a>
-                        <a href="#">Dermocosmesi</a>
-                        <a href="#">Fitoterapia</a>
-                        <a href="#">Noleggio Dispositivi</a>
+                        <a href="dermocosmesi.html">Dermocosmesi</a>
+                        <a href="fitoterapia.html">Fitoterapia</a>
+                        <a href="noleggio-dispositivi.html">Noleggio Dispositivi</a>
                     </div>
                 </div>
                 <a href="../index.html#consigli">Consigli</a>
@@ -37,6 +45,9 @@
             </nav>
         </div>
     </header>
+    <!-- =============================================== -->
+    <!-- FINE HEADER -->
+    <!-- =============================================== -->
 
     <main>
         <div class="page-header">
@@ -85,8 +96,9 @@
     <footer>
         <div class="container footer-content">
             <div class="footer-links">
+                <!-- I link ora puntano alle ancore della pagina principale -->
                 <a href="../index.html#sedi">Farmacia S. Gottardo</a>
-                <a href="../index.html#sedi">Farmacia S. Apollonia</a>
+                <a href="../index.html#sedi">Farmacia S. Apollonio</a>
                 <a href="../index.html#sedi">Farmacia Santi Pietro e Paolo</a>
             </div>
             <div class="footer-social">
@@ -95,10 +107,40 @@
             </div>
             <div class="footer-legal">
                 <p>© 2023 Farmacie Lanzani – Tutti i diritti riservati. P.IVA 12345678901</p>
+                <!-- Questi link andranno creati in futuro, per ora li lasciamo così -->
                 <a href="#">Informativa Privacy</a> | <a href="#">Cookie Policy</a>
             </div>
         </div>
     </footer>
-    
+    <!-- =============================================== -->
+    <!-- FINE FOOTER -->
+    <!-- =============================================== -->
+        <!-- =============================================== -->
+    <!-- SCRIPT DA AGGIUNGERE ALLA FINE DI OGNI PAGINA DI SERVIZIO -->
+    <!-- =============================================== -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdownToggle = document.getElementById('servizi-toggle');
+        const dropdownMenu = document.getElementById('servizi-menu');
+
+        if (dropdownToggle && dropdownMenu) {
+            dropdownToggle.addEventListener('click', function(event) {
+                event.stopPropagation();
+                dropdownMenu.classList.toggle('show');
+                dropdownToggle.classList.toggle('open');
+            });
+        }
+
+        window.addEventListener('click', function() {
+            if (dropdownMenu && dropdownMenu.classList.contains('show')) {
+                dropdownMenu.classList.remove('show');
+                dropdownToggle.classList.remove('open');
+            }
+        });
+    });
+    </script>
+    <!-- =============================================== -->
+    <!-- FINE SCRIPT -->
+    <!-- =============================================== -->   
 </body>
 </html>

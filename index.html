@@ -6,9 +6,7 @@
     
     <title>Farmacie Lanzani – Le tue farmacie di fiducia a Brescia</title>
     <meta name="description" content="Le Farmacie Lanzani, con sedi a Trenzano, Lumezzane e Travagliato, offrono servizi di autoanalisi, consulenze personalizzate e un'ampia gamma di prodotti per la tua salute.">
-    <meta name="keywords" content="Farmacie Lanzani, Farmacia Brescia, Farmacia S. Gottardo Trenzano, Farmacia S. Apollonia Lumezzane, Farmacia Santi Pietro e Paolo Travagliato, salute, benessere, Dott. Lanzani">
-    <meta name="author" content="Farmacie Lanzani">
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -24,9 +22,13 @@
             <nav>
                 <a href="#chi-siamo">Chi Siamo</a>
                 <a href="#sedi">Le Sedi</a>
+                <!-- MODIFICA MENU SERVIZI -->
                 <div class="dropdown">
-                    <a href="#servizi" class="dropbtn">Servizi <i class="fa-solid fa-chevron-down"></i></a>
-                    <div class="dropdown-content">
+                    <!-- Usiamo un button per attivare il menu al click, non un link -->
+                    <button class="dropbtn" id="servizi-toggle">
+                        Servizi <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="servizi-menu">
                         <a href="servizi/autoanalisi.html">Autoanalisi del Sangue</a>
                         <a href="servizi/misurazione-pressione.html">Misurazione Pressione</a>
                         <a href="servizi/dermocosmesi.html">Dermocosmesi</a>
@@ -34,6 +36,7 @@
                         <a href="servizi/noleggio-dispositivi.html">Noleggio Dispositivi</a>
                     </div>
                 </div>
+                <!-- FINE MODIFICA -->
                 <a href="#consigli">Consigli</a>
                 <a href="#contatti">Contatti</a>
             </nav>
@@ -41,6 +44,7 @@
     </header>
 
     <main>
+        <!-- Contenuto della pagina... rimane invariato -->
         <!-- 1. Hero Iniziale con Immagine Reale -->
         <section id="hero">
             <div class="hero-overlay"></div>
@@ -66,8 +70,8 @@
                 </div>
             </div>
         </section>
-
-        <!-- 3. I nostri servizi (versione migliorata) -->
+        
+        <!-- Altre sezioni restano invariate -->
         <section id="servizi" class="section-padding bg-light">
             <div class="container">
                 <h2 class="text-center">I nostri servizi per la tua salute</h2>
@@ -97,12 +101,10 @@
             </div>
         </section>
 
-        <!-- 4. Le nostre farmacie con foto -->
         <section id="sedi" class="section-padding">
             <div class="container">
                 <h2 class="text-center">Le nostre farmacie</h2>
                 <div class="sedi-grid">
-                    <!-- Card Farmacia S. Gottardo -->
                     <div class="card farmacia-card">
                         <img src="images/sede-trenzano.jpg" alt="Esterno della Farmacia S. Gottardo a Trenzano" class="farmacia-img">
                         <div class="farmacia-content">
@@ -111,7 +113,6 @@
                             <p><i class="fa-solid fa-location-dot"></i> Piazza del Volontario, 15, 25030</p>
                             <p><i class="fa-solid fa-clock"></i> Lun-Ven: 8:30-12:30, 15:00-19:00</p>
                             <p><i class="fa-solid fa-clock"></i> Sab: 8:30-12:30</p>
-
                             <div class="card-links">
                                 <a href="#" target="_blank" title="Vedi su Google Maps">Google Maps</a>
                                 <a href="#" target="_blank" title="Seguici su Instagram">Instagram</a>
@@ -139,7 +140,7 @@
                             <p class="location">Travagliato (BS)</p>
                             <p><i class="fa-solid fa-location-dot"></i> Via Andrea Mai, 45, 25039</p>
                             <p><i class="fa-solid fa-clock"></i> Lun-Ven: 8:00-12:30, 15:00-19:30</p>
-                            <p><i class="fa-solid fa-clock"></i> Sab: 8:30-12:30, 15:00-19:00
+                            <p><i class="fa-solid fa-clock"></i> Sab: 8:30-12:30, 15:00-19:00</p>
                             <div class="card-links">
                                 <a href="#" target="_blank" title="Vedi su Google Maps">Google Maps</a>
                                 <a href="#" target="_blank" title="Seguici su Instagram">Instagram</a>
@@ -150,12 +151,10 @@
             </div>
         </section>
 
-        <!-- 5. Ultimi consigli per la salute -->
         <section id="consigli" class="section-padding bg-light">
             <div class="container">
                 <h2 class="text-center">Ultimi consigli per la salute</h2>
                 <div class="consigli-grid">
-                    <!-- Articolo 1 -->
                     <article class="card blog-card">
                         <img src="images/consiglio-allergie.jpg" alt="Prevenzione delle allergie di stagione">
                         <div class="blog-content">
@@ -184,7 +183,6 @@
             </div>
         </section>
 
-        <!-- 6. Contattaci -->
         <section id="contatti" class="section-padding">
              <div class="container">
                 <h2 class="text-center">Contattaci</h2>
@@ -199,7 +197,6 @@
                             <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
                             <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                         </div>
-                    </div>
                     <form class="contact-form">
                         <div class="form-group">
                             <label for="name">Nome</label>
@@ -220,7 +217,6 @@
         </section>
     </main>
 
-    <!-- 7. Footer -->
     <footer>
         <div class="container footer-content">
             <div class="footer-links">
@@ -238,5 +234,35 @@
             </div>
         </div>
     </footer>
+
+    <!-- =============================================== -->
+    <!-- SCRIPT PER GESTIRE IL MENU A TENDINA -->
+    <!-- =============================================== -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdownToggle = document.getElementById('servizi-toggle');
+        const dropdownMenu = document.getElementById('servizi-menu');
+
+        if (dropdownToggle && dropdownMenu) {
+            dropdownToggle.addEventListener('click', function(event) {
+                // Ferma la propagazione per evitare che il click sulla finestra chiuda subito il menu
+                event.stopPropagation();
+                // Aggiungi o togli la classe .show per mostrare/nascondere il menu
+                dropdownMenu.classList.toggle('show');
+                // Aggiungi o togli la classe .open per ruotare la freccia
+                dropdownToggle.classList.toggle('open');
+            });
+        }
+
+        // Chiude il menu se l'utente clicca in qualsiasi altro punto della pagina
+        window.addEventListener('click', function() {
+            if (dropdownMenu.classList.contains('show')) {
+                dropdownMenu.classList.remove('show');
+                dropdownToggle.classList.remove('open');
+            }
+        });
+    });
+    </script>
+
 </body>
 </html>
