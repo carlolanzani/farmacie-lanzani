@@ -289,11 +289,12 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
         font-size: 2.5rem;
     }
 
-    #hero {
-        height: 60vh;
-        padding-top: 80px; /* Aggiunto spazio per evitare che l'header copra l'hero */
-        box-sizing: border-box;
-    }
+#hero {
+    min-height: 75vh;           /* Aumentata l’altezza minima */
+    padding: 80px 0 100px;      /* Aggiunto padding inferiore */
+    box-sizing: border-box;
+}
+
 
     .dropdown-content {
         left: 50%;
