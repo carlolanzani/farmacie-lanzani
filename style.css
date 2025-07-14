@@ -240,34 +240,94 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
     .about-image { max-width: 250px; margin: 0 auto 30px auto; }
     .content-sidebar { margin-top: 40px; }
 }
-
+/* === Fine Media Queries per max-width: 768px === */
 @media (max-width: 768px) {
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.8rem; }
+
     .section-padding { padding: 60px 0; }
-    header .container { flex-direction: column; gap: 10px; }
-    header {position: static; }
-    header nav { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; }
-    header nav a, .dropdown .dropbtn { margin: 5px 10px; }
-    .sedi-grid, .consigli-grid { grid-template-columns: 1fr; }
-    .contatti-wrapper { grid-template-columns: 1fr; gap: 40px; }
-    .hero-content { padding: 0 15px; }
-    .hero-content h1 { font-size: 2.5rem; }
-    #hero { height: 60vh; }
+
+    header {
+        position: relative; /* Assicura che non sia sovrapposto */
+        z-index: 1;
+        background: white; /* o altro colore per evitare trasparenze */
+    }
+
+    header .container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px; /* Aggiunta padding interno per respiro */
+    }
+
+    header nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header nav a,
+    .dropdown .dropbtn {
+        margin: 5px 10px;
+    }
+
+    .sedi-grid,
+    .consigli-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contatti-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero-content {
+        padding: 0 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    #hero {
+        height: 60vh;
+        padding-top: 80px; /* Aggiunto spazio per evitare che l'header copra l'hero */
+        box-sizing: border-box;
+    }
+
     .dropdown-content {
         left: 50%;
         transform: translateX(-50%);
         width: 220px;
         max-width: 85vw;
     }
-    #servizi {
-        padding-bottom: 90px;
-    }
-    #servizi::after {
-        height: 60px;
-    }
 }
 
+
+/* === Media Queries per dispositivi molto piccoli === */
 @media (max-width: 480px) {
-    .hero-buttons { display: flex; flex-direction: column; gap: 15px; }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+    .hero-buttons .btn {
+        margin: 5px 0;
+        display: block;
+        width: 100%;
+    }
+    .dropdown-content {
+        min-width: 180px;
+    }
+    .servizio-item i {
+        font-size: 2rem;
+    }
+    .servizio-card i {
+        font-size: 2.2rem;
+    }
+    .farmacia-card .location {
+        font-size: 0.9rem;
+    }
+    .footer-content {
+        padding: 0 10px;
+    }
 }
