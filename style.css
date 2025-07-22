@@ -315,7 +315,7 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
 
     header {
         position: relative; /* Assicura che non sia sovrapposto */
-        z-index: 2;
+        z-index: 3;
         background: white; /* o altro colore per evitare trasparenze */
     }
 
