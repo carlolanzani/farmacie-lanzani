@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -82,32 +83,73 @@
         <section id="servizi" class="section-padding bg-light">
             <div class="container">
                 <h2 class="text-center">I nostri servizi per la tua salute</h2>
-                <div class="servizi-grid-detailed">
-                    <!-- Servizio 1: Autoanalisi -->
-                    <div class="card servizio-card">
-                        <i class="fa-solid fa-droplet"></i>
-                        <h3>Autoanalisi del Sangue</h3>
-                        <p>Controlla i valori chiave della tua salute in pochi minuti, direttamente in farmacia.
-                            Misuriamo colesterolo, glicemia e molto altro.</p>
-                        <a href="servizi/autoanalisi.html" class="btn-discover">Scopri di più →</a>
+                
+                <!-- Inizio Struttura Swiper -->
+                <div class="swiper-container my-services-slider">
+                    <div class="swiper-wrapper">
+                        
+                        <!-- Slide 1: Autoanalisi -->
+                        <div class="swiper-slide">
+                            <div class="card servizio-card">
+                                <i class="fa-solid fa-droplet"></i>
+                                <h3>Autoanalisi del Sangue</h3>
+                                <p>Controlla i valori chiave della tua salute in pochi minuti, direttamente in farmacia. Misuriamo colesterolo, glicemia e molto altro.</p>
+                                <a href="servizi/autoanalisi.html" class="btn-discover">Scopri di più →</a>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: Pressione -->
+                        <div class="swiper-slide">
+                            <div class="card servizio-card">
+                                <i class="fa-solid fa-heart-pulse"></i>
+                                <h3>Misurazione Pressione</h3>
+                                <p>Monitora la tua pressione arteriosa con strumenti professionali e il supporto di un farmacista esperto per la prevenzione cardiovascolare.</p>
+                                <a href="servizi/misurazione-pressione.html" class="btn-discover">Scopri di più →</a>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3: Dermocosmesi -->
+                        <div class="swiper-slide">
+                            <div class="card servizio-card">
+                                <i class="fa-solid fa-spa"></i>
+                                <h3>Consulenze Dermocosmesi</h3>
+                                <p>Affidati ai nostri specialisti per trovare la routine di bellezza e cura della pelle più adatta alle tue esigenze specifiche.</p>
+                                <a href="servizi/dermocosmesi.html" class="btn-discover">Scopri di più →</a>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4: Fitoterapia (NUOVO) -->
+                        <div class="swiper-slide">
+                            <div class="card servizio-card">
+                                <i class="fa-solid fa-leaf"></i>
+                                <h3>Fitoterapia</h3>
+                                <p>Scopri il potere curativo delle piante con la nostra selezione di prodotti fitoterapici e la consulenza dei nostri esperti.</p>
+                                <a href="servizi/fitoterapia.html" class="btn-discover">Scopri di più →</a>
+                            </div>
+                        </div>
+
+                        <!-- Slide 5: Noleggio (NUOVO) -->
+                        <div class="swiper-slide">
+                            <div class="card servizio-card">
+                                <i class="fa-solid fa-crutch"></i>
+                                <h3>Noleggio Dispositivi</h3>
+                                <p>Offriamo un servizio di noleggio per ausili sanitari come stampelle, aerosol e tiralatte, per le tue esigenze temporanee.</p>
+                                <a href="servizi/noleggio-dispositivi.html" class="btn-discover">Scopri di più →</a>
+                            </div>
+                        </div>
+
                     </div>
-                    <!-- Servizio 2: Pressione -->
-                    <div class="card servizio-card">
-                        <i class="fa-solid fa-heart-pulse"></i>
-                        <h3>Misurazione Pressione</h3>
-                        <p>Monitora la tua pressione arteriosa con strumenti professionali e il supporto di un
-                            farmacista esperto per la prevenzione cardiovascolare.</p>
-                        <a href="servizi/misurazione-pressione.html" class="btn-discover">Scopri di più →</a>
-                    </div>
-                    <!-- Servizio 3: Dermocosmesi -->
-                    <div class="card servizio-card">
-                        <i class="fa-solid fa-spa"></i>
-                        <h3>Consulenze Dermocosmesi</h3>
-                        <p>Affidati ai nostri specialisti per trovare la routine di bellezza e cura della pelle più
-                            adatta alle tue esigenze specifiche.</p>
-                        <a href="servizi/dermocosmesi.html" class="btn-discover">Scopri di più →</a>
-                    </div>
+                    <!-- Fine Wrapper -->
+
+                    <!-- Aggiungi Frecce di Navigazione -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+
+                    <!-- Aggiungi Paginazione (pallini) -->
+                    <div class="swiper-pagination"></div>
                 </div>
+                <!-- Fine Struttura Swiper -->
+
             </div>
         </section>
 
@@ -286,9 +328,9 @@
         </div>
     </footer>
 
-    <!-- =============================================== -->
-    <!-- SCRIPT PER GESTIRE IL MENU A TENDINA -->
-    <!-- =============================================== -->
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const dropdownToggle = document.getElementById('servizi-toggle');
@@ -313,6 +355,48 @@
                 }
             });
         });
+    </script>
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const swiper = new Swiper('.my-services-slider', {
+            // Opzioni di base
+            loop: true, // Ricomincia da capo quando arriva alla fine
+            spaceBetween: 20, // Spazio tra le slide
+
+            // Paginazione (pallini)
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+
+            // Navigazione (frecce)
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // Impostazioni Responsive (la parte più importante!)
+            breakpoints: {
+                // Quando la larghezza della finestra è >= 320px
+                320: {
+                    slidesPerView: 1, // Mostra 1 slide
+                    spaceBetween: 10
+                },
+                // Quando la larghezza della finestra è >= 768px
+                768: {
+                    slidesPerView: 2, // Mostra 2 slide
+                    spaceBetween: 20
+                },
+                // Quando la larghezza della finestra è >= 992px
+                992: {
+                    slidesPerView: 3, // Mostra 3 slide
+                    spaceBetween: 30
+                }
+            }
+        });
+    });
     </script>
 
 </body>
