@@ -258,8 +258,14 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
 .btn.full-width { display: block; width: 100%; text-align: center; }
 
 /* --- Stile Personalizzato per Swiper Slider Servizi --- */
+/* --- Stile Personalizzato per Swiper Slider Servizi --- */
 .my-services-slider {
     padding-bottom: 50px; /* Spazio per la paginazione */
+    
+    /* AGGIUNGI QUESTE DUE RIGHE */
+    overflow: hidden; /* Nasconde l'overflow su entrambi gli assi */
+    margin: 0 -10px; /* Compensa il padding del contenitore se necessario */
+    padding: 0 10px; /* Aggiunge spazio interno per non tagliare le ombre */
 }
 
 /* Stile delle Frecce */
