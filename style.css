@@ -180,9 +180,33 @@ header nav a:hover {
 .farmacia-card .location { font-style: italic; color: #777; margin-bottom: 15px; }
 .farmacia-card p { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
 .farmacia-card i { color: var(--primary-green); }
-.card-links { margin-top: 20px; display: flex; justify-content: space-between; }
-.card-links a { color: var(--primary-green); text-decoration: none; font-weight: 600; }
-.card-links a:hover { text-decoration: underline; }
+.card-links {
+    margin-top: 20px;
+    padding-top: 20px; /* Aggiunge spazio sopra */
+    border-top: 1px solid var(--border-color); /* Aggiunge una linea di separazione */
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+}
+
+.card-links a {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 600;
+    display: flex; /* Allinea icona e testo */
+    align-items: center; /* Allinea icona e testo verticalmente */
+    gap: 8px; /* Spazio tra icona e testo */
+    transition: color 0.3s ease;
+}
+
+.card-links a:hover {
+    color: var(--heading-color);
+    text-decoration: none; /* Rimuoviamo la sottolineatura che è meno elegante con le icone */
+}
+
+.card-links a i {
+    font-size: 1.2rem; /* Regola la dimensione dell'icona se necessario */
+}
 .servizi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: center; }
 .servizio-item { padding: 25px; border: 1px solid var(--border-color); border-radius: 8px; transition: all 0.3s ease; }
 .servizio-item:hover { border-color: var(--primary-green); transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
