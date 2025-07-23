@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- ====================================================== -->
+  <!-- Pagina Principale (Priorità Massima) -->
+  <!-- ====================================================== -->
+  <url>
+    <loc>https://www.farmacielanzani.it/</loc>
+    <lastmod>2025-07-23</lastmod> 
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- ====================================================== -->
+  <!-- Pagine dei Servizi (Priorità Alta) -->
+  <!-- ====================================================== -->
+  <url>
+    <loc>https://www.farmacielanzani.it/servizi/autoanalisi.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.farmacielanzani.it/servizi/misurazione-pressione.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.farmacielanzani.it/servizi/dermocosmesi.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.farmacielanzani.it/servizi/fitoterapia.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.farmacielanzani.it/servizi/noleggio-dispositivi.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- ====================================================== -->
+  <!-- Pagine dei Consigli / Articoli del Blog (Priorità Media) -->
+  <!-- ====================================================== -->
+  <url>
+    <loc>https://www.farmacielanzani.it/consigli/allergie-stagionali.html</loc>
+    <changefreq>never</changefreq> <!-- Se il contenuto è "evergreen" (sempre valido) -->
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.farmacielanzani.it/consigli/vitamina-d.html</loc>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.farmacielanzani.it/consigli/controllo-pressione.html</loc>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
