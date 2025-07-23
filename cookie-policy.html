@@ -13,61 +13,50 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     
     <link rel="stylesheet" href="../style.css">
+        <!-- =============================================== -->
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a3de5982-af78-4643-8ee0-10d6291a9cbe" data-blockingmode="auto" type="text/javascript"></script>
+    <!-- =============================================== -->
 
 </head>
 <body>
     <header>
-        <!-- ... il tuo header ... -->
+        <div class="container">
+            <!-- Il link del logo torna a index.html nella cartella principale -->
+            <a href="../index.html" class="logo">Farmacie <strong>Lanzani</strong></a>
+            <nav>
+                <!-- I link alle sezioni puntano a index.html -->
+                <a href="../index.html#chi-siamo">Chi Siamo</a>
+                <a href="../index.html#sedi">Le Sedi</a>
+                <!-- Il menu a tendina ora usa il bottone e ha i link corretti -->
+                <div class="dropdown">
+                    <button class="dropbtn" id="servizi-toggle">
+                        Servizi <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="servizi-menu">
+                        <a href="autoanalisi.html">Autoanalisi del Sangue</a>
+                        <a href="misurazione-pressione.html">Misurazione Pressione</a>
+                        <a href="dermocosmesi.html">Dermocosmesi</a>
+                        <a href="fitoterapia.html">Fitoterapia</a>
+                        <a href="noleggio-dispositivi.html">Noleggio Dispositivi</a>
+                    </div>
+                </div>
+                <a href="../index.html#consigli">Consigli</a>
+                <a href="../index.html#contatti">Contatti</a>
+            </nav>
+        </div>
     </header>
 
     <main class="container section-padding">
         <h1>Cookie Policy</h1>
-        <p><em>Ultimo aggiornamento: 27 Ottobre 2023</em></p>
-
-        <p>Questa Cookie Policy spiega cosa sono i cookie e come vengono utilizzati su questo sito web. Si consiglia di leggere questa policy per comprendere quali tipi di cookie utilizziamo, le informazioni che raccogliamo e come tali informazioni vengono utilizzate.</p>
         
-        <hr>
-
-        <h2>Cosa sono i Cookie?</h2>
-        <p>I cookie sono piccoli file di testo che i siti visitati dagli utenti inviano ai loro terminali (solitamente al browser), dove vengono memorizzati per essere poi ritrasmessi agli stessi siti alla successiva visita del medesimo utente. Nel corso della navigazione, l'utente può ricevere sul suo terminale anche cookie di siti o di web server diversi (c.d. cookie di "terze parti").</p>
-
-        <hr>
-
-        <h2>Tipi di Cookie utilizzati da questo Sito</h2>
+        <script id="CookieDeclaration" src="https://consent.cookiebot.com/a3de5982-af78-4643-8ee0-10d6291a9cbe/cd.js" type="text/javascript" async></script>
+        <script 
+          id="CookieDeclaration" 
+          src="https://consent.cookiebot.com/a3de5982-af78-4643-8ee0-10d6291a9cbe/cd.js" 
+          type="text/javascript" 
+          async>
+        </script>
         
-        <h3>Cookie Tecnici e Strettamente Necessari</h3>
-        <p>Questi cookie sono essenziali per il corretto funzionamento del sito e per fornire il servizio richiesto. Non richiedono il consenso dell'utente.</p>
-        <ul>
-            <li><strong>Cookie di sessione:</strong> Garantiscono la normale navigazione e fruizione del sito.</li>
-        </ul>
-
-        <h3>Cookie di Terze Parti</h3>
-        <p>Questi cookie sono impostati da un dominio diverso da quello visitato dall'utente. Su questo sito, utilizziamo:</p>
-        <ul>
-            <li>
-                <strong>Google Fonts (Google LLC):</strong>
-                <p>Google Fonts è un servizio di visualizzazione di stili di carattere gestito da Google LLC che permette a questo sito di integrare tali contenuti all’interno delle proprie pagine. L'utilizzo di questo servizio può comportare la raccolta di dati di utilizzo e indirizzi IP.</p>
-                <p>Luogo del trattamento: Stati Uniti – <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a>.</p>
-            </li>
-            <li>
-                <strong>Font Awesome (Fonticons, Inc.):</strong>
-                <p>Font Awesome è un servizio di visualizzazione di icone gestito da Fonticons, Inc. che permette di integrare icone grafiche nelle pagine del sito. L'utilizzo tramite CDN (come nel nostro caso) comporta una richiesta ai loro server.</p>
-                <p>Luogo del trattamento: Stati Uniti – <a href="https://fontawesome.com/privacy" target="_blank">Privacy Policy</a>.</p>
-            </li>
-        </ul>
-
-        <hr>
-        
-        <h2>Come gestire le preferenze sui Cookie</h2>
-        <p>L'utente può gestire le preferenze relative ai cookie direttamente dal proprio browser ed impedire – per esempio – che terze parti possano installarne. Tramite le preferenze del browser è inoltre possibile eliminare i cookie installati in passato. È importante notare che disabilitando tutti i cookie, il funzionamento di questo sito potrebbe essere compromesso.</p>
-        <p>Puoi trovare informazioni su come gestire i cookie nel tuo browser ai seguenti indirizzi:</p>
-        <ul>
-            <li><a href="https://support.google.com/chrome/answer/95647" target="_blank">Google Chrome</a></li>
-            <li><a href="https://support.mozilla.org/it/kb/Gestione%20dei%20cookie" target="_blank">Mozilla Firefox</a></li>
-            <li><a href="https://support.apple.com/it-it/guide/safari/sfri11471/mac" target="_blank">Apple Safari</a></li>
-            <li><a href="https://support.microsoft.com/it-it/windows/eliminare-e-gestire-i-cookie-168dab11-0753-043d-7c16-ede5947fc64d" target="_blank">Microsoft Edge</a></li>
-        </ul>
-
     </main>
 
     <footer>
@@ -84,7 +73,7 @@
             </div>
             <div class="footer-legal">
                 <p>© 2018 Farmacie Lanzani – Tutti i diritti riservati. P.IVA 03973080983</p>
-                <a href="#">Informativa Privacy</a> | <a href="#">Cookie Policy</a>
+                <a href="informativa-privacy.html">Informativa Privacy</a> | <a href="cookie-policy.html">Cookie Policy</a>
             </div>
         </div>
     </footer>
