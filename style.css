@@ -22,6 +22,7 @@
 }
 
 html, body {
+    font-family: var(--font-family); /* <-- AGGIUNGI QUESTA RIGA */
     height: 100%; 
     overflow-x: hidden;
 }
@@ -389,11 +390,15 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
         font-size: 2.5rem;
     }
 
-#hero {
-    min-height: 75vh;           /* Aumentata l’altezza minima */
-    padding: 80px 0 100px;      /* Aggiunto padding inferiore */
-    box-sizing: border-box;
-}
+    #hero {
+        min-height: 75vh;
+        padding: 80px 20px 100px; /* Ho riaggiunto il padding laterale per coerenza */
+        box-sizing: border-box;
+
+        /* --- CORREZIONE --- */
+        display: block; /* Disattiva il flexbox, tornando al comportamento di default */
+        text-align: center; /* Assicura che il testo rimanga centrato orizzontalmente */
+    }
 
 
     .dropdown-content {
