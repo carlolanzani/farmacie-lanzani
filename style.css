@@ -130,22 +130,25 @@ header nav a:hover {
 /* =============================================== */
 
 /* --- Hero Section --- */
+/* --- Hero Section --- */
 #hero {
     position: relative;
-    background-image: url('../images/hero-background.jpg'); /* Corretto il percorso per sicurezza */
+    background-image: url('images/hero-background.jpg'); /* Percorso pulito, senza ../ */
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     color: var(--white-color);
-    height: 70vh;
+    
+    /* Usiamo Flexbox per un perfetto allineamento verticale */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-bottom: 50px;
+    
+    /* Altezza e padding gestiti in modo più robusto */
+    min-height: 60vh;
+    padding: 60px 20px;
 }
 
-/* La regola per .hero-overlay è stata CANCELLATA. */
-/* Al suo posto, usiamo questo pseudo-elemento: */
 #hero::before {
     content: '';
     position: absolute;
@@ -157,9 +160,10 @@ header nav a:hover {
     z-index: 1;
 }
 
-.hero-content { 
-    position: relative; 
-    z-index: 2; /* Questa regola rimane per assicurare che il testo stia sopra l'overlay */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px; /* Limita la larghezza del testo per una migliore leggibilità */
 }
 
 /* =============================================== */
