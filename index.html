@@ -408,7 +408,7 @@
                     <a href="#sedi">Farmacia Santi Pietro e Paolo</a>
                 </div>
                 <div class="footer-legal">
-                    <p>© 2018 Farmacie Lanzani – Tutti i diritti riservati. P.IVA 03973080983</p>
+                    <p>© 2025 Farmacie Lanzani – Tutti i diritti riservati. P.IVA 03973080983</p>
                     <a href="informativa-privacy.html">Informativa Privacy</a> | <a href="cookie-policy.html">Cookie
                         Policy</a>
                 </div>
@@ -425,19 +425,28 @@
             const dropdownMenu = document.getElementById('servizi-menu');
 
             if (dropdownToggle && dropdownMenu) {
-                dropdownToggle.addEventListener('click', function (event) {
-                    // Ferma la propagazione per evitare che il click sulla finestra chiuda subito il menu
+                // Logica per gestire il dropdown
+                const toggleDropdown = function (event) {
                     event.stopPropagation();
-                    // Aggiungi o togli la classe .show per mostrare/nascondere il menu
                     dropdownMenu.classList.toggle('show');
-                    // Aggiungi o togli la classe .open per ruotare la freccia
                     dropdownToggle.classList.toggle('open');
-                });
+                };
+
+                // Controlla se il dispositivo è touch
+                const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+                if (isTouchDevice) {
+                    // Sui dispositivi touch, usa 'touchstart' che è più reattivo e non ha il bug
+                    dropdownToggle.addEventListener('touchstart', toggleDropdown);
+                } else {
+                    // Sui dispositivi desktop, usa il 'click' standard
+                    dropdownToggle.addEventListener('click', toggleDropdown);
+                }
             }
 
-            // Chiude il menu se l'utente clicca in qualsiasi altro punto della pagina
+            // La logica per chiudere il menu rimane invariata e funziona per entrambi i casi
             window.addEventListener('click', function () {
-                if (dropdownMenu.classList.contains('show')) {
+                if (dropdownMenu && dropdownMenu.classList.contains('show')) {
                     dropdownMenu.classList.remove('show');
                     dropdownToggle.classList.remove('open');
                 }
