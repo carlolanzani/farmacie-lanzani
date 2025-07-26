@@ -73,5 +73,27 @@
             </div>
         </div>
     </footer>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdownToggle = document.getElementById('servizi-toggle');
+        const dropdownMenu = document.getElementById('servizi-menu');
+
+        if (dropdownToggle && dropdownMenu) {
+            dropdownToggle.addEventListener('click', function(event) {
+                event.stopPropagation();
+                dropdownMenu.classList.toggle('show');
+                dropdownToggle.classList.toggle('open');
+            });
+        }
+
+        window.addEventListener('click', function() {
+            if (dropdownMenu && dropdownMenu.classList.contains('show')) {
+                dropdownMenu.classList.remove('show');
+                dropdownToggle.classList.remove('open');
+            }
+        });
+    });
+    </script>
 </body>
 </html>

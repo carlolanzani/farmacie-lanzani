@@ -420,38 +420,25 @@
     <script src="js/swiper-bundle.min.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const dropdownToggle = document.getElementById('servizi-toggle');
-            const dropdownMenu = document.getElementById('servizi-menu');
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdownToggle = document.getElementById('servizi-toggle');
+        const dropdownMenu = document.getElementById('servizi-menu');
 
-            if (dropdownToggle && dropdownMenu) {
-                // Logica per gestire il dropdown
-                const toggleDropdown = function (event) {
-                    event.stopPropagation();
-                    dropdownMenu.classList.toggle('show');
-                    dropdownToggle.classList.toggle('open');
-                };
-
-                // Controlla se il dispositivo è touch
-                const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-
-                if (isTouchDevice) {
-                    // Sui dispositivi touch, usa 'touchstart' che è più reattivo e non ha il bug
-                    dropdownToggle.addEventListener('touchstart', toggleDropdown);
-                } else {
-                    // Sui dispositivi desktop, usa il 'click' standard
-                    dropdownToggle.addEventListener('click', toggleDropdown);
-                }
-            }
-
-            // La logica per chiudere il menu rimane invariata e funziona per entrambi i casi
-            window.addEventListener('click', function () {
-                if (dropdownMenu && dropdownMenu.classList.contains('show')) {
-                    dropdownMenu.classList.remove('show');
-                    dropdownToggle.classList.remove('open');
-                }
+        if (dropdownToggle && dropdownMenu) {
+            dropdownToggle.addEventListener('click', function(event) {
+                event.stopPropagation();
+                dropdownMenu.classList.toggle('show');
+                dropdownToggle.classList.toggle('open');
             });
+        }
+
+        window.addEventListener('click', function() {
+            if (dropdownMenu && dropdownMenu.classList.contains('show')) {
+                dropdownMenu.classList.remove('show');
+                dropdownToggle.classList.remove('open');
+            }
         });
+    });
     </script>
 
 
