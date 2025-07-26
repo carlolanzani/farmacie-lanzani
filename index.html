@@ -78,316 +78,343 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/swiper-bundle.min.css" /> 
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a3de5982-af78-4643-8ee0-10d6291a9cbe" data-blockingmode="manual" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a3de5982-af78-4643-8ee0-10d6291a9cbe"
+        data-blockingmode="manual" type="text/javascript"></script>
     <!-- =============================================== -->
 </head>
 
 <body>
 
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">Farmacie <strong>Lanzani</strong></a>
-            <nav>
-                <a href="#chi-siamo">Chi Siamo</a>
-                <a href="#sedi">Le Sedi</a>
-                <!-- MODIFICA MENU SERVIZI -->
-                <div class="dropdown">
-                    <!-- Usiamo un button per attivare il menu al click, non un link -->
-                    <button class="dropbtn" id="servizi-toggle">
-                        Servizi <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div class="dropdown-content" id="servizi-menu">
-                        <a href="servizi/autoanalisi.html">Autoanalisi del Sangue</a>
-                        <a href="servizi/misurazione-pressione.html">Misurazione Pressione</a>
-                        <a href="servizi/dermocosmesi.html">Dermocosmesi</a>
-                        <a href="servizi/fitoterapia.html">Fitoterapia</a>
-                        <a href="servizi/noleggio-dispositivi.html">Noleggio Dispositivi</a>
-                    </div>
-                </div>
-                <!-- FINE MODIFICA -->
-                <a href="#consigli">Consigli</a>
-                <a href="#contatti">Contatti</a>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <!-- Contenuto della pagina... rimane invariato -->
-        <!-- 1. Hero Iniziale con Immagine Reale -->
-        <section id="hero">
-            <div class="container hero-content">
-                <h1>Farmacie Lanzani – Le tue farmacie di fiducia a Brescia</h1>
-                <p>Tre punti salute, un’unica missione: prenderci cura di te ogni giorno con competenza e passione.</p>
-                <div class="hero-buttons">
-                    <a href="#contatti" class="btn btn-primary">Contattaci</a>
-                    <a href="#sedi" class="btn btn-secondary">Scopri le sedi</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2. Presentazione del gruppo con foto -->
-        <section id="chi-siamo" class="section-padding">
-            <div class="container about-section">
-                <div class="about-image">
-                    <img src="images/dott-lanzani.jpg"
-                        alt="Ritratto del Dott. Lanzani, titolare delle Farmacie Lanzani">
-                </div>
-                <div class="about-text">
-                    <h2>Una realtà radicata sul territorio</h2>
-                    <p>Le Farmacie Lanzani sono un punto di riferimento consolidato sul territorio bresciano, guidate
-                        con passione dal <strong>Dott. Lanzani</strong>. La nostra missione è offrire ascolto,
-                        competenza e innovazione nella cura quotidiana delle persone, combinando la tradizione della
-                        farmacia con i servizi più moderni per essere sempre al tuo fianco.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Altre sezioni restano invariate -->
-        <section id="servizi" class="section-padding bg-light">
+    <div class="page-wrapper">
+        <header>
             <div class="container">
-                <h2 class="text-center">I nostri servizi per la tua salute</h2>
-                
-                <!-- Inizio Struttura Swiper -->
-                <div class="swiper-container my-services-slider">
-                    <div class="swiper-wrapper">
-                        
-                        <!-- Slide 1: Autoanalisi -->
-                        <div class="swiper-slide">
-                            <div class="card servizio-card">
-                                <i class="fa-solid fa-droplet"></i>
-                                <h3>Autoanalisi del Sangue</h3>
-                                <p>Controlla i valori chiave della tua salute in pochi minuti, direttamente in farmacia. Misuriamo colesterolo, glicemia e molto altro.</p>
-                                <a href="servizi/autoanalisi.html" class="btn-discover">Scopri di più →</a>
-                            </div>
+                <a href="index.html" class="logo">Farmacie <strong>Lanzani</strong></a>
+                <nav>
+                    <a href="#chi-siamo">Chi Siamo</a>
+                    <a href="#sedi">Le Sedi</a>
+                    <!-- MODIFICA MENU SERVIZI -->
+                    <div class="dropdown">
+                        <!-- Usiamo un button per attivare il menu al click, non un link -->
+                        <button class="dropbtn" id="servizi-toggle">
+                            Servizi <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-content" id="servizi-menu">
+                            <a href="servizi/autoanalisi.html">Autoanalisi del Sangue</a>
+                            <a href="servizi/misurazione-pressione.html">Misurazione Pressione</a>
+                            <a href="servizi/dermocosmesi.html">Dermocosmesi</a>
+                            <a href="servizi/fitoterapia.html">Fitoterapia</a>
+                            <a href="servizi/noleggio-dispositivi.html">Noleggio Dispositivi</a>
                         </div>
-
-                        <!-- Slide 2: Pressione -->
-                        <div class="swiper-slide">
-                            <div class="card servizio-card">
-                                <i class="fa-solid fa-heart-pulse"></i>
-                                <h3>Misurazione Pressione</h3>
-                                <p>Monitora la tua pressione arteriosa con strumenti professionali e il supporto di un farmacista esperto per la prevenzione cardiovascolare.</p>
-                                <a href="servizi/misurazione-pressione.html" class="btn-discover">Scopri di più →</a>
-                            </div>
-                        </div>
-
-                        <!-- Slide 3: Dermocosmesi -->
-                        <div class="swiper-slide">
-                            <div class="card servizio-card">
-                                <i class="fa-solid fa-spa"></i>
-                                <h3>Consulenze Dermocosmesi</h3>
-                                <p>Affidati ai nostri specialisti per trovare la routine di bellezza e cura della pelle più adatta alle tue esigenze specifiche.</p>
-                                <a href="servizi/dermocosmesi.html" class="btn-discover">Scopri di più →</a>
-                            </div>
-                        </div>
-
-                        <!-- Slide 4: Fitoterapia (NUOVO) -->
-                        <div class="swiper-slide">
-                            <div class="card servizio-card">
-                                <i class="fa-solid fa-leaf"></i>
-                                <h3>Fitoterapia</h3>
-                                <p>Scopri il potere curativo delle piante con la nostra selezione di prodotti fitoterapici e la consulenza dei nostri esperti.</p>
-                                <a href="servizi/fitoterapia.html" class="btn-discover">Scopri di più →</a>
-                            </div>
-                        </div>
-
-                        <!-- Slide 5: Noleggio (NUOVO) -->
-                        <div class="swiper-slide">
-                            <div class="card servizio-card">
-                                <i class="fa-solid fa-crutch"></i>
-                                <h3>Noleggio Dispositivi</h3>
-                                <p>Offriamo un servizio di noleggio per ausili sanitari come stampelle, aerosol e tiralatte, per le tue esigenze temporanee.</p>
-                                <a href="servizi/noleggio-dispositivi.html" class="btn-discover">Scopri di più →</a>
-                            </div>
-                        </div>
-
                     </div>
-                    <!-- Fine Wrapper -->
-
-                    <!-- Aggiungi Frecce di Navigazione -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-
-                    <!-- Aggiungi Paginazione (pallini) -->
-                    <div class="swiper-pagination"></div>
-                </div>
-                <!-- Fine Struttura Swiper -->
-
+                    <!-- FINE MODIFICA -->
+                    <a href="#consigli">Consigli</a>
+                    <a href="#contatti">Contatti</a>
+                </nav>
             </div>
-        </section>
+        </header>
 
-        <section id="sedi" class="section-padding">
-            <div class="container">
-                <h2 class="text-center">Le nostre farmacie</h2>
-                <div class="sedi-grid">
-                    <div class="card farmacia-card">
-                        <img src="images/sede-trenzano.jpg" alt="Esterno della Farmacia S. Gottardo a Trenzano"
-                            class="farmacia-img">
-                        <div class="farmacia-content">
-                            <h3>Farmacia S. Gottardo</h3>
-                            <p class="location">Trenzano (BS)</p>
-                            <p><i class="fa-solid fa-location-dot"></i> Piazza del Volontario, 15, 25030</p>
-                            <p><i class="fa-solid fa-clock"></i> Lun-Ven: 8:30-12:30, 15:00-19:00</p>
-                            <p><i class="fa-solid fa-clock"></i> Sab: 8:30-12:30</p>
-                            <div class="card-links">
-                                <a href="https://maps.app.goo.gl/b6JLgavzEx7Yphb88" target="_blank" rel="noopener noreferrer" title="Vedi su Google Maps">
-                                    <i class="fa-solid fa-map-location-dot"></i> Maps
-                                </a>
-                                <a href="https://www.instagram.com/farmacias.gottardo.trenzano/" target="_blank" rel="noopener noreferrer" title="Seguici su Instagram">
-                                    <i class="fa-brands fa-instagram"></i> Instagram
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card farmacia-card">
-                        <img src="images/sede-lumezzane.jpg" alt="Esterno della Farmacia S. Apollonio a Lumezzane"
-                            class="farmacia-img">
-                        <div class="farmacia-content">
-                            <h3>Farmacia S. Apollonio</h3>
-                            <p class="location">Lumezzane (BS)</p>
-                            <p><i class="fa-solid fa-location-dot"></i> Piazza portegaia, 10, 25065</p>
-                            <p><i class="fa-solid fa-clock"></i> Lun-Ven: 8:45-12:30, 15:00-19:00</p>
-                            <p><i class="fa-solid fa-clock"></i> Sab: 8:45-12:30</p>
-                            <div class="card-links">
-                                <a href="https://maps.app.goo.gl/dptkq15GM1X5UxRW9" target="_blank" rel="noopener noreferrer" title="Vedi su Google Maps">
-                                    <i class="fa-solid fa-map-location-dot"></i> Maps
-                                </a>
-                                <a href="https://www.instagram.com/farmacias.apollonio.lumezzane/" target="_blank" rel="noopener noreferrer" title="Seguici su Instagram">
-                                    <i class="fa-brands fa-instagram"></i> Instagram
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card farmacia-card">
-                        <img src="images/sede-travagliato.jpg"
-                            alt="Esterno della Farmacia Santi Pietro e Paolo a Travagliato" class="farmacia-img">
-                        <div class="farmacia-content">
-                            <h3>Farmacia Santi Pietro e Paolo</h3>
-                            <p class="location">Travagliato (BS)</p>
-                            <p><i class="fa-solid fa-location-dot"></i> Via Andrea Mai, 45, 25039</p>
-                            <p><i class="fa-solid fa-clock"></i> Lun-Ven: 8:00-12:30, 15:00-19:30</p>
-                            <p><i class="fa-solid fa-clock"></i> Sab: 8:30-12:30, 15:00-19:00</p>
-                            <div class="card-links">
-                                <a href="https://maps.app.goo.gl/7jTKEtu3p5r66oTt5" target="_blank" rel="noopener noreferrer" title="Vedi su Google Maps">
-                                    <i class="fa-solid fa-map-location-dot"></i> Maps
-                                </a>
-                                <a href="https://www.instagram.com/farmaciasantipietroepaolo/" target="_blank" rel="noopener noreferrer" title="Seguici su Instagram">
-                                    <i class="fa-brands fa-instagram"></i> Instagram
-                                </a>
-                            </div>
-                            </div>
-                        </div>
+        <main>
+            <!-- Contenuto della pagina... rimane invariato -->
+            <!-- 1. Hero Iniziale con Immagine Reale -->
+            <section id="hero">
+                <div class="container hero-content">
+                    <h1>Farmacie Lanzani – Le tue farmacie di fiducia a Brescia</h1>
+                    <p>Tre punti salute, un’unica missione: prenderci cura di te ogni giorno con competenza e passione.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contatti" class="btn btn-primary">Contattaci</a>
+                        <a href="#sedi" class="btn btn-secondary">Scopri le sedi</a>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="consigli" class="section-padding bg-light">
-            <div class="container">
-                <h2 class="text-center">Ultimi consigli per la salute</h2>
-                <div class="consigli-grid">
-                    <article class="card blog-card">
-                        <img src="images/consiglio-allergie.jpg" alt="Prevenzione delle allergie di stagione">
-                        <div class="blog-content">
-                            <h3>Allergie di stagione: come prevenirle</h3>
-                            <p>Scopri i nostri consigli pratici per affrontare al meglio l'arrivo della primavera e
-                                ridurre i sintomi delle allergie...</p>
-                            <a href="consigli/allergie-stagionali.html">Leggi di più</a>
-                        </div>
-                    </article>
-                    <article class="card blog-card">
-                        <img src="images/consiglio-vitamina-d.jpg" alt="Importanza della Vitamina D in estate">
-                        <div class="blog-content">
-                            <h3>Vitamina D: perché è importante anche in estate</h3>
-                            <p>Non solo d'inverno: la vitamina D è fondamentale per il nostro sistema immunitario tutto
-                                l'anno. Ecco perché...</p>
-                            <a href="consigli/vitamina-d.html">Leggi di più</a>
-                        </div>
-                    </article>
-                    <article class="card blog-card">
-                        <img src="images/consiglio-pressione.jpg" alt="Controllo della pressione arteriosa">
-                        <div class="blog-content">
-                            <h3>Come tenere sotto controllo la pressione</h3>
-                            <p>Pochi semplici accorgimenti quotidiani possono fare la differenza per la salute del tuo
-                                cuore. Scopri quali...</p>
-                            <a href="consigli/controllo-pressione.html">Leggi di più</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="contatti" class="section-padding">
-            <div class="container">
-                <h2 class="text-center">Contattaci</h2>
-                
-                <div class="contatti-wrapper">
-                    
-                    <!-- Colonna Sinistra: Info di Contatto -->
-                    <div class="contatti-info">
-                        <h3>Hai una domanda?</h3>
-                        <p>Il nostro team è a tua disposizione per qualsiasi informazione. Compila il modulo o utilizza i nostri contatti diretti. Saremo felici di aiutarti.</p>
-                        
-                        <p>
-                            <i class="fa-solid fa-envelope"></i> 
-                            <a href="mailto:farmacielanzani@gmail.com">farmacielanzani@gmail.com</a>
-                        </p>
-                        
-                        <h4>Telefoni delle nostre sedi:</h4>
-                        <p>
-                            <i class="fa-solid fa-phone"></i> 
-                            <a href="tel:+390309977019">+39 030 9977019</a> (Farmacia S.Gottardo, Trenzano)
-                        </p>
-                        <p>
-                            <i class="fa-solid fa-phone"></i> 
-                            <a href="tel:+39030828931">+39 030 828931</a> (Farmacia S.Apollonio, Lumezzane)
-                        </p>
-                        <p>
-                            <i class="fa-solid fa-phone"></i> 
-                            <a href="tel:+390307284247">+39 030 7284247</a> (Farmacia Santi Pietro e Paolo, Travagliato)
-                        </p>
+            <!-- 2. Presentazione del gruppo con foto -->
+            <section id="chi-siamo" class="section-padding">
+                <div class="container about-section">
+                    <div class="about-image">
+                        <img src="images/dott-lanzani.jpg"
+                            alt="Ritratto del Dott. Lanzani, titolare delle Farmacie Lanzani">
                     </div>
+                    <div class="about-text">
+                        <h2>Una realtà radicata sul territorio</h2>
+                        <p>Le Farmacie Lanzani sono un punto di riferimento consolidato sul territorio bresciano,
+                            guidate
+                            con passione dal <strong>Dott. Lanzani</strong>. La nostra missione è offrire ascolto,
+                            competenza e innovazione nella cura quotidiana delle persone, combinando la tradizione della
+                            farmacia con i servizi più moderni per essere sempre al tuo fianco.</p>
+                    </div>
+                </div>
+            </section>
 
-                    <!-- Colonna Destra: Modulo di Contatto -->
-                    <form class="contact-form" action="https://formspree.io/f/meozagnq" method="POST">
-                        <div class="form-group">
-                            <label for="name">Nome</label>
-                            <input type="text" id="name" name="name" placeholder="Il tuo nome" required>
+            <!-- Altre sezioni restano invariate -->
+            <section id="servizi" class="section-padding bg-light">
+                <div class="container">
+                    <h2 class="text-center">I nostri servizi per la tua salute</h2>
+
+                    <!-- Inizio Struttura Swiper -->
+                    <div class="swiper-container my-services-slider">
+                        <div class="swiper-wrapper">
+
+                            <!-- Slide 1: Autoanalisi -->
+                            <div class="swiper-slide">
+                                <div class="card servizio-card">
+                                    <i class="fa-solid fa-droplet"></i>
+                                    <h3>Autoanalisi del Sangue</h3>
+                                    <p>Controlla i valori chiave della tua salute in pochi minuti, direttamente in
+                                        farmacia.
+                                        Misuriamo colesterolo, glicemia e molto altro.</p>
+                                    <a href="servizi/autoanalisi.html" class="btn-discover">Scopri di più →</a>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2: Pressione -->
+                            <div class="swiper-slide">
+                                <div class="card servizio-card">
+                                    <i class="fa-solid fa-heart-pulse"></i>
+                                    <h3>Misurazione Pressione</h3>
+                                    <p>Monitora la tua pressione arteriosa con strumenti professionali e il supporto di
+                                        un
+                                        farmacista esperto per la prevenzione cardiovascolare.</p>
+                                    <a href="servizi/misurazione-pressione.html" class="btn-discover">Scopri di più
+                                        →</a>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3: Dermocosmesi -->
+                            <div class="swiper-slide">
+                                <div class="card servizio-card">
+                                    <i class="fa-solid fa-spa"></i>
+                                    <h3>Consulenze Dermocosmesi</h3>
+                                    <p>Affidati ai nostri specialisti per trovare la routine di bellezza e cura della
+                                        pelle
+                                        più adatta alle tue esigenze specifiche.</p>
+                                    <a href="servizi/dermocosmesi.html" class="btn-discover">Scopri di più →</a>
+                                </div>
+                            </div>
+
+                            <!-- Slide 4: Fitoterapia (NUOVO) -->
+                            <div class="swiper-slide">
+                                <div class="card servizio-card">
+                                    <i class="fa-solid fa-leaf"></i>
+                                    <h3>Fitoterapia</h3>
+                                    <p>Scopri il potere curativo delle piante con la nostra selezione di prodotti
+                                        fitoterapici e la consulenza dei nostri esperti.</p>
+                                    <a href="servizi/fitoterapia.html" class="btn-discover">Scopri di più →</a>
+                                </div>
+                            </div>
+
+                            <!-- Slide 5: Noleggio (NUOVO) -->
+                            <div class="swiper-slide">
+                                <div class="card servizio-card">
+                                    <i class="fa-solid fa-crutch"></i>
+                                    <h3>Noleggio Dispositivi</h3>
+                                    <p>Offriamo un servizio di noleggio per ausili sanitari come stampelle, aerosol e
+                                        tiralatte, per le tue esigenze temporanee.</p>
+                                    <a href="servizi/noleggio-dispositivi.html" class="btn-discover">Scopri di più →</a>
+                                </div>
+                            </div>
+
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="latuaemail@esempio.com" required>
+                        <!-- Fine Wrapper -->
+
+                        <!-- Aggiungi Frecce di Navigazione -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+
+                        <!-- Aggiungi Paginazione (pallini) -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <!-- Fine Struttura Swiper -->
+
+                </div>
+            </section>
+
+            <section id="sedi" class="section-padding">
+                <div class="container">
+                    <h2 class="text-center">Le nostre farmacie</h2>
+                    <div class="sedi-grid">
+                        <div class="card farmacia-card">
+                            <img src="images/sede-trenzano.jpg" alt="Esterno della Farmacia S. Gottardo a Trenzano"
+                                class="farmacia-img">
+                            <div class="farmacia-content">
+                                <h3>Farmacia S. Gottardo</h3>
+                                <p class="location">Trenzano (BS)</p>
+                                <p><i class="fa-solid fa-location-dot"></i> Piazza del Volontario, 15, 25030</p>
+                                <p><i class="fa-solid fa-clock"></i> Lun-Ven: 8:30-12:30, 15:00-19:00</p>
+                                <p><i class="fa-solid fa-clock"></i> Sab: 8:30-12:30</p>
+                                <div class="card-links">
+                                    <a href="https://maps.app.goo.gl/b6JLgavzEx7Yphb88" target="_blank"
+                                        rel="noopener noreferrer" title="Vedi su Google Maps">
+                                        <i class="fa-solid fa-map-location-dot"></i> Maps
+                                    </a>
+                                    <a href="https://www.instagram.com/farmacias.gottardo.trenzano/" target="_blank"
+                                        rel="noopener noreferrer" title="Seguici su Instagram">
+                                        <i class="fa-brands fa-instagram"></i> Instagram
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Messaggio</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Scrivi qui la tua richiesta..." required></textarea>
+                        <div class="card farmacia-card">
+                            <img src="images/sede-lumezzane.jpg" alt="Esterno della Farmacia S. Apollonio a Lumezzane"
+                                class="farmacia-img">
+                            <div class="farmacia-content">
+                                <h3>Farmacia S. Apollonio</h3>
+                                <p class="location">Lumezzane (BS)</p>
+                                <p><i class="fa-solid fa-location-dot"></i> Piazza portegaia, 10, 25065</p>
+                                <p><i class="fa-solid fa-clock"></i> Lun-Ven: 8:45-12:30, 15:00-19:00</p>
+                                <p><i class="fa-solid fa-clock"></i> Sab: 8:45-12:30</p>
+                                <div class="card-links">
+                                    <a href="https://maps.app.goo.gl/dptkq15GM1X5UxRW9" target="_blank"
+                                        rel="noopener noreferrer" title="Vedi su Google Maps">
+                                        <i class="fa-solid fa-map-location-dot"></i> Maps
+                                    </a>
+                                    <a href="https://www.instagram.com/farmacias.apollonio.lumezzane/" target="_blank"
+                                        rel="noopener noreferrer" title="Seguici su Instagram">
+                                        <i class="fa-brands fa-instagram"></i> Instagram
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        
-                        <button type="submit" class="btn btn-primary full-width">Invia Messaggio</button>
-                    </form>
-                    
+                        <div class="card farmacia-card">
+                            <img src="images/sede-travagliato.jpg"
+                                alt="Esterno della Farmacia Santi Pietro e Paolo a Travagliato" class="farmacia-img">
+                            <div class="farmacia-content">
+                                <h3>Farmacia Santi Pietro e Paolo</h3>
+                                <p class="location">Travagliato (BS)</p>
+                                <p><i class="fa-solid fa-location-dot"></i> Via Andrea Mai, 45, 25039</p>
+                                <p><i class="fa-solid fa-clock"></i> Lun-Ven: 8:00-12:30, 15:00-19:30</p>
+                                <p><i class="fa-solid fa-clock"></i> Sab: 8:30-12:30, 15:00-19:00</p>
+                                <div class="card-links">
+                                    <a href="https://maps.app.goo.gl/7jTKEtu3p5r66oTt5" target="_blank"
+                                        rel="noopener noreferrer" title="Vedi su Google Maps">
+                                        <i class="fa-solid fa-map-location-dot"></i> Maps
+                                    </a>
+                                    <a href="https://www.instagram.com/farmaciasantipietroepaolo/" target="_blank"
+                                        rel="noopener noreferrer" title="Seguici su Instagram">
+                                        <i class="fa-brands fa-instagram"></i> Instagram
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="consigli" class="section-padding bg-light">
+                <div class="container">
+                    <h2 class="text-center">Ultimi consigli per la salute</h2>
+                    <div class="consigli-grid">
+                        <article class="card blog-card">
+                            <img src="images/consiglio-allergie.jpg" alt="Prevenzione delle allergie di stagione">
+                            <div class="blog-content">
+                                <h3>Allergie di stagione: come prevenirle</h3>
+                                <p>Scopri i nostri consigli pratici per affrontare al meglio l'arrivo della primavera e
+                                    ridurre i sintomi delle allergie...</p>
+                                <a href="consigli/allergie-stagionali.html">Leggi di più</a>
+                            </div>
+                        </article>
+                        <article class="card blog-card">
+                            <img src="images/consiglio-vitamina-d.jpg" alt="Importanza della Vitamina D in estate">
+                            <div class="blog-content">
+                                <h3>Vitamina D: perché è importante anche in estate</h3>
+                                <p>Non solo d'inverno: la vitamina D è fondamentale per il nostro sistema immunitario
+                                    tutto
+                                    l'anno. Ecco perché...</p>
+                                <a href="consigli/vitamina-d.html">Leggi di più</a>
+                            </div>
+                        </article>
+                        <article class="card blog-card">
+                            <img src="images/consiglio-pressione.jpg" alt="Controllo della pressione arteriosa">
+                            <div class="blog-content">
+                                <h3>Come tenere sotto controllo la pressione</h3>
+                                <p>Pochi semplici accorgimenti quotidiani possono fare la differenza per la salute del
+                                    tuo
+                                    cuore. Scopri quali...</p>
+                                <a href="consigli/controllo-pressione.html">Leggi di più</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contatti" class="section-padding">
+                <div class="container">
+                    <h2 class="text-center">Contattaci</h2>
+
+                    <div class="contatti-wrapper">
+
+                        <!-- Colonna Sinistra: Info di Contatto -->
+                        <div class="contatti-info">
+                            <h3>Hai una domanda?</h3>
+                            <p>Il nostro team è a tua disposizione per qualsiasi informazione. Compila il modulo o
+                                utilizza
+                                i nostri contatti diretti. Saremo felici di aiutarti.</p>
+
+                            <p>
+                                <i class="fa-solid fa-envelope"></i>
+                                <a href="mailto:farmacielanzani@gmail.com">farmacielanzani@gmail.com</a>
+                            </p>
+
+                            <h4>Telefoni delle nostre sedi:</h4>
+                            <p>
+                                <i class="fa-solid fa-phone"></i>
+                                <a href="tel:+390309977019">+39 030 9977019</a> (Farmacia S.Gottardo, Trenzano)
+                            </p>
+                            <p>
+                                <i class="fa-solid fa-phone"></i>
+                                <a href="tel:+39030828931">+39 030 828931</a> (Farmacia S.Apollonio, Lumezzane)
+                            </p>
+                            <p>
+                                <i class="fa-solid fa-phone"></i>
+                                <a href="tel:+390307284247">+39 030 7284247</a> (Farmacia Santi Pietro e Paolo,
+                                Travagliato)
+                            </p>
+                        </div>
+
+                        <!-- Colonna Destra: Modulo di Contatto -->
+                        <form class="contact-form" action="https://formspree.io/f/meozagnq" method="POST">
+                            <div class="form-group">
+                                <label for="name">Nome</label>
+                                <input type="text" id="name" name="name" placeholder="Il tuo nome" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="latuaemail@esempio.com"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Messaggio</label>
+                                <textarea id="message" name="message" rows="5"
+                                    placeholder="Scrivi qui la tua richiesta..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary full-width">Invia Messaggio</button>
+                        </form>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container footer-content">
+                <div class="footer-links">
+                    <a href="#sedi">Farmacia S. Gottardo</a>
+                    <a href="#sedi">Farmacia S. Apollonio</a>
+                    <a href="#sedi">Farmacia Santi Pietro e Paolo</a>
+                </div>
+                <div class="footer-legal">
+                    <p>© 2018 Farmacie Lanzani – Tutti i diritti riservati. P.IVA 03973080983</p>
+                    <a href="informativa-privacy.html">Informativa Privacy</a> | <a href="cookie-policy.html">Cookie
+                        Policy</a>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-links">
-                <a href="#sedi">Farmacia S. Gottardo</a>
-                <a href="#sedi">Farmacia S. Apollonio</a>
-                <a href="#sedi">Farmacia Santi Pietro e Paolo</a>
-            </div>
-            <div class="footer-legal">
-                <p>© 2018 Farmacie Lanzani – Tutti i diritti riservati. P.IVA 03973080983</p>
-                <a href="informativa-privacy.html">Informativa Privacy</a> | <a href="cookie-policy.html">Cookie Policy</a>
-            </div>
-        </div>
-    </footer>
-
+        </footer>
+    </div>
 
 
     <script src="js/swiper-bundle.min.js"></script>
@@ -420,44 +447,44 @@
 
 
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const swiper = new Swiper('.my-services-slider', {
-            // Opzioni di base
-            loop: true, // Ricomincia da capo quando arriva alla fine
-            spaceBetween: 20, // Spazio tra le slide
+        document.addEventListener('DOMContentLoaded', function () {
+            const swiper = new Swiper('.my-services-slider', {
+                // Opzioni di base
+                loop: true, // Ricomincia da capo quando arriva alla fine
+                spaceBetween: 20, // Spazio tra le slide
 
-            // Paginazione (pallini)
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-
-            // Navigazione (frecce)
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-
-            // Impostazioni Responsive (la parte più importante!)
-            breakpoints: {
-                // Quando la larghezza della finestra è >= 320px
-                320: {
-                    slidesPerView: 1, // Mostra 1 slide
-                    spaceBetween: 10
+                // Paginazione (pallini)
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
                 },
-                // Quando la larghezza della finestra è >= 768px
-                768: {
-                    slidesPerView: 2, // Mostra 2 slide
-                    spaceBetween: 20
+
+                // Navigazione (frecce)
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
                 },
-                // Quando la larghezza della finestra è >= 992px
-                992: {
-                    slidesPerView: 3, // Mostra 3 slide
-                    spaceBetween: 30
+
+                // Impostazioni Responsive (la parte più importante!)
+                breakpoints: {
+                    // Quando la larghezza della finestra è >= 320px
+                    320: {
+                        slidesPerView: 1, // Mostra 1 slide
+                        spaceBetween: 10
+                    },
+                    // Quando la larghezza della finestra è >= 768px
+                    768: {
+                        slidesPerView: 2, // Mostra 2 slide
+                        spaceBetween: 20
+                    },
+                    // Quando la larghezza della finestra è >= 992px
+                    992: {
+                        slidesPerView: 3, // Mostra 3 slide
+                        spaceBetween: 30
+                    }
                 }
-            }
+            });
         });
-    });
     </script>
 
 </body>

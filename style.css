@@ -21,15 +21,19 @@
     box-sizing: border-box;
 }
 
-html {
-    overflow-x: hidden; /* Previene scroll orizzontale causato da 100vw */
+html, body {
+    height: 100%; 
+    overflow-x: hidden;
 }
 
-body {
-    font-family: var(--font-family);
-    color: var(--text-color);
-    line-height: 1.6;
-    background-color: var(--white-color);
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Il wrapper occupa almeno tutta l'altezza dello schermo */
+}
+
+main {
+    flex-grow: 1; /* Il main si prende tutto lo spazio verticale disponibile */
 }
 
 .container {
