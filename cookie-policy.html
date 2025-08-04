@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Cookie Policy - Farmacie Lanzani</title>
     <meta name="description" content="Noleggia ausili sanitari come tiralatte, aerosol, stampelle e bilance per neonati. Un servizio comodo e flessibile per le tue esigenze temporanee.">
 
@@ -11,23 +10,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    
     <link rel="stylesheet" href="../style.css">
-        <!-- =============================================== -->
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a3de5982-af78-4643-8ee0-10d6291a9cbe" data-blockingmode="auto" type="text/javascript"></script>
-    <!-- =============================================== -->
 
+    <!-- Codice 1: Google Analytics (gtag.js) - Controllato da Klaro! -->
+    <script data-klaro-name="google-analytics" type="application/javascript" async src="https://www.googletagmanager.com/gtag/js?id=G-94D13PMRX1"></script>
+    <script data-klaro-name="google-analytics" type="application/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-94D13PMRX1', { 'anonymize_ip': true });
+    </script>
 </head>
 <body>
     <header>
         <div class="container">
-            <!-- Il link del logo torna a index.html nella cartella principale -->
             <a href="../index.html" class="logo">Farmacie <strong>Lanzani</strong></a>
             <nav>
-                <!-- I link alle sezioni puntano a index.html -->
                 <a href="../index.html#chi-siamo">Chi Siamo</a>
                 <a href="../index.html#sedi">Le Sedi</a>
-                <!-- Il menu a tendina ora usa il bottone e ha i link corretti -->
                 <div class="dropdown">
                     <button class="dropbtn" id="servizi-toggle">
                         Servizi <i class="fa-solid fa-chevron-down"></i>
@@ -48,21 +48,23 @@
 
     <main class="container section-padding">
         <h1>Cookie Policy</h1>
+        <p>Questo sito utilizza cookie tecnici e, previo tuo consenso, cookie di terze parti per analizzare il traffico e migliorare l'esperienza utente. I cookie sono piccoli file di testo che possono essere utilizzati dai siti web per rendere più efficiente l'esperienza per l'utente.</p>
+        <p>La legge afferma che possiamo memorizzare i cookie sul suo dispositivo se sono strettamente necessari per il funzionamento di questo sito. Per tutti gli altri tipi di cookie abbiamo bisogno del suo permesso.</p>
         
-        <script id="CookieDeclaration" src="https://consent.cookiebot.com/a3de5982-af78-4643-8ee0-10d6291a9cbe/cd.js" type="text/javascript" async></script>
-        <script 
-          id="CookieDeclaration" 
-          src="https://consent.cookiebot.com/a3de5982-af78-4643-8ee0-10d6291a9cbe/cd.js" 
-          type="text/javascript" 
-          async>
-        </script>
+        <h2>Gestisci il tuo consenso</h2>
+        <p>Puoi modificare o revocare il tuo consenso in qualsiasi momento. Clicca qui sotto per riaprire il pannello delle preferenze:</p>
+        <p><a href="#" onclick="klaro.show(); return false;">Modifica il tuo consenso sui cookie</a></p>
+        <p>La tua scelta attuale verrà applicata a questo sito.</p>
         
+        <!-- RICORDATI DI INSERIRE QUI IL TUO DOMINIO! -->
+        <p>Il tuo consenso si applica ai seguenti domini: www.farmacielanzani.it</p>
+
+        <p>Per maggiori dettagli sul trattamento dei dati personali, consulta la nostra <a href="informativa-privacy.html">Informativa Privacy</a>.</p>
     </main>
 
     <footer>
         <div class="container footer-content">
             <div class="footer-links">
-                <!-- I link ora puntano alle ancore della pagina principale -->
                 <a href="../index.html#sedi">Farmacia S. Gottardo</a>
                 <a href="../index.html#sedi">Farmacia S. Apollonio</a>
                 <a href="../index.html#sedi">Farmacia Santi Pietro e Paolo</a>
@@ -73,7 +75,10 @@
             </div>
         </div>
     </footer>
-    
+
+    <!-- INIZIO BLOCCO SCRIPT DI FINE PAGINA (TUTTO DENTRO IL BODY) -->
+
+    <!-- Il tuo script per il menu a tendina -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const dropdownToggle = document.getElementById('servizi-toggle');
@@ -94,6 +99,29 @@
             }
         });
     });
+    </script>   
+
+    <!-- Codice 2: Implementazione di Klaro! -->
+    <script type="application/javascript">
+    const klaroConfig = {
+        elementID: 'klaro',
+        storageMethod: 'cookie',
+        cookieName: 'klaro',
+        lang: 'it',
+        default: false,
+        mustConsent: true,
+        hideDecline: true,
+        translations: { it: { consentModal: { title: 'Informazioni che raccogliamo', description: 'Qui puoi visualizzare e personalizzare le informazioni che raccogliamo su di te. Per saperne di più, leggi la nostra informativa sulla privacy.', privacyPolicy: { text: 'Per saperne di più, si prega di leggere la nostra {privacyPolicy}.', name: 'informativa sulla privacy', }, }, consentNotice: { description: 'Questo sito utilizza i cookie per migliorare la tua esperienza. Premi "Accetta" per continuare o "Personalizza" per gestire le tue preferenze.', learnMore: 'Personalizza', }, ok: 'OK', accept: 'Accetta', acceptAll: 'Accetta tutti', decline: 'Rifiuta', close: 'Chiudi', purposes: { necessary: 'Strettamente necessari', analytics: 'Analisi del traffico', styling: 'Stile del sito', }, service: { disableAll: { title: 'Disattiva tutti i servizi', }, optOut: { title: '(opt-out)', description: 'Questo servizio è caricato di default (ma puoi disattivarlo)', }, required: { title: '(sempre richiesto)', description: 'Questo servizio è necessario per il corretto funzionamento del sito.', }, }, }, },
+        services: [ { name: 'googleFonts', title: 'Google Fonts', purposes: ['styling'], required: true, description: 'Servizio per caricare i caratteri personalizzati (font) per lo stile grafico del sito.', }, { name: 'google-analytics', title: 'Google Analytics', purposes: ['analytics'], cookies: [ /^_ga_/, /_ga/, /_gid/, /_gat/ ], required: false, optOut: false, description: 'Servizio di analisi del traffico web fornito da Google che ci aiuta a capire come i visitatori interagiscono con il sito in forma anonima.', }, ],
+    };
     </script>
-</body>
+    <script
+        defer
+        type="application/javascript"
+        src="https://cdn.jsdelivr.net/npm/klaro@0.7.20/dist/klaro.js"
+        data-config="klaroConfig"
+    ></script>
+    <!-- FINE IMPLEMENTAZIONE KLARO! -->
+
+</body> <!-- IL BODY ORA SI CHIUDE QUI, DOPO TUTTI GLI SCRIPT -->
 </html>
