@@ -442,9 +442,11 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
         padding: 0 10px;
     }
 }
-/* =============================================== */
-/* --- PERSONALIZZAZIONE BANNER COOKIE (KLARO) --- */
-/* =============================================== */
+/* ======================================================== */
+/* --- BLOCCO CSS COMPLETO E DEFINITIVO PER KLARO (v3) --- */
+/* Corregge il problema del centraggio su desktop. */
+/* ======================================================== */
+
 /* 1. VARIABILI GLOBALI E STILE DI BASE */
 /* ------------------------------------ */
 div.klaro {
@@ -459,52 +461,55 @@ div.klaro {
     --border-radius: 8px;
 }
 
-/* 2. LAYOUT DEL BANNER A TUTTA LARGHEZZA */
-/* -------------------------------------- */
+/* 2. LAYOUT DEL BANNER A TUTTA LARGHEZZA (REALE) */
+/* ----------------------------------------------- */
+/* Questa regola si applica a TUTTI gli schermi e forza il layout a tutta larghezza.
+   Usiamo !important per garantire la vittoria contro gli stili di default di Klaro. */
 .klaro .cookie-notice:not(.cookie-modal-notice) {
-    max-width: none;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-    border-bottom: none;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    z-index: 999;
+    
+    /* FORZA LA POSIZIONE E DIMENSIONE */
+    width: 100% !important;
+    max-width: none !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: auto !important;
+
+    /* ANNULLA LO STILE A "RIQUADRO" */
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* === MODIFICA CHIAVE PER IL CONTENUTO A TUTTA LARGHEZZA === */
+/* Contenitore del contenuto interno (testo e pulsanti) */
 .klaro .cookie-notice .cn-body {
     display: flex;
-    flex-wrap: wrap; /* Permette al contenuto di andare a capo su mobile */
-    justify-content: space-between; /* Spinge testo e pulsanti ai lati opposti */
+    flex-wrap: wrap; /* Manda a capo su schermi piccoli */
+    justify-content: space-between; /* Spinge testo e pulsanti ai lati */
     align-items: center;
-    
-    /* RIMOSSA la larghezza massima per permettere al contenuto di espandersi */
-    /* RIMOSSO il margine automatico che centrava il contenuto */
-    
-    /* Aggiungiamo solo un padding laterale per dare respiro sui bordi dello schermo */
-    padding: 1.2rem 2rem; 
+    width: 100%;
+    margin: 0;
+    padding: 1.2rem 2rem; /* Padding laterale per dare respiro */
 }
 
+/* Paragrafo del testo */
 .klaro .cookie-notice .cn-body p {
-    flex: 1 1 50%; /* Permette al testo di occupare lo spazio disponibile */
-    margin-right: 20px;
-    margin-bottom: 0.5em; /* Serve per quando i pulsanti vanno a capo su mobile */
+    flex: 1 1 50%; /* Occupa lo spazio disponibile */
+    margin-right: 2rem; /* Spazio tra testo e pulsanti */
+    margin-bottom: 0.5em; /* Serve solo quando va a capo su mobile */
 }
 
-/* Contenitore per i pulsanti nel banner */
+/* Contenitore dei pulsanti */
 .klaro .cn-buttons {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
 }
 
-
 /* 3. STILE PULSANTI GERARCHICO E ACCATTIVANTE */
 /* -------------------------------------------- */
-
 /* Stile generale per tutti i pulsanti */
 .klaro .cm-btn {
     font-weight: 600;
@@ -520,7 +525,7 @@ div.klaro {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* --- Pulsante Principale "Accetta tutti" --- */
+/* Pulsante Principale "Accetta tutti" */
 .klaro .cm-btn.cm-btn-success {
     background-color: var(--green1);
     color: var(--white-color);
@@ -541,7 +546,7 @@ div.klaro {
     box-shadow: 0 6px 15px rgba(46, 139, 87, 0.4);
 }
 
-/* --- Pulsanti Secondari ("Rifiuta", "Personalizza") --- */
+/* Pulsanti Secondari ("Rifiuta", "Personalizza") */
 .klaro .cm-btn:not(.cm-btn-success) {
     background-color: var(--dark2);
     color: var(--light1);
@@ -552,7 +557,7 @@ div.klaro {
     border-color: #5f7a92;
 }
 
-/* Stile specifico per il link "Personalizza" */
+/* Link "Personalizza" */
 .klaro .cn-learn-more {
     font-size: 0.9em;
     text-decoration: underline;
@@ -560,7 +565,6 @@ div.klaro {
     background: none !important;
     box-shadow: none !important;
     border: none !important;
-    order: -1; /* Lo sposta prima degli altri pulsanti se necessario */
     margin-right: 15px;
 }
 .klaro .cn-learn-more:hover {
