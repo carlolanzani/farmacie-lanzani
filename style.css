@@ -24,13 +24,13 @@
 html, body {
     font-family: var(--font-family); /* <-- AGGIUNGI QUESTA RIGA */
     height: 100%; 
-    overflow-x: hidden;
 }
 
 .page-wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Il wrapper occupa almeno tutta l'altezza dello schermo */
+    overflow-x: hidden;
 }
 
 main {
