@@ -442,3 +442,10 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
         padding: 0 10px;
     }
 }
+
+/* =============================================== */
+/* FIX DI EMERGENZA PER BANNER KLARO!              */
+/* =============================================== */
+.klaro .cookie-notice, .klaro .consent-modal {
+    z-index: 99999 !important;
+}
