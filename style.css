@@ -446,79 +446,124 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
 /* --- PERSONALIZZAZIONE BANNER COOKIE (KLARO) --- */
 /* =============================================== */
 
-/* Questo blocco sovrascrive le variabili di default di Klaro 
-   per adattarle allo stile delle Farmacie Lanzani. */
+/* 1. VARIABILI GLOBALI E STILE DI BASE */
+/* ------------------------------------ */
 div.klaro {
-    /* Usa lo stesso font del sito */
     --font-family: 'Inter', sans-serif;
-    --font-size: 15px; /* Leggermente più grande per una migliore leggibilità */
-
-    /* --- COLORI PRINCIPALI --- */
-
-    /* Sfondo del banner e della finestra modale (usiamo il blu dei titoli) */
-    --dark1: #2c3e50; 
-    
-    /* Colore dei testi principali su sfondo scuro */
+    --font-size: 15px;
+    --dark1: #2c3e50;
     --light1: #ffffff;
-
-    /* Colore primario per i pulsanti "Accetta" e per gli switch "ON" */
-    --green1: #2E8B57; /* <-- Il tuo verde primario! */
-    --green2: #3a9f68; /* <-- Una versione leggermente più chiara per coerenza */
-
-    /* Colore dei link (usiamo sempre il tuo verde) */
-    --blue1: #2E8B57;
-    --blue2: #3a9f68;
-
-    /* --- ELEMENTI DELL'INTERFACCIA --- */
-
-    /* Colore per i bordi interni e divisori (una versione più chiara dello sfondo) */
-    --dark2: #4a657f; 
-    
-    /* Testo descrittivo secondario (più tenue per non distrarre) */
+    --green1: #2E8B57;
+    --green2: #3a9f68;
+    --dark2: #4a657f;
     --light3: #cdd6de;
-
-    /* Arrotondamento degli angoli (uguale a quello delle tue card) */
-    --border-radius: 8px; 
+    --border-radius: 8px;
 }
 
-/* --- STILE DEI PULSANTI --- */
+/* 2. LAYOUT DEL BANNER INFERIORE */
+/* ------------------------------- */
+.klaro .cookie-notice:not(.cookie-modal-notice) {
+    max-width: none;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
 
-/* Stile generale per tutti i pulsanti nel banner */
+.klaro .cookie-notice .cn-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1em 20px;
+}
+
+.klaro .cookie-notice .cn-body p {
+    flex-grow: 1;
+    margin-right: 20px;
+    margin-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+
+/* Contenitore per i pulsanti nel banner */
+.klaro .cn-buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+/* 3. STILE PULSANTI GERARCHICO E ACCATTIVANTE */
+/* -------------------------------------------- */
+
+/* Stile generale per tutti i pulsanti */
 .klaro .cm-btn {
     font-weight: 600;
-    padding: 10px 20px;
-    text-transform: none; /* Rimuove il maiuscolo di default se presente */
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    padding: 10px 22px;
+    border-radius: var(--border-radius, 8px);
+    border: 2px solid transparent;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: all 0.2s ease-in-out;
+}
+.klaro .cm-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Pulsante principale "Accetta Tutti" (stile pieno) */
+/* --- Pulsante Principale "Accetta tutti" --- */
+/* Questo è il pulsante più importante e visibile. */
 .klaro .cm-btn.cm-btn-success {
     background-color: var(--green1);
-    border: 2px solid var(--green1);
     color: var(--white-color);
-}
-.klaro .cm-btn.cm-btn-success:hover {
-    background-color: #246d45; /* Un verde leggermente più scuro al passaggio del mouse */
-    border-color: #246d45;
+    border-color: var(--green1);
+    
+    /* Lo rendiamo leggermente più grande e audace */
+    padding: 12px 28px; 
+    font-size: 1.05em;
 }
 
-/* Pulsanti secondari "Accetta Selezionati" e "Rifiuta" (stile "outline") */
+/* Aggiungiamo un'icona di spunta per renderlo più chiaro e accattivante */
+.klaro .cm-btn.cm-btn-success::before {
+    content: '\2713'; /* Codice per il carattere spunta (✓) */
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.klaro .cm-btn.cm-btn-success:hover {
+    background-color: #246d45;
+    border-color: #246d45;
+    box-shadow: 0 6px 15px rgba(46, 139, 87, 0.4);
+}
+
+/* --- Pulsanti Secondari ("Rifiuta", "Personalizza") --- */
+/* Stile solido, ad alto contrasto, ma chiaramente secondario. */
 .klaro .cm-btn:not(.cm-btn-success) {
-    background-color: transparent;
-    border: 2px solid var(--dark2);
+    background-color: var(--dark2);
     color: var(--light1);
+    border-color: var(--dark2);
 }
 .klaro .cm-btn:not(.cm-btn-success):hover {
-    background-color: var(--dark2);
-    border-color: var(--dark2);
-    color: var(--white-color);
+    background-color: #5f7a92;
+    border-color: #5f7a92;
 }
 
-/* Stile per il link "Personalizza" (se presente) */
+/* Stile specifico per il link "Personalizza" */
 .klaro .cn-learn-more {
-    color: var(--light3) !important;
+    font-size: 0.9em;
     text-decoration: underline;
+    color: var(--light3) !important;
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
 }
 .klaro .cn-learn-more:hover {
     color: var(--white-color) !important;
+    transform: none !important;
 }
