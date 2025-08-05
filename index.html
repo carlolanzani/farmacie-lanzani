@@ -578,12 +578,21 @@
 
     <!-- 2. Caricamento della libreria di Klaro! -->
     <script
+        defer
         type="application/javascript"
         src="https://cdn.jsdelivr.net/npm/klaro@0.7.20/dist/klaro.js"
         data-config="klaroConfig"
     ></script>
+    <!-- FINE IMPLEMENTAZIONE KLARO! -->  
     <div id="klaro"></div>
-<!-- FINE IMPLEMENTAZIONE KLARO! --> 
-</body>
 
+
+    <script type="application/javascript">
+    window.addEventListener('load', () => {
+        klaro.show();
+    });
+    </script>
+
+   
+</body>
 </html>
