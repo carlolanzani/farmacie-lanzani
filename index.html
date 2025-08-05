@@ -72,29 +72,25 @@
     ]
     }
     </script>
-    <!-- Codice 1: Da inserire nel <head> di ogni pagina -->
 
-    <!-- Google Analytics (gtag.js) - Controllato da Klaro! -->
-    <script
-        data-klaro-name="google-analytics"
-        type="application/javascript"
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-94D13PMRX1"
-    ></script>
+    <script data-type="text/plain" data-klaro-service="google-analytics" data-src="https://www.googletagmanager.com/gtag/js?id=G-94D13PMRX1">
+    </script>
 
     <script data-klaro-name="google-analytics" type="application/javascript">
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
-        // Configurazione con ID di misurazione e anonimizzazione dell'IP (fondamentale per il GDPR)
         gtag('config', 'G-94D13PMRX1', { 'anonymize_ip': true });
     </script>
     <!-- Fine script Google Analytics -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link data-type="text/plain"
+    data-klaro-service="google-fonts"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet"/>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">

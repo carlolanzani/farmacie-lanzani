@@ -57,15 +57,24 @@ var klaroConfig = {
     },
 
     services: [
-        {
-            name: 'google-analytics',
-            title: 'Google Analytics',
-            purposes: ['analytics'],
-            cookies: [ /^_ga_/, /_ga/, /_gid/, /_gat/ ],
-            required: false,
-            optOut: false,
-            description: 'Servizio di analisi che ci aiuta a capire come i visitatori interagiscono con il sito in forma anonima.',
+    {
+        name: 'google-analytics',
+        title: 'Google Analytics',
+        purposes: ['analytics'],
+        cookies: [ /^_ga_/, /_ga/, /_gid/, /_gat/ ],
+        required: false,
+        optOut: false,
+        description: 'Servizio di analisi che ci aiuta a capire come i visitatori interagiscono con il sito in forma anonima.',
+    },
+    {
+        name: 'google-fonts',
+        title: 'Google Fonts',
+        purposes: ['styling'],
+        cookies: [],
+        required: false,
+        optOut: false,
+        onlyOnce: true,
+        description: 'Caricamento di font da domini Google (fonts.googleapis.com / fonts.gstatic.com).',
         },
-        // Inserisci qui altri servizi come Google Fonts se li gestisci tramite Klaro
-    ],
+        ],
 };
