@@ -442,3 +442,83 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
         padding: 0 10px;
     }
 }
+/* =============================================== */
+/* --- PERSONALIZZAZIONE BANNER COOKIE (KLARO) --- */
+/* =============================================== */
+
+/* Questo blocco sovrascrive le variabili di default di Klaro 
+   per adattarle allo stile delle Farmacie Lanzani. */
+div.klaro {
+    /* Usa lo stesso font del sito */
+    --font-family: 'Inter', sans-serif;
+    --font-size: 15px; /* Leggermente più grande per una migliore leggibilità */
+
+    /* --- COLORI PRINCIPALI --- */
+
+    /* Sfondo del banner e della finestra modale (usiamo il blu dei titoli) */
+    --dark1: #2c3e50; 
+    
+    /* Colore dei testi principali su sfondo scuro */
+    --light1: #ffffff;
+
+    /* Colore primario per i pulsanti "Accetta" e per gli switch "ON" */
+    --green1: #2E8B57; /* <-- Il tuo verde primario! */
+    --green2: #3a9f68; /* <-- Una versione leggermente più chiara per coerenza */
+
+    /* Colore dei link (usiamo sempre il tuo verde) */
+    --blue1: #2E8B57;
+    --blue2: #3a9f68;
+
+    /* --- ELEMENTI DELL'INTERFACCIA --- */
+
+    /* Colore per i bordi interni e divisori (una versione più chiara dello sfondo) */
+    --dark2: #4a657f; 
+    
+    /* Testo descrittivo secondario (più tenue per non distrarre) */
+    --light3: #cdd6de;
+
+    /* Arrotondamento degli angoli (uguale a quello delle tue card) */
+    --border-radius: 8px; 
+}
+
+/* --- STILE DEI PULSANTI --- */
+
+/* Stile generale per tutti i pulsanti nel banner */
+.klaro .cm-btn {
+    font-weight: 600;
+    padding: 10px 20px;
+    text-transform: none; /* Rimuove il maiuscolo di default se presente */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Pulsante principale "Accetta Tutti" (stile pieno) */
+.klaro .cm-btn.cm-btn-success {
+    background-color: var(--green1);
+    border: 2px solid var(--green1);
+    color: var(--white-color);
+}
+.klaro .cm-btn.cm-btn-success:hover {
+    background-color: #246d45; /* Un verde leggermente più scuro al passaggio del mouse */
+    border-color: #246d45;
+}
+
+/* Pulsanti secondari "Accetta Selezionati" e "Rifiuta" (stile "outline") */
+.klaro .cm-btn:not(.cm-btn-success) {
+    background-color: transparent;
+    border: 2px solid var(--dark2);
+    color: var(--light1);
+}
+.klaro .cm-btn:not(.cm-btn-success):hover {
+    background-color: var(--dark2);
+    border-color: var(--dark2);
+    color: var(--white-color);
+}
+
+/* Stile per il link "Personalizza" (se presente) */
+.klaro .cn-learn-more {
+    color: var(--light3) !important;
+    text-decoration: underline;
+}
+.klaro .cn-learn-more:hover {
+    color: var(--white-color) !important;
+}
