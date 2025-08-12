@@ -13,11 +13,6 @@ var klaroConfig = {
     // Confermiamo che vogliamo un banner, non un pop-up.
     noticeAsModal: false, 
 
-    // Impostazioni del banner
-    notice: {
-        layout: 'bar',
-        position: 'bottom',
-    },
 
     // Il resto della configurazione rimane invariato
     acceptAll: true, 

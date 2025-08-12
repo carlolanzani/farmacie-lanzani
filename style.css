@@ -23,13 +23,13 @@
 html, body {
     font-family: var(--font-family); 
     height: 100%; 
-    overflow-x: hidden;
+    /* overflow-x: hidden; */ /* <<< QUESTA RIGA È STATA RIMOSSA PER CORREGGERE IL POSIZIONAMENTO FISSO */
 }
 
 .page-wrapper {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Il wrapper occupa almeno tutta l'altezza dello schermo *
+    min-height: 100vh; /* Il wrapper occupa almeno tutta l'altezza dello schermo */
 }
 
 main {

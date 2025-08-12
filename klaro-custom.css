@@ -80,6 +80,7 @@
     box-shadow: 0 -4px 12px var(--shadow-light) !important;
     padding: 20px !important;
     animation: slideUp 0.4s ease-out;
+    z-index: 9998 !important; /* <<< AGGIUNTO PER GARANTIRE LA SOVRAPPOSIZIONE */
 }
 
 @keyframes slideUp {
@@ -105,6 +106,7 @@
     backdrop-filter: blur(4px) !important;
     -webkit-backdrop-filter: blur(4px) !important;
     transition: all 0.3s ease-out !important;
+    z-index: 9999 !important; /* <<< AGGIUNTO PER GARANTIRE LA SOVRAPPOSIZIONE */
 }
 
 .klaro .cookie-modal .cm-modal {
