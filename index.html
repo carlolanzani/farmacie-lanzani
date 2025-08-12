@@ -109,9 +109,7 @@
                 <nav>
                     <a href="#chi-siamo">Chi Siamo</a>
                     <a href="#sedi">Le Sedi</a>
-                    <!-- MODIFICA MENU SERVIZI -->
                     <div class="dropdown">
-                        <!-- Usiamo un button per attivare il menu al click, non un link -->
                         <button class="dropbtn" id="servizi-toggle">
                             Servizi <i class="fa-solid fa-chevron-down"></i>
                         </button>
@@ -123,7 +121,6 @@
                             <a href="servizi/noleggio-dispositivi.html">Noleggio Dispositivi</a>
                         </div>
                     </div>
-                    <!-- FINE MODIFICA -->
                     <a href="#consigli">Consigli</a>
                     <a href="#contatti">Contatti</a>
                 </nav>
@@ -131,8 +128,6 @@
         </header>
 
         <main>
-            <!-- Contenuto della pagina... rimane invariato -->
-            <!-- 1. Hero Iniziale con Immagine Reale -->
             <section id="hero">
                 <div class="container">
                     <div class="container hero-content">
@@ -146,9 +141,9 @@
                     </div>
                 </div>
             </section>
-
-            <!-- 2. Presentazione del gruppo con foto -->
-            <section id="chi-siamo" class="section-padding">
+            
+            <!-- MODIFICA QUI: Aggiunta classe e stile per l'onda che transita verso il blu della sezione servizi -->
+            <section id="chi-siamo" class="section-padding wave-divider-bottom" style="color: var(--light-blue);">
                 <div class="container">
                     <div class="container about-section">
                         <div class="about-image">
@@ -167,13 +162,13 @@
                 </div>
             </section>
 
-            <!-- Altre sezioni restano invariate -->
-            <section id="servizi" class="section-padding bg-light">
+            <!-- MODIFICA QUI: Aggiunta classe e stile per l'onda che transita verso il grigio della sezione sedi -->
+            <section id="servizi" class="section-padding bg-light wave-divider-bottom" style="color: var(--background-light-gray);">
                 <div class="container">
                     <h2 class="text-center">I nostri servizi per la tua salute</h2>
 
-                    <!-- Inizio Struttura Swiper -->
-                    <div class="swiper-container my-services-slider">
+                    <!-- MODIFICA QUI: Aggiornata la classe da "swiper-container" a "swiper" per compatibilità con Swiper v6+ -->
+                    <div class="swiper my-services-slider">
                         <div class="swiper-wrapper">
 
                             <!-- Slide 1: Autoanalisi -->
@@ -213,7 +208,7 @@
                                 </div>
                             </div>
 
-                            <!-- Slide 4: Fitoterapia (NUOVO) -->
+                            <!-- Slide 4: Fitoterapia -->
                             <div class="swiper-slide">
                                 <div class="card servizio-card">
                                     <i class="fa-solid fa-leaf"></i>
@@ -224,7 +219,7 @@
                                 </div>
                             </div>
 
-                            <!-- Slide 5: Noleggio (NUOVO) -->
+                            <!-- Slide 5: Noleggio -->
                             <div class="swiper-slide">
                                 <div class="card servizio-card">
                                     <i class="fa-solid fa-crutch"></i>
@@ -238,11 +233,8 @@
                         </div>
                         <!-- Fine Wrapper -->
 
-                        <!-- Aggiungi Frecce di Navigazione -->
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
-
-                        <!-- Aggiungi Paginazione (pallini) -->
                         <div class="swiper-pagination"></div>
                     </div>
                     <!-- Fine Struttura Swiper -->
@@ -250,7 +242,8 @@
                 </div>
             </section>
 
-            <section id="sedi" class="section-padding">
+             <!-- MODIFICA QUI: Aggiunta classe e stile per l'onda che transita verso il blu della sezione consigli -->
+            <section id="sedi" class="section-padding wave-divider-bottom" style="color: var(--light-blue);">
                 <div class="container">
                     <h2 class="text-center">Le nostre farmacie</h2>
                     <div class="sedi-grid">
@@ -322,7 +315,8 @@
 
             </section>
 
-            <section id="consigli" class="section-padding bg-light">
+             <!-- MODIFICA QUI: Aggiunta classe e stile per l'onda che transita verso il grigio della sezione contatti -->
+            <section id="consigli" class="section-padding bg-light wave-divider-bottom" style="color: var(--background-light-gray);">
                 <div class="container">
                     <h2 class="text-center">Ultimi consigli per la salute</h2>
                     <div class="consigli-grid">
@@ -365,7 +359,6 @@
 
                     <div class="contatti-wrapper">
 
-                        <!-- Colonna Sinistra: Info di Contatto -->
                         <div class="contatti-info">
                             <h3>Hai una domanda?</h3>
                             <p>Il nostro team è a tua disposizione per qualsiasi informazione. Compila il modulo o
@@ -393,7 +386,6 @@
                             </p>
                         </div>
 
-                        <!-- Colonna Destra: Modulo di Contatto -->
                         <form class="contact-form" action="https://formspree.io/f/meozagnq" method="POST">
                             <div class="form-group">
                                 <label for="name">Nome</label>
@@ -467,39 +459,36 @@
 
 
     <script>
+        // <!-- MODIFICA QUI: Aggiunto "slidesPerGroup: 1" per lo scorrimento singolo -->
         document.addEventListener('DOMContentLoaded', function () {
             const swiper = new Swiper('.my-services-slider', {
-                // Opzioni di base
-                loop: true, // Ricomincia da capo quando arriva alla fine
-                spaceBetween: 20, // Spazio tra le slide
+                loop: true,
+                spaceBetween: 20,
+                
+                // Opzione chiave per scorrere una slide alla volta
+                slidesPerGroup: 1,
 
-                // Paginazione (pallini)
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
                 },
 
-                // Navigazione (frecce)
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 },
 
-                // Impostazioni Responsive (la parte più importante!)
                 breakpoints: {
-                    // Quando la larghezza della finestra è >= 320px
                     320: {
-                        slidesPerView: 1, // Mostra 1 slide
+                        slidesPerView: 1,
                         spaceBetween: 10
                     },
-                    // Quando la larghezza della finestra è >= 768px
                     768: {
-                        slidesPerView: 2, // Mostra 2 slide
+                        slidesPerView: 2,
                         spaceBetween: 20
                     },
-                    // Quando la larghezza della finestra è >= 992px
                     992: {
-                        slidesPerView: 3, // Mostra 3 slide
+                        slidesPerView: 3,
                         spaceBetween: 30
                     }
                 }
