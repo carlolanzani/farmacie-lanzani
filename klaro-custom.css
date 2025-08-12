@@ -1,9 +1,24 @@
 /* ===================================================================
-   Klaro – Tema Farmacia (Versione Corretta e Migliorata)
+   Klaro – Tema Farmacia (Versione con !important Strategico)
    =================================================================== */
 
 .klaro {
-    /* --- 1. VARIABILI DI LAYOUT DEL BANNER --- */
+    /* --- VARIABILI CSS PER MANUTENIBILITÀ --- */
+    --pharmacy-green: #2E8B57;
+    --pharmacy-green-hover: #236B44;
+    --pharmacy-green-light: rgba(46, 139, 87, 0.1);
+    --text-dark: #333333;
+    --text-light: #666666;
+    --bg-white: #ffffff;
+    --bg-light: #f7f9fa;
+    --bg-gray: #e9ecef;
+    --border-color: #dddddd;
+    --border-light: #ced4da;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
+    
+    /* --- LAYOUT VARIABILI DEL BANNER --- */
     --notice-position: fixed;
     --notice-max-width: 100%;
     --notice-bottom: 0;
@@ -13,43 +28,102 @@
     --notice-margin: 0;
 }
 
-/* 2. Sovrascrive la regola specifica del testo di Klaro (#fafafa) */
+/* ===================================================================
+   OVERRIDE GLOBALI TESTO E ELEMENTI BASE
+   =================================================================== */
+
 .klaro .cookie-modal p,
 .klaro .cookie-modal strong,
 .klaro .cookie-modal h1,
 .klaro .cookie-modal h2,
+.klaro .cookie-modal h3,
 .klaro .cookie-modal ul,
 .klaro .cookie-modal li,
 .klaro .cookie-notice p,
 .klaro .cookie-notice strong,
 .klaro .cookie-notice h1,
 .klaro .cookie-notice h2,
+.klaro .cookie-notice h3,
 .klaro .cookie-notice ul,
 .klaro .cookie-notice li {
-    color: #333333 !important; /* Testo scuro */
+    color: var(--text-dark) !important;
 }
 
+/* Icona di chiusura modale */
 .klaro .cookie-modal .cm-modal .hide svg {
-    stroke: #333333 !important; /* Rende il tratto dell'icona SVG scuro */
+    stroke: var(--text-dark) !important;
+    transition: var(--transition);
 }
 
+.klaro .cookie-modal .cm-modal .hide:hover svg {
+    stroke: var(--pharmacy-green) !important;
+    transform: scale(1.1);
+}
+
+/* Slider toggle personalizzato */
 .klaro .cm-list-label .slider::before {
-    background-color: #afb4b9 !important; /* Grigio più scuro solo per il pallino */
+    background-color: #afb4b9 !important;
+    transition: var(--transition);
 }
 
-/* --- 1. Override Sfondo e Testo del BANNER --- */
+.klaro .cm-list-label .slider.checked::before {
+    background-color: var(--pharmacy-green) !important;
+}
+
+/* ===================================================================
+   BANNER COOKIE (NOTICE)
+   =================================================================== */
+
 .klaro .cookie-notice {
-    background-color: #f7f9fa !important; /* Sfondo grigio chiaro del tuo sito */
-    border-top: 3px solid #2E8B57 !important; /* Bordo superiore verde */
+    background-color: var(--bg-light) !important;
+    border-top: 3px solid var(--pharmacy-green) !important;
+    box-shadow: 0 -4px 12px var(--shadow-light) !important;
+    padding: 20px !important;
+    animation: slideUp 0.4s ease-out;
 }
 
-/* --- 2. Override Sfondo e Testo della FINESTRA MODALE (popup) --- */
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animazione semplice solo per il banner - non per la modale */
+
+/* ===================================================================
+   FINESTRA MODALE
+   =================================================================== */
+
+.klaro .cookie-modal {
+    backdrop-filter: blur(4px) !important;
+    transition: backdrop-filter 0.3s ease-out !important;
+}
+
 .klaro .cookie-modal .cm-modal {
-    background-color: #ffffff !important; /* Sfondo bianco */
+    background-color: var(--bg-white) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 20px 40px var(--shadow-medium) !important;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), 
+                opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1) !important;
+    transform: translateY(0px) !important;
 }
 
+/* Stati per animazione fluida senza keyframes */
+.klaro .cookie-modal .cm-modal[style*="display: block"],
+.klaro .cookie-modal .cm-modal:not([style*="display: none"]) {
+    opacity: 1 !important;
+    transform: translateY(0px) scale(1) !important;
+}
+
+/* Header della modale */
 .klaro .cookie-modal .cm-header {
-    border-bottom-color: #dddddd !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    padding: 24px !important;
 }
 
 .klaro .cookie-modal .cm-title,
@@ -57,49 +131,283 @@
 .klaro .cookie-modal .cm-service-description,
 .klaro .cookie-modal .cm-purpose-title,
 .klaro .cookie-modal .cm-switch-description {
-    color: #333333 !important; 
+    color: var(--text-dark) !important;
 }
 
-/* --- 3. Override Colori dei BOTTONI per Alto Contrasto --- */
-
-/* Bottone "Accetta tutti" (verde con testo bianco) */
-.klaro .cm-btn-accept-all {
-    background-color: #2E8B57 !important;
-    color: #ffffff !important;
+.klaro .cookie-modal .cm-title {
+    font-weight: 600 !important;
+    font-size: 1.25rem !important;
 }
 
-/* Bottone "Rifiuta" (grigio chiaro con testo scuro) */
+/* Body della modale */
+.klaro .cookie-modal .cm-body {
+    padding: 0 24px 24px !important;
+}
+
+/* Footer della modale */
+.klaro .cookie-modal .cm-footer {
+    padding: 20px 24px !important;
+    border-top: 1px solid var(--border-color) !important;
+    background-color: var(--bg-light) !important;
+    border-radius: 0 0 12px 12px !important;
+}
+
+/* ===================================================================
+   BOTTONI - DESIGN SYSTEM COMPLETO
+   =================================================================== */
+
+/* Bottone primario - Accetta tutti */
+.klaro .cm-btn-accept-all,
+.klaro .cm-footer .cm-btn-success {
+    background-color: var(--pharmacy-green) !important;
+    color: var(--bg-white) !important;
+    border: 2px solid var(--pharmacy-green) !important;
+    padding: 12px 24px !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    transition: var(--transition) !important;
+    cursor: pointer;
+}
+
+.klaro .cm-btn-accept-all:hover,
+.klaro .cm-footer .cm-btn-success:hover {
+    background-color: var(--pharmacy-green-hover) !important;
+    border-color: var(--pharmacy-green-hover) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(46, 139, 87, 0.3) !important;
+}
+
+.klaro .cm-btn-accept-all:active,
+.klaro .cm-footer .cm-btn-success:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 6px rgba(46, 139, 87, 0.2) !important;
+}
+
+/* Bottone secondario - Rifiuta */
 .klaro .cm-btn-decline {
-    background-color: #e9ecef !important;
-    color: #333333 !important;
-    border-color: #ced4da !important;
+    background-color: var(--bg-gray) !important;
+    color: var(--text-dark) !important;
+    border: 2px solid var(--border-light) !important;
+    padding: 12px 24px !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    transition: var(--transition) !important;
+    cursor: pointer;
 }
 
-/* Link "Gestisci preferenze" (verde) */
-.klaro .cm-learn-more {
-    color: #2E8B57 !important;
+.klaro .cm-btn-decline:hover {
+    background-color: #dee2e6 !important;
+    border-color: #adb5bd !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 8px var(--shadow-light) !important;
 }
 
-/* --- 4. Correzione Contrasto BOTTONI DENTRO LA MODALE --- */
+.klaro .cm-btn-decline:active {
+    transform: translateY(0) !important;
+}
 
-/* Bottoni di accettazione/rifiuto singolo servizio */
+/* Bottoni piccoli nella modale */
 .klaro .cm-btn.cm-btn-sm.cm-btn-success,
 .klaro .cm-btn.cm-btn-sm.cm-btn-secondary.active {
-    background-color: #2E8B57 !important;
-    color: #ffffff !important;
+    background-color: var(--pharmacy-green) !important;
+    color: var(--bg-white) !important;
+    border-radius: 6px !important;
+    transition: var(--transition) !important;
 }
 
-/* Pulsante "Salva le preferenze" (verde con testo bianco) */
-.klaro .cm-footer .cm-btn-success {
-    background-color: #2E8B57 !important;
-    color: #ffffff !important;
+.klaro .cm-btn.cm-btn-sm.cm-btn-success:hover,
+.klaro .cm-btn.cm-btn-sm.cm-btn-secondary.active:hover {
+    background-color: var(--pharmacy-green-hover) !important;
+    transform: scale(1.05) !important;
 }
 
-/* --- 5. Icona per "Gestisci preferenze" (già corretta, la manteniamo) --- */
+/* Link "Gestisci preferenze" */
+.klaro .cm-learn-more {
+    color: var(--pharmacy-green) !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    transition: var(--transition) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.klaro .cm-learn-more:hover {
+    color: var(--pharmacy-green-hover) !important;
+    text-decoration: underline !important;
+}
+
+/* Icona FontAwesome per "Gestisci preferenze" */
 .klaro .cm-learn-more::before {
     content: '\f013';
-    font-family: 'Font Awesome 6 Free';
+    font-family: 'Font Awesome 6 Free', 'Font Awesome 5 Free';
     font-weight: 900;
     margin-right: 8px;
-    font-size: 0.95em;
+    font-size: 0.9em;
+    transition: var(--transition);
+}
+
+.klaro .cm-learn-more:hover::before {
+    transform: rotate(90deg);
+}
+
+/* ===================================================================
+   ELEMENTI LISTA SERVIZI
+   =================================================================== */
+
+.klaro .cm-services .cm-service {
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+    margin-bottom: 12px !important;
+    transition: var(--transition) !important;
+}
+
+.klaro .cm-services .cm-service:hover {
+    border-color: var(--pharmacy-green) !important;
+    box-shadow: 0 2px 8px var(--pharmacy-green-light) !important;
+}
+
+.klaro .cm-service-title {
+    font-weight: 600 !important;
+    color: var(--text-dark) !important;
+}
+
+.klaro .cm-service-description {
+    color: var(--text-light) !important;
+    font-size: 0.9em !important;
+    line-height: 1.5 !important;
+}
+
+/* ===================================================================
+   CORREZIONI SPECIFICHE PER OVERRIDE KLARO
+   =================================================================== */
+
+/* Forza il colore del testo su tutti gli elementi problematici */
+.klaro .cookie-modal *:not(.hide):not(.slider) {
+    color: var(--text-dark) !important;
+}
+
+/* Forza background della modale */
+.klaro .cookie-modal .cm-modal,
+.klaro .cookie-modal .cm-modal > div {
+    background-color: var(--bg-white) !important;
+}
+
+/* Forza colori dei toggle switches */
+.klaro .cm-list-label .slider {
+    background-color: #ccc !important;
+}
+
+.klaro .cm-list-label .slider.checked {
+    background-color: var(--pharmacy-green) !important;
+}
+
+/* Override per elementi di lista */
+.klaro .cm-purposes li,
+.klaro .cm-list li {
+    color: var(--text-dark) !important;
+}
+
+/* ===================================================================
+   RESPONSIVE DESIGN
+   =================================================================== */
+
+@media (max-width: 768px) {
+    .klaro {
+        --notice-border-radius: 12px 12px 0 0;
+    }
+    
+    .klaro .cookie-notice {
+        padding: 16px !important;
+        border-radius: var(--notice-border-radius) !important;
+    }
+    
+    .klaro .cookie-modal .cm-modal {
+        margin: 10px !important;
+        max-height: 90vh !important;
+        overflow-y: auto !important;
+    }
+    
+    .klaro .cookie-modal .cm-header,
+    .klaro .cookie-modal .cm-body,
+    .klaro .cookie-modal .cm-footer {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+    
+    .klaro .cm-btn-accept-all,
+    .klaro .cm-btn-decline,
+    .klaro .cm-footer .cm-btn-success {
+        width: 100% !important;
+        margin-bottom: 8px !important;
+        padding: 14px !important;
+        font-size: 16px !important; /* Previene zoom su iOS */
+    }
+}
+
+@media (max-width: 480px) {
+    .klaro .cookie-modal .cm-modal {
+        margin: 5px !important;
+        border-radius: 8px !important;
+    }
+    
+    .klaro .cookie-notice {
+        padding: 12px !important;
+    }
+    
+    .klaro .cm-learn-more::before {
+        margin-right: 6px !important;
+    }
+}
+
+/* ===================================================================
+   ACCESSIBILITÀ E STATI FOCUS
+   =================================================================== */
+
+.klaro .cm-btn-accept-all:focus,
+.klaro .cm-btn-decline:focus,
+.klaro .cm-footer .cm-btn-success:focus,
+.klaro .cm-learn-more:focus {
+    outline: 2px solid var(--pharmacy-green) !important;
+    outline-offset: 2px !important;
+}
+
+/* Migliora la visibilità per utenti con ridotta percezione dei colori */
+@media (prefers-reduced-motion: reduce) {
+    .klaro * {
+        animation-duration: 0.1s !important;
+        transition-duration: 0.1s !important;
+    }
+}
+
+@media (prefers-contrast: high) {
+    .klaro {
+        --pharmacy-green: #1f5f3f;
+        --text-dark: #000000;
+        --border-color: #000000;
+    }
+}
+
+/* ===================================================================
+   FALLBACK E SICUREZZA
+   =================================================================== */
+
+/* Ultima risorsa per elementi testardi */
+.klaro .cookie-modal .cm-modal .cm-header,
+.klaro .cookie-modal .cm-modal .cm-body,
+.klaro .cookie-modal .cm-modal .cm-footer {
+    background: var(--bg-white) !important;
+}
+
+/* Assicura che i link mantengano il colore giusto */
+.klaro a:not(.cm-btn):not(.hide) {
+    color: var(--pharmacy-green) !important;
+}
+
+/* Override finale per testo scuro ovunque */
+.klaro .cookie-modal .cm-modal * {
+    color: var(--text-dark) !important;
+}
+
+.klaro .cookie-modal .cm-modal .hide * {
+    color: inherit !important; /* Mantiene il colore dell'icona di chiusura */
 }
