@@ -1,5 +1,3 @@
-// File: klaro-config.js (Versione Corretta e Definitiva)
-
 var klaroConfig = {
     elementID: 'klaro',
     storageMethod: 'cookie',
@@ -7,12 +5,9 @@ var klaroConfig = {
     cookieExpiresAfterDays: 365,
     lang: 'it',
     
-    // MODIFICA CHIAVE #1: I servizi sono disabilitati per impostazione predefinita.
-    // Questo è fondamentale per la conformità.
     default: false, 
     
-    // MODIFICA CHIAVE #2: Disattiviamo la modalità di blocco forzato.
-    // Questo rimuoverà l'overlay grigio e permetterà al CSS di posizionare il banner.
+
     mustConsent: false, 
     
     // Confermiamo che vogliamo un banner, non un pop-up.
@@ -41,11 +36,14 @@ var klaroConfig = {
             },
             consentNotice: {
                 description: 'Utilizziamo i cookie per migliorare la tua esperienza sul sito. Puoi accettarli tutti o personalizzare le tue preferenze.',
-                learnMore: 'Personalizza', 
+                learnMore: 'Gestisci preferenze', 
             },
-            acceptAll: 'Accetta tutti',
-            accept: 'Salva le preferenze',
-            decline: 'Rifiuta',
+            
+
+            acceptAll: 'Accetta tutti', 
+            accept: 'Salva le preferenze', 
+            decline: 'Rifiuta', 
+            
             purposes: {
                 analytics: 'Analisi del traffico',
                 styling: 'Stile del sito',

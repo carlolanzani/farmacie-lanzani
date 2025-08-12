@@ -1,62 +1,70 @@
 /* ===================================================================
-   Klaro – Tema Farmacia (Soluzione Pulita e Corretta)
-   Questo file personalizza Klaro ridefinendo le sue variabili di tema.
+   Klaro – Tema Farmacia (Soluzione Finale e Corretta)
+   Ridefinisce le variabili di Klaro sia per lo stile che per il layout.
    =================================================================== */
 
-/*
-   Il selettore .klaro assicura che queste variabili vengano applicate solo
-   agli elementi di Klaro, con una specificità sufficiente a sovrascrivere
-   quelle di default senza usare !important.
-*/
 .klaro {
-
+    /* --- 1. VARIABILI DI LAYOUT DEL BANNER --- */
     --notice-position: fixed;
     --notice-max-width: 100%;
     --notice-bottom: 0;
     --notice-left: 0;
     --notice-right: 0;
-    --notice-border-radius: 0; /* Rimuove gli angoli arrotondati */
-    --notice-margin: 0;  
-    /* --- 1. Ridefinizione delle Variabili di Colore Principali --- */
-    --color-primary: #2E8B57;         /* Colore primario (pulsanti, link, toggle) */
-    --color-primary-hover: #257247;   /* Colore primario al passaggio del mouse */
-    --color-text: #333333;            /* Colore del testo principale */
-    --color-text-light: #555555;      /* Colore del testo secondario (descrizioni) */
-    --color-background: #ffffff;      /* Sfondo del modale */
-    --color-background-notice: #f7f9fa; /* Sfondo del banner inferiore */
-    --color-border: #dddddd;          /* Colori dei bordi */
+    --notice-border-radius: 0;
+    --notice-margin: 0;
 
-    /* --- 2. Ridefinizione delle Variabili di Tipografia --- */
+    /* --- 2. VARIABILI DI STILE (COLORI E FONT) --- */
+    --color-primary: #2E8B57;
+    --color-primary-hover: #257247;
+    --color-text: #333333;
+    --color-background: #ffffff;
+    --color-background-notice: #bfd2b9;
+    --color-border: #dddddd;
+    --bg-overlay: rgba(44, 62, 80, 0.65);
     --font-family: 'Inter', sans-serif;
     --font-size: 15px;
-    
-    /* --- 3. Ridefinizione delle Variabili del Modale e dell'Overlay --- */
-    --bg-modal: var(--color-background);
-    --bg-overlay: rgba(44, 62, 80, 0.65); /* Colore velo semitrasparente */
-    
-    /* --- 4. Ridefinizione delle Variabili del Banner --- */
-    --bg-notice: var(--color-background-notice);
 }
 
-/* --- 5. Piccole Correzioni Specifiche (senza !important) --- */
+/* --- 3. PICCOLE CORREZIONI SPECIFICHE E PULITE --- */
 
-/*
-   A volte, un elemento specifico (come il titolo) potrebbe avere uno stile
-   diretto che le variabili non coprono. In questo caso, usiamo un selettore
-   specifico ma pulito.
-*/
-.klaro .cookie-modal .cm-header .cm-title {
-    color: #2c3e50; /* Colore specifico per i titoli del sito */
-    font-weight: 700;
-}
-
-/* Stile del bordo superiore del banner, che richiede una specifica regola */
 .klaro .cookie-notice {
-    border-top: 2px solid var(--color-primary);
+    border-top: 4px solid var(--color-primary);
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Assicura che i pulsanti usino il colore del testo corretto (bianco) */
+.klaro .cookie-modal .cm-header .cm-title {
+    color: #2c3e50;
+    font-weight: 700;
+}
+
 .klaro .cm-btn {
     color: #ffffff;
+}
+
+/*
+   ===================================================================
+   --- NUOVA REGOLA: Aggiunta dell'icona a "Gestisci preferenze" ---
+   ===================================================================
+*/
+.klaro .cm-learn-more {
+    /* Allinea il link per un posizionamento corretto dell'icona */
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none; /* Rimuove la sottolineatura per un look più pulito */
+    font-weight: 600;
+    color: var(--color-primary); /* Usa il colore primario definito sopra */
+}
+
+.klaro .cm-learn-more:hover {
+    color: var(--color-primary-hover);
+    text-decoration: underline; /* Ri-aggiunge la sottolineatura solo al passaggio del mouse */
+}
+
+/* Crea l'icona usando Font Awesome */
+.klaro .cm-learn-more::before {
+    content: '\f013'; /* Codice Unicode per l'icona "gear" (ingranaggio) di Font Awesome */
+    font-family: 'Font Awesome 6 Free'; /* Nome corretto della famiglia di font */
+    font-weight: 900; /* Necessario per le icone "solid" */
+    margin-right: 8px; /* Spazio tra l'icona e il testo */
+    font-size: 0.95em; /* Rende l'icona leggermente più piccola del testo, per un effetto più gradevole */
 }
