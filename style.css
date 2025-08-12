@@ -23,13 +23,14 @@
 html, body {
     font-family: var(--font-family); 
     height: 100%; 
-    /* overflow-x: hidden; */ /* <<< QUESTA RIGA È STATA RIMOSSA PER CORREGGERE IL POSIZIONAMENTO FISSO */
+    /* overflow-x: hidden; */ /* <<< RIMOSSA DA QUI */
 }
 
 .page-wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Il wrapper occupa almeno tutta l'altezza dello schermo */
+    overflow: hidden; /* <<< AGGIUNTA QUI: Previene lo scroll orizzontale solo per il contenuto del sito */
 }
 
 main {
@@ -299,10 +300,9 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
 .my-services-slider {
     padding-bottom: 50px; /* Spazio per la paginazione */
     
-    /* AGGIUNGI QUESTE DUE RIGHE */
-    overflow: hidden; /* Nasconde l'overflow su entrambi gli assi */
-    margin: 0 -10px; /* Compensa il padding del contenitore se necessario */
-    padding: 0 10px; /* Aggiunge spazio interno per non tagliare le ombre */
+    /* overflow è gestito dal .page-wrapper ora, ma queste regole sono utili per lo slider stesso */
+    margin: 0 -10px; 
+    padding: 0 10px; 
 }
 
 /* Stile delle Frecce */
@@ -394,12 +394,10 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
 
     #hero {
         min-height: 75vh;
-        padding: 80px 20px 100px; /* Ho riaggiunto il padding laterale per coerenza */
+        padding: 80px 20px 100px; 
         box-sizing: border-box;
-
-        /* --- CORREZIONE --- */
-        display: block; /* Disattiva il flexbox, tornando al comportamento di default */
-        text-align: center; /* Assicura che il testo rimanga centrato orizzontalmente */
+        display: block; 
+        text-align: center;
     }
 
 
