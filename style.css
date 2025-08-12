@@ -300,9 +300,13 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
     padding: 0 10px; 
 }
 
-.my-services-slider .swiper-button-next,
+.my-services-slider .swiper-button-next {
+    color: var(--primary-green);
+    right: -10px;
+}
 .my-services-slider .swiper-button-prev {
     color: var(--primary-green);
+    left: -10px;
 }
 .my-services-slider .swiper-button-next:after,
 .my-services-slider .swiper-button-prev:after {
