@@ -9,6 +9,14 @@
    quelle di default senza usare !important.
 */
 .klaro {
+
+    --notice-position: fixed;
+    --notice-max-width: 100%;
+    --notice-bottom: 0;
+    --notice-left: 0;
+    --notice-right: 0;
+    --notice-border-radius: 0; /* Rimuove gli angoli arrotondati */
+    --notice-margin: 0;  
     /* --- 1. Ridefinizione delle Variabili di Colore Principali --- */
     --color-primary: #2E8B57;         /* Colore primario (pulsanti, link, toggle) */
     --color-primary-hover: #257247;   /* Colore primario al passaggio del mouse */
@@ -46,13 +54,6 @@
 .klaro .cookie-notice {
     border-top: 2px solid var(--color-primary);
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    max-width: 100%;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border-radius: 0; /* Rimuove gli angoli arrotondati del box di default */
-    margin: 0;        /* Rimuove eventuali margini del box di default */
 }
 
 /* Assicura che i pulsanti usino il colore del testo corretto (bianco) */
