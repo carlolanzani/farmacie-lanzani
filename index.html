@@ -97,7 +97,6 @@
     <link rel="canonical" href="https://www.farmacielanzani.it/" />
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
 
-
 </head>
 
 <body>
@@ -142,7 +141,6 @@
                 </div>
             </section>
             
-            <!-- MODIFICA QUI: Aggiunta classe "wave-to-blue" e rimosso lo style inline -->
             <section id="chi-siamo" class="section-padding wave-divider-bottom wave-to-blue">
                 <div class="container">
                     <div class="container about-section">
@@ -162,18 +160,13 @@
                 </div>
             </section>
 
-            <!-- MODIFICA QUI: Struttura dello slider completamente riscritta per separare le frecce -->
             <section id="servizi" class="section-padding bg-light wave-divider-bottom wave-to-gray">
                 <div class="container">
                     <h2 class="text-center">I nostri servizi per la tua salute</h2>
 
-                    <!-- NUOVO CONTENITORE PER SLIDER E FRECCE -->
                     <div class="servizi-slider-container">
-                        
-                        <!-- Lo slider vero e proprio (senza le frecce all'interno) -->
                         <div class="swiper my-services-slider">
                             <div class="swiper-wrapper">
-                                <!-- Slide 1: Autoanalisi -->
                                 <div class="swiper-slide">
                                     <div class="card servizio-card">
                                         <i class="fa-solid fa-droplet"></i>
@@ -182,7 +175,6 @@
                                         <a href="servizi/autoanalisi.html" class="btn-discover">Scopri di più →</a>
                                     </div>
                                 </div>
-                                <!-- Slide 2: Pressione -->
                                 <div class="swiper-slide">
                                     <div class="card servizio-card">
                                         <i class="fa-solid fa-heart-pulse"></i>
@@ -191,7 +183,6 @@
                                         <a href="servizi/misurazione-pressione.html" class="btn-discover">Scopri di più →</a>
                                     </div>
                                 </div>
-                                <!-- Slide 3: Dermocosmesi -->
                                 <div class="swiper-slide">
                                     <div class="card servizio-card">
                                         <i class="fa-solid fa-spa"></i>
@@ -200,7 +191,6 @@
                                         <a href="servizi/dermocosmesi.html" class="btn-discover">Scopri di più →</a>
                                     </div>
                                 </div>
-                                <!-- Slide 4: Fitoterapia -->
                                 <div class="swiper-slide">
                                     <div class="card servizio-card">
                                         <i class="fa-solid fa-leaf"></i>
@@ -209,7 +199,6 @@
                                         <a href="servizi/fitoterapia.html" class="btn-discover">Scopri di più →</a>
                                     </div>
                                 </div>
-                                <!-- Slide 5: Noleggio -->
                                 <div class="swiper-slide">
                                     <div class="card servizio-card">
                                         <i class="fa-solid fa-crutch"></i>
@@ -219,19 +208,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- La paginazione (pallini) rimane qui dentro -->
                             <div class="swiper-pagination"></div>
                         </div>
-                        
-                        <!-- LE FRECCE ORA SONO QUI, FUORI DALLO SLIDER MA DENTRO IL CONTENITORE -->
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
-            
-                    </div> <!-- Fine di .servizi-slider-container -->
+                    </div>
                 </div>
             </section>
 
-             <!-- MODIFICA QUI: Aggiunta classe "wave-to-blue" e rimosso lo style inline -->
             <section id="sedi" class="section-padding wave-divider-bottom wave-to-blue">
                 <div class="container">
                     <h2 class="text-center">Le nostre farmacie</h2>
@@ -301,10 +285,8 @@
                         </div>
                     </div>
                 </div>
-
             </section>
 
-             <!-- MODIFICA QUI: Aggiunta classe "wave-to-white" e rimosso lo style inline -->
             <section id="consigli" class="section-padding bg-light wave-divider-bottom wave-to-white">
                 <div class="container">
                     <h2 class="text-center">Ultimi consigli per la salute</h2>
@@ -345,20 +327,16 @@
             <section id="contatti" class="section-padding">
                 <div class="container">
                     <h2 class="text-center">Contattaci</h2>
-
                     <div class="contatti-wrapper">
-
                         <div class="contatti-info">
                             <h3>Hai una domanda?</h3>
                             <p>Il nostro team è a tua disposizione per qualsiasi informazione. Compila il modulo o
                                 utilizza
                                 i nostri contatti diretti. Saremo felici di aiutarti.</p>
-
                             <p>
                                 <i class="fa-solid fa-envelope"></i>
                                 <a href="mailto:farmacielanzani@gmail.com">farmacielanzani@gmail.com</a>
                             </p>
-
                             <h4>Telefoni delle nostre sedi:</h4>
                             <p>
                                 <i class="fa-solid fa-phone"></i>
@@ -374,32 +352,27 @@
                                 Travagliato)
                             </p>
                         </div>
-
                         <form class="contact-form" action="https://formspree.io/f/meozagnq" method="POST">
                             <div class="form-group">
                                 <label for="name">Nome</label>
                                 <input type="text" id="name" name="name" placeholder="Il tuo nome" required>
                             </div>
-
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="email" id="email" name="email" placeholder="latuaemail@esempio.com"
                                     required>
                             </div>
-
                             <div class="form-group">
                                 <label for="message">Messaggio</label>
                                 <textarea id="message" name="message" rows="5"
                                     placeholder="Scrivi qui la tua richiesta..." required></textarea>
                             </div>
-
                             <div class="form-group">
                                <input type="checkbox" id="privacy" name="privacy_consent" required>
                                 <label for="privacy">Ho letto e accetto l'<a href="informativa-privacy.html" target="_blank">informativa privacy</a>.</label>
                             </div>
                             <button type="submit" class="btn btn-primary full-width">Invia Messaggio</button>
                         </form>
-
                     </div>
                 </div>
             </section>
@@ -421,7 +394,6 @@
         </footer>
     </div>
 
-
     <script src="js/swiper-bundle.min.js"></script>
 
     <script>
@@ -429,23 +401,23 @@
         const dropdownToggle = document.getElementById('servizi-toggle');
         const dropdownMenu = document.getElementById('servizi-menu');
 
-        if (dropdownToggle && dropdownMenu) {
+        if (dropdownToggle) {
             dropdownToggle.addEventListener('click', function(event) {
                 event.stopPropagation();
                 dropdownMenu.classList.toggle('show');
                 dropdownToggle.classList.toggle('open');
             });
         }
-
         window.addEventListener('click', function() {
             if (dropdownMenu && dropdownMenu.classList.contains('show')) {
                 dropdownMenu.classList.remove('show');
-                dropdownToggle.classList.remove('open');
+                if (dropdownToggle) {
+                    dropdownToggle.classList.remove('open');
+                }
             }
         });
     });
     </script>
-
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -453,35 +425,23 @@
                 loop: true,
                 spaceBetween: 20,
                 slidesPerGroup: 1,
-
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
                 },
-
-                // MODIFICA QUI: Le frecce ora puntano al contenitore esterno
                 navigation: {
                     nextEl: '.servizi-slider-container .swiper-button-next',
                     prevEl: '.servizi-slider-container .swiper-button-prev',
                 },
-
                 breakpoints: {
-                    320: {
-                        slidesPerView: 1,
-                        spaceBetween: 10
-                    },
-                    768: {
-                        slidesPerView: 2,
-                        spaceBetween: 20
-                    },
-                    992: {
-                        slidesPerView: 3,
-                        spaceBetween: 30
-                    }
+                    320: { slidesPerView: 1, spaceBetween: 10 },
+                    768: { slidesPerView: 2, spaceBetween: 20 },
+                    992: { slidesPerView: 3, spaceBetween: 30 }
                 }
             });
         });
     </script>
+
     <script src="config.js"></script>
     <script
         defer

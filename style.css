@@ -85,7 +85,6 @@ header {
     position: sticky; 
     top: 0;
     z-index: 1000; 
-    position: relative; 
 }
 
 header .container {
@@ -177,12 +176,16 @@ header nav a:hover {
 #chi-siamo {
     background-color: var(--background-light-gray);
 }
+#sedi {
+    background-color: var(--background-light-gray);
+}
 .intro-text { max-width: 750px; margin: 0 auto; font-size: 1.1rem; }
 
-/* MODIFICA QUI: Blocco Wave Divider riscritto per usare classi di colore specifiche */
+
+/* === WAVE DIVIDER CORRETTO === */
 .wave-divider-bottom {
     position: relative;
-    padding-bottom: 100px;
+    padding-bottom: 100px; /* Spazio per l'onda, altrimenti viene tagliata */
 }
 
 .wave-divider-bottom::after {
@@ -195,25 +198,29 @@ header nav a:hover {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3e%3cpath fill='currentColor' d='M0,192L60,170.7C120,149,240,107,360,112C480,117,600,171,720,197.3C840,224,960,224,1080,202.7C1200,181,1320,139,1380,117.3L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z'%3e%3c/path%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-size: cover;
-    color: var(--background-light-gray); /* Colore di default */
+    /* NESSUN COLORE DI DEFAULT QUI */
 }
 
-/* Classi specifiche per ogni colore di transizione */
-.wave-to-blue::after   { color: var(--light-blue); }
-.wave-to-gray::after   { color: var(--background-light-gray); }
-.wave-to-white::after  { color: var(--white-color); }
+/* REGOLE SPECIFICHE E PIÙ FORTI PER OGNI COLORE */
+.wave-divider-bottom.wave-to-blue::after   { color: var(--light-blue); }
+.wave-divider-bottom.wave-to-gray::after   { color: var(--background-light-gray); }
+.wave-divider-bottom.wave-to-white::after  { color: var(--white-color); }
 
-/* Compensa il padding delle sezioni per lo spazio aggiunto dall'onda */
+
 #chi-siamo, #servizi, #sedi, #consigli {
-    padding-bottom: 180px;
+    /* Padding complessivo delle sezioni con onda */
+    padding-top: 80px;
+    padding-bottom: 180px; /* 80px di padding + 100px per l'onda */
 }
+/* === FINE WAVE DIVIDER === */
 
-.sedi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; background-color: var(--background-light-gray);}
+
+.sedi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 .farmacia-card h3 { color: var(--primary-green); font-size: 1.4rem; }
 .farmacia-card .location { font-style: italic; color: #777; margin-bottom: 15px; }
 .farmacia-card p { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
 .farmacia-card i { color: var(--primary-green); }
-.card-links { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-color); display: flex; justify-content: space-around; align-items: center; }
+.card-links { margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border-color); display: flex; justify-content: space-around; align-items: center; }
 .card-links a { color: var(--primary-green); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: color 0.3s ease; }
 .card-links a:hover { color: var(--heading-color); text-decoration: none; }
 .card-links a i { font-size: 1.2rem; }
@@ -251,22 +258,15 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
 .farmacia-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
 .farmacia-img { width: 100%; height: 180px; object-fit: cover; }
 .farmacia-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
-.farmacia-content .card-links { margin-top: auto; }
 .page-header { background-color: var(--primary-green); color: var(--white-color); padding: 40px 0; text-align: center; }
 .page-header h1 { color: var(--white-color); font-size: 2.8rem; margin-bottom: 10px; }
-.content-page { display: grid; grid-template-columns: 3fr 1fr; gap: 50px; }
-.content-main h2, .content-main h3 { margin-top: 30px; margin-bottom: 15px; }
-.content-main ul, .content-main ol { padding-left: 20px; }
-.content-main li { margin-bottom: 10px; }
-.content-main ul li i { color: var(--primary-green); margin-right: 10px; }
-.content-sidebar .card { position: sticky; top: 100px; }
 .btn.full-width { display: block; width: 100%; text-align: center; }
 
 
-/* MODIFICA QUI: Stili per il nuovo contenitore dello slider e le frecce */
+/* === SLIDER SWIPER CORRETTO === */
 .servizi-slider-container {
     position: relative;
-    padding: 0 35px; /* Spazio laterale per le frecce */
+    padding: 0 40px; /* Spazio laterale per le frecce */
 }
 
 .my-services-slider {
@@ -281,39 +281,22 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
     z-index: 10;
 }
 
-.servizi-slider-container .swiper-button-next {
-    right: 0;
-}
+.servizi-slider-container .swiper-button-next { right: 0; }
+.servizi-slider-container .swiper-button-prev { left: 0; }
 
-.servizi-slider-container .swiper-button-prev {
-    left: 0;
-}
+.my-services-slider .swiper-pagination-bullet { background-color: var(--primary-green); opacity: 0.5; }
+.my-services-slider .swiper-pagination-bullet-active { background-color: var(--primary-green); opacity: 1; }
 
-.my-services-slider .swiper-pagination-bullet {
-    background-color: var(--primary-green);
-    opacity: 0.5;
-}
-
-.my-services-slider .swiper-pagination-bullet-active {
-    background-color: var(--primary-green);
-    opacity: 1;
-}
-
-.swiper-slide {
-    height: auto;
-}
-.swiper-slide .servizio-card {
-    height: 100%;
-}
+.swiper-slide { height: auto; }
+.swiper-slide .servizio-card { height: 100%; }
 
 
 /* --- Media Queries --- */
 @media (max-width: 992px) {
     h2 { font-size: 2rem; }
     .sedi-grid, .consigli-grid { grid-template-columns: 1fr 1fr; }
-    .about-section, .content-page { grid-template-columns: 1fr; text-align: center; }
+    .about-section { grid-template-columns: 1fr; text-align: center; }
     .about-image { max-width: 250px; margin: 0 auto 30px auto; }
-    .content-sidebar { margin-top: 40px; }
 }
 
 @media (max-width: 768px) {
@@ -322,35 +305,34 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
     .section-padding { padding: 60px 0; }
     
     #chi-siamo, #servizi, #sedi, #consigli {
-        padding-bottom: 160px; /* Padding (60) + altezza onda (100) */
+        padding-top: 60px;
+        padding-bottom: 160px; /* 60px padding + 100px onda */
     }
 
-    header { position: relative; z-index: 1001; background: white; }
+    header { z-index: 1001; }
     header .container { flex-direction: column; gap: 10px; padding: 15px; }
-    header nav { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; }
+    header nav { flex-wrap: wrap; justify-content: center; align-items: center; }
     header nav a, .dropdown .dropbtn { margin: 5px 10px; }
     .sedi-grid, .consigli-grid { grid-template-columns: 1fr; }
     .contatti-wrapper { grid-template-columns: 1fr; gap: 40px; }
     .hero-content { padding: 0 15px; }
     .hero-content h1 { font-size: 2.5rem; }
-    #hero { min-height: 75vh; padding: 80px 20px 100px; box-sizing: border-box; display: block; text-align: center; }
-    .dropdown-content { left: 50%; transform: translateX(-50%); width: 220px; max-width: 85vw; }
+    #hero { min-height: 75vh; padding: 80px 20px 100px; }
+    .dropdown-content { left: 50%; transform: translateX(-50%); max-width: 85vw; }
     
     .servizi-slider-container {
-        padding: 0 10px; /* Riduciamo lo spazio laterale su mobile */
+        padding: 0 10px; /* Riduciamo lo spazio per le frecce su mobile */
     }
 }
 
 @media (max-width: 480px) {
     .btn { padding: 10px 20px; font-size: 0.95rem; }
     .hero-buttons .btn { margin: 5px 0; display: block; width: 100%; }
-    .dropdown-content { min-width: 180px; }
     .servizio-card i { font-size: 2.2rem; }
-    .farmacia-card .location { font-size: 0.9rem; }
-    .footer-content { padding: 0 10px; }
-
+    
+    /* Nascondiamo le frecce su schermi molto piccoli, la paginazione è sufficiente */
     .servizi-slider-container .swiper-button-next,
     .servizi-slider-container .swiper-button-prev {
-        display: none; /* Nascondiamo le frecce su schermi molto piccoli */
+        display: none;
     }
 }
