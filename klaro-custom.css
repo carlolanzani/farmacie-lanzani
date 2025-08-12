@@ -13,18 +13,31 @@
     --notice-margin: 0;
 }
 
+/* 2. Sovrascrive la regola specifica del testo di Klaro (#fafafa) */
+.klaro .cookie-modal p,
+.klaro .cookie-modal strong,
+.klaro .cookie-modal h1,
+.klaro .cookie-modal h2,
+.klaro .cookie-modal ul,
+.klaro .cookie-modal li,
+.klaro .cookie-notice p,
+.klaro .cookie-notice strong,
+.klaro .cookie-notice h1,
+.klaro .cookie-notice h2,
+.klaro .cookie-notice ul,
+.klaro .cookie-notice li {
+    color: #333333 !important; /* Testo scuro */
+}
 
 /* --- 1. Override Sfondo e Testo del BANNER --- */
 .klaro .cookie-notice {
     background-color: #f7f9fa !important; /* Sfondo grigio chiaro del tuo sito */
-    color: #333333 !important;           /* Testo scuro */
     border-top: 3px solid #2E8B57 !important; /* Bordo superiore verde */
 }
 
 /* --- 2. Override Sfondo e Testo della FINESTRA MODALE (popup) --- */
 .klaro .cookie-modal .cm-modal {
     background-color: #ffffff !important; /* Sfondo bianco */
-    color: #333333 !important;           /* Testo scuro */
 }
 
 .klaro .cookie-modal .cm-header {
@@ -36,7 +49,7 @@
 .klaro .cookie-modal .cm-service-description,
 .klaro .cookie-modal .cm-purpose-title,
 .klaro .cookie-modal .cm-switch-description {
-    color: #333333 !important; /* Garantisce che tutto il testo nella modale sia scuro */
+    color: #333333 !important; 
 }
 
 /* --- 3. Override Colori dei BOTTONI per Alto Contrasto --- */
