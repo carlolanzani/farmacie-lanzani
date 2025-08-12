@@ -29,6 +29,14 @@
     color: #333333 !important; /* Testo scuro */
 }
 
+.klaro .cookie-modal .cm-modal .hide svg {
+    stroke: #333333 !important; /* Rende il tratto dell'icona SVG scuro */
+}
+
+.klaro .cm-list-label .slider::before {
+    background-color: #afb4b9 !important; /* Grigio più scuro solo per il pallino */
+}
+
 /* --- 1. Override Sfondo e Testo del BANNER --- */
 .klaro .cookie-notice {
     background-color: #f7f9fa !important; /* Sfondo grigio chiaro del tuo sito */
