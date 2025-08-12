@@ -1,106 +1,101 @@
-/* ===========================
-   Klaro – Tema Farmacia + Posizionamento Fondo Pagina
-   =========================== */
+/* =======================================================
+   Klaro – Tema Farmacia (Versione Corretta e Definitiva)
+   ======================================================= */
 
-/* Override variabili di base */
+/* 1. VARIABILI DI POSIZIONAMENTO E STILE
+   ------------------------------------------------------- */
 :root {
+  /* --- Posizionamento del banner in basso --- */
+  --notice-position: fixed;
   --notice-top: auto;
   --notice-bottom: 0;
   --notice-left: 0;
   --notice-right: 0;
   --notice-max-width: 100%;
-  --notice-position: fixed;
-
+  
+  /* --- Stili personalizzati "Farmacia" --- */
   --white1: #ffffff;
   --white2: #f9fdf9;
-  --white3: #f0faf0;
-  --green1: #007a55;
-  --green2: #006646;
-  --green3: #004d34;
-  --font-family: "Helvetica Neue", Arial, sans-serif;
+  --green1: #2E8B57; /* Usiamo il verde primario del sito */
+  --green2: #257247; /* Versione più scura per hover */
+  --text-color: #333333; /* Colore testo dal sito */
+  --heading-color: #2c3e50; /* Colore titoli dal sito */
+  
+  --font-family: 'Inter', sans-serif; /* Font del sito */
   --font-size: 15px;
-  --title-font-family: "Helvetica Neue", Arial, sans-serif;
   --border-radius: 6px;
-  --border-style: solid;
-  --border-width: 1px;
   --button-text-color: #ffffff;
 }
 
-/* Rimuove overlay grigio */
+/* 2. RIMOZIONE COMPLETA DELL'OVERLAY GRIGIO
+   ------------------------------------------------------- */
+/* Questa è la regola fondamentale per risolvere il problema.
+   Rimuove lo strato grigio e rende il sito nuovamente visibile. */
 .klaro .cm-overlay {
   display: none !important;
 }
 
-/* Stile barra */
+/* 3. STILE DEL BANNER INFERIORE
+   ------------------------------------------------------- */
+/* Assicura che il banner occupi tutta la larghezza e abbia lo stile corretto */
 .klaro .cookie-notice {
-  border-radius: 0;
-  background-color: var(--white2);
-  border-top: 2px solid var(--green1);
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-  margin: 0;
-}
-
-/* Banner in fondo */
-.klaro .cookie-notice:not(.cookie-modal-notice) {
-  border-radius: 0 !important;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1) !important;
-  margin: 0 !important;
   background-color: var(--white2) !important;
   border-top: 2px solid var(--green1) !important;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  padding: 1rem 1.5rem !important; /* Aggiunge un po' di spazio interno */
 }
 
-/* Titoli e testo */
+/* 4. STILE DEI TESTI E DEI PULSANTI
+   ------------------------------------------------------- */
 .klaro .cookie-notice h1,
 .klaro .cookie-notice h2,
 .klaro .cookie-notice h3 {
-  color: var(--green3) !important;
-  font-family: var(--title-font-family) !important;
+  color: var(--heading-color) !important;
+  font-family: var(--font-family) !important;
 }
 
-.klaro .cookie-notice p {
-  color: var(--dark2) !important;
+.klaro .cookie-notice p, .klaro .cookie-notice div {
+  color: var(--text-color) !important;
+  font-family: var(--font-family) !important;
 }
 
-/* Pulsanti accetta/rifiuta */
-.klaro button.cm-btn,
 .klaro .cm-btn {
   background-color: var(--green1) !important;
-  border: none !important;
   color: var(--button-text-color) !important;
-  padding: 8px 16px !important;
-  font-weight: bold !important;
+  border: none !important;
+  padding: 10px 20px !important;
+  font-weight: 600 !important;
   border-radius: var(--border-radius) !important;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
-.klaro button.cm-btn:hover,
 .klaro .cm-btn:hover {
   background-color: var(--green2) !important;
+  transform: translateY(-1px);
 }
 
-/* Link nelle descrizioni */
-.klaro a {
-  color: var(--blue2) !important;
+/* Stile del link "Personalizza" */
+.klaro .cookie-notice .cm-learn-more {
+    font-weight: 600;
+    text-decoration: underline;
+    color: var(--green1) !important;
+}
+.klaro .cookie-notice .cm-learn-more:hover {
+    color: var(--green2) !important;
 }
 
-.klaro a:hover {
-  color: var(--blue3) !important;
-}
-
-/* Modal cookie */
+/* 5. STILE DELLA FINESTRA MODALE (quando si clicca "Personalizza")
+   ------------------------------------------------------- */
 .klaro .cookie-modal {
   background-color: var(--white1) !important;
   border-radius: var(--border-radius) !important;
-  border: 1px solid var(--green1) !important;
+  border: 1px solid #dddddd !important;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.15) !important;
 }
 
-.klaro .cookie-modal h1,
-.klaro .cookie-modal h2,
-.klaro .cookie-modal h3 {
-  color: var(--green3) !important;
-}
-
-/* Sezioni e toggles */
 .klaro .cm-list-input input:checked + label::before {
   background-color: var(--green1) !important;
   border-color: var(--green1) !important;
