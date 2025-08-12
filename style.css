@@ -23,18 +23,18 @@
 html, body {
     font-family: var(--font-family); 
     height: 100%; 
-    /* overflow-x: hidden; */ /* <<< RIMOSSA DA QUI */
+    overflow-x: hidden; 
 }
 
 .page-wrapper {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Il wrapper occupa almeno tutta l'altezza dello schermo */
-    overflow: hidden; /* <<< AGGIUNTA QUI: Previene lo scroll orizzontale solo per il contenuto del sito */
+    min-height: 100vh; 
+
 }
 
 main {
-    flex-grow: 1; /* Il main si prende tutto lo spazio verticale disponibile */
+    flex-grow: 1; 
 }
 
 .container {
@@ -201,7 +201,7 @@ header nav a:hover {
     padding-bottom: 150px;
     background-color: var(--light-blue);
 }
-#servizi::after {
+#chi-siamo::after, #servizi::after, #sedi::after, #consigli::after {
     content: '';
     position: absolute;
     bottom: 0;
