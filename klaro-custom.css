@@ -46,6 +46,13 @@
 .klaro .cookie-notice {
     border-top: 2px solid var(--color-primary);
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0; /* Rimuove gli angoli arrotondati del box di default */
+    margin: 0;        /* Rimuove eventuali margini del box di default */
 }
 
 /* Assicura che i pulsanti usino il colore del testo corretto (bianco) */
