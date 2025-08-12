@@ -1,4 +1,4 @@
-// File: klaro-config.js (Versione Definitiva)
+// File: klaro-config.js (Versione Corretta e Definitiva)
 
 var klaroConfig = {
     elementID: 'klaro',
@@ -6,13 +6,25 @@ var klaroConfig = {
     cookieName: 'klaro-farmacielanzani',
     cookieExpiresAfterDays: 365,
     lang: 'it',
+    
+    // MODIFICA CHIAVE #1: I servizi sono disabilitati per impostazione predefinita.
+    // Questo è fondamentale per la conformità.
     default: false, 
-    mustConsent: true, 
+    
+    // MODIFICA CHIAVE #2: Disattiviamo la modalità di blocco forzato.
+    // Questo rimuoverà l'overlay grigio e permetterà al CSS di posizionare il banner.
+    mustConsent: false, 
+    
+    // Confermiamo che vogliamo un banner, non un pop-up.
     noticeAsModal: false, 
+
+    // Impostazioni del banner
     notice: {
         layout: 'bar',
         position: 'bottom',
     },
+
+    // Il resto della configurazione rimane invariato
     acceptAll: true, 
     hideDeclineAll: false,
 
@@ -29,45 +41,37 @@ var klaroConfig = {
             },
             consentNotice: {
                 description: 'Utilizziamo i cookie per migliorare la tua esperienza sul sito. Puoi accettarli tutti o personalizzare le tue preferenze.',
-                // Il testo del link per aprire il pannello delle preferenze
                 learnMore: 'Personalizza', 
             },
-            
-            // TESTI DEI PULSANTI
-            acceptAll: 'Accetta tutti', // Testo per il pulsante di accettazione totale
-            accept: 'Salva le preferenze', // Testo per il pulsante di salvataggio nel pannello
-            decline: 'Rifiuta', // Testo per il pulsante di rifiuto
-            
+            acceptAll: 'Accetta tutti',
+            accept: 'Salva le preferenze',
+            decline: 'Rifiuta',
             purposes: {
                 analytics: 'Analisi del traffico',
                 styling: 'Stile del sito',
-                // Aggiungi altre finalità se necessario
-            },
-            service: {
-                // ...altre traduzioni di servizio...
             },
         },
     },
 
     services: [
-    {
-        name: 'google-analytics',
-        title: 'Google Analytics',
-        purposes: ['analytics'],
-        cookies: [ /^_ga_/, /_ga/, /_gid/, /_gat/ ],
-        required: false,
-        optOut: false,
-        description: 'Servizio di analisi che ci aiuta a capire come i visitatori interagiscono con il sito in forma anonima.',
-    },
-    {
-        name: 'google-fonts',
-        title: 'Google Fonts',
-        purposes: ['styling'],
-        cookies: [],
-        required: false,
-        optOut: false,
-        onlyOnce: true,
-        description: 'Caricamento di font da domini Google (fonts.googleapis.com / fonts.gstatic.com).',
+        {
+            name: 'google-analytics',
+            title: 'Google Analytics',
+            purposes: ['analytics'],
+            cookies: [ /^_ga_/, /_ga/, /_gid/, /_gat/ ],
+            required: false,
+            optOut: false,
+            description: 'Servizio di analisi che ci aiuta a capire come i visitatori interagiscono con il sito in forma anonima.',
         },
-        ],
+        {
+            name: 'google-fonts',
+            title: 'Google Fonts',
+            purposes: ['styling'],
+            cookies: [],
+            required: false,
+            optOut: false,
+            onlyOnce: true,
+            description: 'Caricamento di font da domini Google (fonts.googleapis.com / fonts.gstatic.com).',
+        },
+    ],
 };
