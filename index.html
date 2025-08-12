@@ -142,8 +142,8 @@
                 </div>
             </section>
             
-
-            <section id="chi-siamo" class="section-padding wave-divider-bottom" style="--wave-color: var(--light-blue);">
+            <!-- MODIFICA QUI: Aggiunta classe "wave-to-blue" e rimosso lo style inline -->
+            <section id="chi-siamo" class="section-padding wave-divider-bottom wave-to-blue">
                 <div class="container">
                     <div class="container about-section">
                         <div class="about-image">
@@ -162,88 +162,77 @@
                 </div>
             </section>
 
-            <!-- MODIFICA QUI: Aggiunta classe e stile per l'onda che transita verso il grigio della sezione sedi -->
-            <section id="servizi" class="section-padding bg-light wave-divider-bottom" style="--wave-color: var(--background-light-gray);">
+            <!-- MODIFICA QUI: Struttura dello slider completamente riscritta per separare le frecce -->
+            <section id="servizi" class="section-padding bg-light wave-divider-bottom wave-to-gray">
                 <div class="container">
                     <h2 class="text-center">I nostri servizi per la tua salute</h2>
 
-                    <!-- MODIFICA QUI: Aggiornata la classe da "swiper-container" a "swiper" per compatibilità con Swiper v6+ -->
-                    <div class="swiper my-services-slider">
-                        <div class="swiper-wrapper">
-
-                            <!-- Slide 1: Autoanalisi -->
-                            <div class="swiper-slide">
-                                <div class="card servizio-card">
-                                    <i class="fa-solid fa-droplet"></i>
-                                    <h3>Autoanalisi del Sangue</h3>
-                                    <p>Controlla i valori chiave della tua salute in pochi minuti, direttamente in
-                                        farmacia.
-                                        Misuriamo colesterolo, glicemia e molto altro.</p>
-                                    <a href="servizi/autoanalisi.html" class="btn-discover">Scopri di più →</a>
+                    <!-- NUOVO CONTENITORE PER SLIDER E FRECCE -->
+                    <div class="servizi-slider-container">
+                        
+                        <!-- Lo slider vero e proprio (senza le frecce all'interno) -->
+                        <div class="swiper my-services-slider">
+                            <div class="swiper-wrapper">
+                                <!-- Slide 1: Autoanalisi -->
+                                <div class="swiper-slide">
+                                    <div class="card servizio-card">
+                                        <i class="fa-solid fa-droplet"></i>
+                                        <h3>Autoanalisi del Sangue</h3>
+                                        <p>Controlla i valori chiave della tua salute in pochi minuti, direttamente in farmacia.</p>
+                                        <a href="servizi/autoanalisi.html" class="btn-discover">Scopri di più →</a>
+                                    </div>
+                                </div>
+                                <!-- Slide 2: Pressione -->
+                                <div class="swiper-slide">
+                                    <div class="card servizio-card">
+                                        <i class="fa-solid fa-heart-pulse"></i>
+                                        <h3>Misurazione Pressione</h3>
+                                        <p>Monitora la tua pressione con strumenti professionali e il supporto di un farmacista.</p>
+                                        <a href="servizi/misurazione-pressione.html" class="btn-discover">Scopri di più →</a>
+                                    </div>
+                                </div>
+                                <!-- Slide 3: Dermocosmesi -->
+                                <div class="swiper-slide">
+                                    <div class="card servizio-card">
+                                        <i class="fa-solid fa-spa"></i>
+                                        <h3>Consulenze Dermocosmesi</h3>
+                                        <p>Affidati ai nostri specialisti per trovare la routine di bellezza più adatta a te.</p>
+                                        <a href="servizi/dermocosmesi.html" class="btn-discover">Scopri di più →</a>
+                                    </div>
+                                </div>
+                                <!-- Slide 4: Fitoterapia -->
+                                <div class="swiper-slide">
+                                    <div class="card servizio-card">
+                                        <i class="fa-solid fa-leaf"></i>
+                                        <h3>Fitoterapia</h3>
+                                        <p>Scopri il potere curativo delle piante con la nostra selezione di prodotti e consulenze.</p>
+                                        <a href="servizi/fitoterapia.html" class="btn-discover">Scopri di più →</a>
+                                    </div>
+                                </div>
+                                <!-- Slide 5: Noleggio -->
+                                <div class="swiper-slide">
+                                    <div class="card servizio-card">
+                                        <i class="fa-solid fa-crutch"></i>
+                                        <h3>Noleggio Dispositivi</h3>
+                                        <p>Servizio di noleggio per ausili sanitari come stampelle, aerosol e tiralatte.</p>
+                                        <a href="servizi/noleggio-dispositivi.html" class="btn-discover">Scopri di più →</a>
+                                    </div>
                                 </div>
                             </div>
-
-                            <!-- Slide 2: Pressione -->
-                            <div class="swiper-slide">
-                                <div class="card servizio-card">
-                                    <i class="fa-solid fa-heart-pulse"></i>
-                                    <h3>Misurazione Pressione</h3>
-                                    <p>Monitora la tua pressione arteriosa con strumenti professionali e il supporto di
-                                        un
-                                        farmacista esperto per la prevenzione cardiovascolare.</p>
-                                    <a href="servizi/misurazione-pressione.html" class="btn-discover">Scopri di più
-                                        →</a>
-                                </div>
-                            </div>
-
-                            <!-- Slide 3: Dermocosmesi -->
-                            <div class="swiper-slide">
-                                <div class="card servizio-card">
-                                    <i class="fa-solid fa-spa"></i>
-                                    <h3>Consulenze Dermocosmesi</h3>
-                                    <p>Affidati ai nostri specialisti per trovare la routine di bellezza e cura della
-                                        pelle
-                                        più adatta alle tue esigenze specifiche.</p>
-                                    <a href="servizi/dermocosmesi.html" class="btn-discover">Scopri di più →</a>
-                                </div>
-                            </div>
-
-                            <!-- Slide 4: Fitoterapia -->
-                            <div class="swiper-slide">
-                                <div class="card servizio-card">
-                                    <i class="fa-solid fa-leaf"></i>
-                                    <h3>Fitoterapia</h3>
-                                    <p>Scopri il potere curativo delle piante con la nostra selezione di prodotti
-                                        fitoterapici e la consulenza dei nostri esperti.</p>
-                                    <a href="servizi/fitoterapia.html" class="btn-discover">Scopri di più →</a>
-                                </div>
-                            </div>
-
-                            <!-- Slide 5: Noleggio -->
-                            <div class="swiper-slide">
-                                <div class="card servizio-card">
-                                    <i class="fa-solid fa-crutch"></i>
-                                    <h3>Noleggio Dispositivi</h3>
-                                    <p>Offriamo un servizio di noleggio per ausili sanitari come stampelle, aerosol e
-                                        tiralatte, per le tue esigenze temporanee.</p>
-                                    <a href="servizi/noleggio-dispositivi.html" class="btn-discover">Scopri di più →</a>
-                                </div>
-                            </div>
-
+                            <!-- La paginazione (pallini) rimane qui dentro -->
+                            <div class="swiper-pagination"></div>
                         </div>
-                        <!-- Fine Wrapper -->
-
+                        
+                        <!-- LE FRECCE ORA SONO QUI, FUORI DALLO SLIDER MA DENTRO IL CONTENITORE -->
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                    <!-- Fine Struttura Swiper -->
-
+            
+                    </div> <!-- Fine di .servizi-slider-container -->
                 </div>
             </section>
 
-             <!-- MODIFICA QUI: Aggiunta classe e stile per l'onda che transita verso il blu della sezione consigli -->
-            <section id="sedi" class="section-padding wave-divider-bottom"style="--wave-color: var(--light-blue);">
+             <!-- MODIFICA QUI: Aggiunta classe "wave-to-blue" e rimosso lo style inline -->
+            <section id="sedi" class="section-padding wave-divider-bottom wave-to-blue">
                 <div class="container">
                     <h2 class="text-center">Le nostre farmacie</h2>
                     <div class="sedi-grid">
@@ -315,8 +304,8 @@
 
             </section>
 
-             <!-- MODIFICA QUI: Aggiunta classe e stile per l'onda che transita verso il grigio della sezione contatti -->
-            <section id="consigli" class="section-padding bg-light wave-divider-bottom" style="--wave-color: var(--background-light-gray);">
+             <!-- MODIFICA QUI: Aggiunta classe "wave-to-white" e rimosso lo style inline -->
+            <section id="consigli" class="section-padding bg-light wave-divider-bottom wave-to-white">
                 <div class="container">
                     <h2 class="text-center">Ultimi consigli per la salute</h2>
                     <div class="consigli-grid">
@@ -459,13 +448,10 @@
 
 
     <script>
-        // <!-- MODIFICA QUI: Aggiunto "slidesPerGroup: 1" per lo scorrimento singolo -->
         document.addEventListener('DOMContentLoaded', function () {
             const swiper = new Swiper('.my-services-slider', {
                 loop: true,
                 spaceBetween: 20,
-                
-                // Opzione chiave per scorrere una slide alla volta
                 slidesPerGroup: 1,
 
                 pagination: {
@@ -473,9 +459,10 @@
                     clickable: true,
                 },
 
+                // MODIFICA QUI: Le frecce ora puntano al contenitore esterno
                 navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                    nextEl: '.servizi-slider-container .swiper-button-next',
+                    prevEl: '.servizi-slider-container .swiper-button-prev',
                 },
 
                 breakpoints: {
