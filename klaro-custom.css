@@ -11,94 +11,74 @@
     --notice-right: 0;
     --notice-border-radius: 0;
     --notice-margin: 0;
-
-    /* --- 2. VARIABILI DI STILE (COLORI E FONT) --- */
-    --color-primary: #2E8B57; /* Verde primario del sito */
-    --color-primary-hover: #257247; /* Versione più scura per hover */
-    --color-text: #333333; /* Testo scuro */
-    --color-background: #ffffff; /* Sfondo generale della modale */
-    --color-background-notice: #f0f8ff; /* Sfondo del banner (azzurrino chiaro, come le sezioni) */
-    --color-border: #dddddd;
-    --bg-overlay: rgba(44, 62, 80, 0.65);
-    --font-family: 'Inter', sans-serif;
-    --font-size: 15px;
 }
 
-/* --- 3. STILE GENERALE DEL BANNER E DELLA MODALE --- */
 
+/* --- 1. Override Sfondo e Testo del BANNER --- */
 .klaro .cookie-notice {
-    border-top: 4px solid var(--color-primary);
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    background-color: #f7f9fa !important; /* Sfondo grigio chiaro del tuo sito */
+    color: #333333 !important;           /* Testo scuro */
+    border-top: 3px solid #2E8B57 !important; /* Bordo superiore verde */
 }
 
-.klaro .cookie-modal .cm-header .cm-title {
-    color: #2c3e50;
-    font-weight: 700;
+/* --- 2. Override Sfondo e Testo della FINESTRA MODALE (popup) --- */
+.klaro .cookie-modal .cm-modal {
+    background-color: #ffffff !important; /* Sfondo bianco */
+    color: #333333 !important;           /* Testo scuro */
 }
 
-/* ===================================================================
-   --- SEZIONE CHIAVE: Correzione Stili dei Bottoni ---
-   =================================================================== */
-
-/* Regola generale per i bottoni (rimuove il colore bianco fisso) */
-.klaro .cm-btn {
-    border-radius: 5px;
-    font-weight: 600;
-    padding: 10px 20px;
+.klaro .cookie-modal .cm-header {
+    border-bottom-color: #dddddd !important;
 }
 
-/* Bottone "Accetta tutti" (sia nel banner che nella modale) */
-.klaro .cm-btn-primary,
-.klaro .cm-btn.cm-btn-accept-all {
-    background-color: var(--color-primary);
-    color: var(--color-background); /* Testo bianco */
-    border: 1px solid var(--color-primary);
-}
-.klaro .cm-btn-primary:hover,
-.klaro .cm-btn.cm-btn-accept-all:hover {
-    background-color: var(--color-primary-hover);
-    border-color: var(--color-primary-hover);
+.klaro .cookie-modal .cm-title,
+.klaro .cookie-modal .cm-service-title,
+.klaro .cookie-modal .cm-service-description,
+.klaro .cookie-modal .cm-purpose-title,
+.klaro .cookie-modal .cm-switch-description {
+    color: #333333 !important; /* Garantisce che tutto il testo nella modale sia scuro */
 }
 
-/* Bottone "Rifiuta" (nel banner) e "Salva" (nella modale) */
-.klaro .cm-btn-success,
+/* --- 3. Override Colori dei BOTTONI per Alto Contrasto --- */
+
+/* Bottone "Accetta tutti" (verde con testo bianco) */
+.klaro .cm-btn-accept-all {
+    background-color: #2E8B57 !important;
+    color: #ffffff !important;
+}
+
+/* Bottone "Rifiuta" (grigio chiaro con testo scuro) */
 .klaro .cm-btn-decline {
-    background-color: #e9ecef; /* Sfondo grigio chiaro */
-    color: var(--color-text); /* Testo scuro per un contrasto elevato */
-    border: 1px solid #ced4da;
-}
-.klaro .cm-btn-success:hover,
-.klaro .cm-btn-decline:hover {
-    background-color: #dee2e6; /* Grigio leggermente più scuro in hover */
+    background-color: #e9ecef !important;
+    color: #333333 !important;
+    border-color: #ced4da !important;
 }
 
-/* ===================================================================
-   --- Icona e stile per "Gestisci preferenze" ---
-   =================================================================== */
+/* Link "Gestisci preferenze" (verde) */
 .klaro .cm-learn-more {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    font-weight: 600;
-    color: var(--color-primary); /* Usa il colore primario */
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    cursor: pointer;
+    color: #2E8B57 !important;
 }
 
-.klaro .cm-learn-more:hover {
-    color: var(--color-primary-hover);
-    text-decoration: underline;
+/* --- 4. Correzione Contrasto BOTTONI DENTRO LA MODALE --- */
+
+/* Bottoni di accettazione/rifiuto singolo servizio */
+.klaro .cm-btn.cm-btn-sm.cm-btn-success,
+.klaro .cm-btn.cm-btn-sm.cm-btn-secondary.active {
+    background-color: #2E8B57 !important;
+    color: #ffffff !important;
 }
 
-/* Crea l'icona usando Font Awesome */
+/* Pulsante "Salva le preferenze" (verde con testo bianco) */
+.klaro .cm-footer .cm-btn-success {
+    background-color: #2E8B57 !important;
+    color: #ffffff !important;
+}
+
+/* --- 5. Icona per "Gestisci preferenze" (già corretta, la manteniamo) --- */
 .klaro .cm-learn-more::before {
-    content: '\f013'; /* Codice Unicode per l'icona "gear" (ingranaggio) di Font Awesome */
-    font-family: 'Font Awesome 6 Free'; /* Nome corretto della famiglia di font */
-    font-weight: 900; /* Necessario per le icone "solid" */
-    margin-right: 8px; /* Spazio tra l'icona e il testo */
+    content: '\f013';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-right: 8px;
     font-size: 0.95em;
 }
