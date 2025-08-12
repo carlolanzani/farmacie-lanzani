@@ -1,6 +1,5 @@
 /* ===================================================================
-   Klaro – Tema Farmacia (Soluzione Finale e Corretta)
-   Ridefinisce le variabili di Klaro sia per lo stile che per il layout.
+   Klaro – Tema Farmacia (Versione Corretta e Migliorata)
    =================================================================== */
 
 .klaro {
@@ -14,22 +13,24 @@
     --notice-margin: 0;
 
     /* --- 2. VARIABILI DI STILE (COLORI E FONT) --- */
-    --color-primary: #2E8B57;
-    --color-primary-hover: #257247;
-    --color-text: #333333;
-    --color-background: #ffffff;
-    --color-background-notice: #bfd2b9;
+    --color-primary: #2E8B57; /* Verde primario del sito */
+    --color-primary-hover: #257247; /* Versione più scura per hover */
+    --color-text: #333333; /* Testo scuro */
+    --color-background: #ffffff; /* Sfondo generale della modale */
+    --color-background-notice: #f0f8ff; /* Sfondo del banner (azzurrino chiaro, come le sezioni) */
     --color-border: #dddddd;
     --bg-overlay: rgba(44, 62, 80, 0.65);
     --font-family: 'Inter', sans-serif;
     --font-size: 15px;
 }
 
-/* --- 3. PICCOLE CORREZIONI SPECIFICHE E PULITE --- */
+/* --- 3. STILE GENERALE DEL BANNER E DELLA MODALE --- */
 
 .klaro .cookie-notice {
     border-top: 4px solid var(--color-primary);
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .klaro .cookie-modal .cm-header .cm-title {
@@ -37,27 +38,60 @@
     font-weight: 700;
 }
 
+/* ===================================================================
+   --- SEZIONE CHIAVE: Correzione Stili dei Bottoni ---
+   =================================================================== */
+
+/* Regola generale per i bottoni (rimuove il colore bianco fisso) */
 .klaro .cm-btn {
-    color: #ffffff;
+    border-radius: 5px;
+    font-weight: 600;
+    padding: 10px 20px;
 }
 
-/*
-   ===================================================================
-   --- NUOVA REGOLA: Aggiunta dell'icona a "Gestisci preferenze" ---
-   ===================================================================
-*/
+/* Bottone "Accetta tutti" (sia nel banner che nella modale) */
+.klaro .cm-btn-primary,
+.klaro .cm-btn.cm-btn-accept-all {
+    background-color: var(--color-primary);
+    color: var(--color-background); /* Testo bianco */
+    border: 1px solid var(--color-primary);
+}
+.klaro .cm-btn-primary:hover,
+.klaro .cm-btn.cm-btn-accept-all:hover {
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+}
+
+/* Bottone "Rifiuta" (nel banner) e "Salva" (nella modale) */
+.klaro .cm-btn-success,
+.klaro .cm-btn-decline {
+    background-color: #e9ecef; /* Sfondo grigio chiaro */
+    color: var(--color-text); /* Testo scuro per un contrasto elevato */
+    border: 1px solid #ced4da;
+}
+.klaro .cm-btn-success:hover,
+.klaro .cm-btn-decline:hover {
+    background-color: #dee2e6; /* Grigio leggermente più scuro in hover */
+}
+
+/* ===================================================================
+   --- Icona e stile per "Gestisci preferenze" ---
+   =================================================================== */
 .klaro .cm-learn-more {
-    /* Allinea il link per un posizionamento corretto dell'icona */
     display: inline-flex;
     align-items: center;
-    text-decoration: none; /* Rimuove la sottolineatura per un look più pulito */
+    text-decoration: none;
     font-weight: 600;
-    color: var(--color-primary); /* Usa il colore primario definito sopra */
+    color: var(--color-primary); /* Usa il colore primario */
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
 
 .klaro .cm-learn-more:hover {
     color: var(--color-primary-hover);
-    text-decoration: underline; /* Ri-aggiunge la sottolineatura solo al passaggio del mouse */
+    text-decoration: underline;
 }
 
 /* Crea l'icona usando Font Awesome */
@@ -66,5 +100,5 @@
     font-family: 'Font Awesome 6 Free'; /* Nome corretto della famiglia di font */
     font-weight: 900; /* Necessario per le icone "solid" */
     margin-right: 8px; /* Spazio tra l'icona e il testo */
-    font-size: 0.95em; /* Rende l'icona leggermente più piccola del testo, per un effetto più gradevole */
+    font-size: 0.95em;
 }
