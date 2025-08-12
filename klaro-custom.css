@@ -1,5 +1,5 @@
 /* ===================================================================
-   Klaro – Tema Farmacia (Versione con !important Strategico)
+   Klaro – Tema Farmacia (Versione Definitiva)
    =================================================================== */
 
 .klaro {
@@ -94,31 +94,27 @@
 }
 
 /* ===================================================================
-   FINESTRA MODALE - CORRETTA PER LA CENTRATURA
+   FINESTRA MODALE (POP-UP)
    =================================================================== */
 
-/* Contenitore principale della modale: ora centra il suo contenuto */
 .klaro .cookie-modal {
     display: flex !important;
-    align-items: center !important; /* Allineamento verticale */
-    justify-content: center !important; /* Allineamento orizzontale */
-    
-    /* Sfondo con sfocatura */
+    align-items: center !important; 
+    justify-content: center !important;
     background-color: rgba(240, 240, 240, 0.6) !important;
     backdrop-filter: blur(4px) !important;
-    -webkit-backdrop-filter: blur(4px) !important; /* Compatibilità Safari */
+    -webkit-backdrop-filter: blur(4px) !important;
     transition: all 0.3s ease-out !important;
 }
 
-/* La finestra modale stessa */
 .klaro .cookie-modal .cm-modal {
     background-color: var(--bg-white) !important;
     border-radius: 12px !important;
     box-shadow: 0 20px 40px var(--shadow-medium) !important;
     transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), 
                 opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1) !important;
-    max-width: 600px; /* Aggiungi una larghezza massima per desktop */
-    width: 90%; /* Occupa il 90% della larghezza su schermi piccoli */
+    max-width: 600px;
+    width: 90%;
 }
 
 /* Header della modale */
@@ -127,22 +123,14 @@
     padding: 24px !important;
 }
 
-.klaro .cookie-modal .cm-title,
-.klaro .cookie-modal .cm-service-title,
-.klaro .cookie-modal .cm-service-description,
-.klaro .cookie-modal .cm-purpose-title,
-.klaro .cookie-modal .cm-switch-description {
-    color: var(--text-dark) !important;
-}
-
-.klaro .cookie-modal .cm-title {
+.klaro .cookie-modal .cm-header .title {
     font-weight: 600 !important;
     font-size: 1.25rem !important;
 }
 
 /* Body della modale */
 .klaro .cookie-modal .cm-body {
-    padding: 0 24px 24px !important;
+    padding: 24px !important;
 }
 
 /* Footer della modale */
@@ -157,9 +145,10 @@
    BOTTONI - DESIGN SYSTEM COMPLETO
    =================================================================== */
 
-/* Bottone primario - Accetta tutti */
+/* Bottone primario - Accetta tutti / Va bene così / Salva */
 .klaro .cm-btn-accept-all,
-.klaro .cm-footer .cm-btn-success {
+.klaro .cm-footer .cm-btn-success,
+.klaro .cookie-notice .cm-btn-success {
     background-color: var(--pharmacy-green) !important;
     color: var(--bg-white) !important;
     border: 2px solid var(--pharmacy-green) !important;
@@ -171,7 +160,8 @@
 }
 
 .klaro .cm-btn-accept-all:hover,
-.klaro .cm-footer .cm-btn-success:hover {
+.klaro .cm-footer .cm-btn-success:hover,
+.klaro .cookie-notice .cm-btn-success:hover {
     background-color: var(--pharmacy-green-hover) !important;
     border-color: var(--pharmacy-green-hover) !important;
     transform: translateY(-1px) !important;
@@ -179,13 +169,15 @@
 }
 
 .klaro .cm-btn-accept-all:active,
-.klaro .cm-footer .cm-btn-success:active {
+.klaro .cm-footer .cm-btn-success:active,
+.klaro .cookie-notice .cm-btn-success:active {
     transform: translateY(0) !important;
     box-shadow: 0 2px 6px rgba(46, 139, 87, 0.2) !important;
 }
 
 /* Bottone secondario - Rifiuta */
-.klaro .cm-btn-decline {
+.klaro .cm-btn-decline,
+.klaro .cn-decline {
     background-color: var(--bg-gray) !important;
     color: var(--text-dark) !important;
     border: 2px solid var(--border-light) !important;
@@ -196,14 +188,16 @@
     cursor: pointer;
 }
 
-.klaro .cm-btn-decline:hover {
+.klaro .cm-btn-decline:hover,
+.klaro .cn-decline:hover {
     background-color: #dee2e6 !important;
     border-color: #adb5bd !important;
     transform: translateY(-1px) !important;
     box-shadow: 0 4px 8px var(--shadow-light) !important;
 }
 
-.klaro .cm-btn-decline:active {
+.klaro .cm-btn-decline:active,
+.klaro .cn-decline:active {
     transform: translateY(0) !important;
 }
 
@@ -223,48 +217,54 @@
 }
 
 /* ===================================================================
-   ELEMENTI LISTA SERVIZI
+   ELEMENTI LISTA SERVIZI E PREFERENZE (NEL POP-UP)
    =================================================================== */
 
-.klaro .cm-services .cm-service {
+.klaro .cm-purpose,
+.klaro .cm-service {
     border: 1px solid var(--border-color) !important;
     border-radius: 8px !important;
+    padding: 1rem;
     margin-bottom: 12px !important;
     transition: var(--transition) !important;
 }
 
-.klaro .cm-services .cm-service:hover {
+.klaro .cm-purpose:hover,
+.klaro .cm-service:hover {
     border-color: var(--pharmacy-green) !important;
     box-shadow: 0 2px 8px var(--pharmacy-green-light) !important;
 }
 
-.klaro .cm-service-title {
+.klaro .cm-list-title {
     font-weight: 600 !important;
+    color: var(--text-dark) !important;
 }
 
-.klaro .cm-service-description {
+.klaro .cm-list-description,
+.klaro .purposes {
     color: var(--text-light) !important;
     font-size: 0.9em !important;
     line-height: 1.5 !important;
 }
 
+.klaro .cm-caret a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 0.9em;
+}
+
 /* ===================================================================
-   CORREZIONI E RESPONSIVE DESIGN
+   RESPONSIVE DESIGN
    =================================================================== */
 
 @media (max-width: 768px) {
-    .klaro {
-        --notice-border-radius: 12px 12px 0 0;
-    }
-    
     .klaro .cookie-notice {
         padding: 16px !important;
-        border-radius: var(--notice-border-radius) !important;
     }
     
     .klaro .cookie-modal .cm-modal {
         margin: 10px !important;
-        max-height: calc(100vh - 20px) !important; /* Calcola l'altezza massima */
+        max-height: calc(100vh - 20px) !important;
         overflow-y: auto !important;
     }
     
@@ -275,9 +275,7 @@
         padding-right: 16px !important;
     }
     
-    .klaro .cm-btn-accept-all,
-    .klaro .cm-btn-decline,
-    .klaro .cm-footer .cm-btn-success {
+    .klaro .cm-btn, .klaro .cn-decline {
         width: 100% !important;
         margin-bottom: 8px !important;
         padding: 14px !important;
@@ -301,9 +299,8 @@
    ACCESSIBILITÀ E STATI FOCUS
    =================================================================== */
 
-.klaro .cm-btn-accept-all:focus,
-.klaro .cm-btn-decline:focus,
-.klaro .cm-footer .cm-btn-success:focus,
+.klaro .cm-btn:focus,
+.klaro .cn-decline:focus,
 .klaro .cm-learn-more:focus {
     outline: 2px solid var(--pharmacy-green) !important;
     outline-offset: 2px !important;
