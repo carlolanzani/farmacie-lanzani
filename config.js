@@ -6,21 +6,14 @@ var klaroConfig = {
     cookieName: 'klaro-farmacielanzani',
     cookieExpiresAfterDays: 365,
     lang: 'it',
-    
-    // Riportato a 'false' per massima conformità GDPR.
-    // I servizi saranno "spenti" di default nel pannello di personalizzazione.
     default: false, 
-
-    // Obbliga l'utente a fare una scelta.
     mustConsent: true, 
-    
-    // Mostra il banner in basso invece di un pop-up modale.
     noticeAsModal: false, 
-
-    // FONDAMENTALE: Attiva la logica e il testo per il pulsante "Accetta tutti".
+    notice: {
+        layout: 'bar',
+        position: 'bottom',
+    },
     acceptAll: true, 
-    
-    // FONDAMENTALE: Assicura che il pulsante "Rifiuta" sia visibile.
     hideDeclineAll: false,
 
     translations: {

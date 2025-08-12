@@ -4,7 +4,6 @@
 
 /* Override variabili di base */
 :root {
-  /* Posizionamento banner */
   --notice-top: auto;
   --notice-bottom: 0;
   --notice-left: 0;
@@ -12,40 +11,34 @@
   --notice-max-width: 100%;
   --notice-position: fixed;
 
-  /* Palette colori “farmacia” */
   --white1: #ffffff;
   --white2: #f9fdf9;
   --white3: #f0faf0;
-
-  --green1: #007a55; /* Verde primario */
-  --green2: #006646; /* Hover/scuro */
-  --green3: #004d34; /* Titoli / bordi */
-
-  --blue1: #4ab5c6;
-  --blue2: #379aa8;
-  --blue3: #217884;
-
-  --dark1: #222222;
-  --dark2: #333333;
-  --dark3: #444444;
-
-  /* Tipografia */
+  --green1: #007a55;
+  --green2: #006646;
+  --green3: #004d34;
   --font-family: "Helvetica Neue", Arial, sans-serif;
   --font-size: 15px;
   --title-font-family: "Helvetica Neue", Arial, sans-serif;
-
-  /* Bordi e pulsanti */
   --border-radius: 6px;
   --border-style: solid;
   --border-width: 1px;
-
-  /* Testo pulsanti */
   --button-text-color: #ffffff;
 }
 
-/* ===========================
-   Stili specifici elementi Klaro
-   =========================== */
+/* Rimuove overlay grigio */
+.klaro .cm-overlay {
+  display: none !important;
+}
+
+/* Stile barra */
+.klaro .cookie-notice {
+  border-radius: 0;
+  background-color: var(--white2);
+  border-top: 2px solid var(--green1);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  margin: 0;
+}
 
 /* Banner in fondo */
 .klaro .cookie-notice:not(.cookie-modal-notice) {
