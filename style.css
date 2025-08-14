@@ -5,7 +5,7 @@
 /* --- Variabili e Reset Globale --- */
 :root {
     --primary-green: #2E8B57; 
-    --light-blue: #d7effbad;
+    --light-blue: #e8f7ff;
     --text-color: #333333;
     --heading-color: #2c3e50;
     --white-color: #ffffff;
@@ -68,7 +68,7 @@ h2 {
     background: var(--white-color);
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    padding: 25px;
+    padding: 30px; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -182,38 +182,40 @@ header nav a:hover {
 .intro-text { max-width: 750px; margin: 0 auto; font-size: 1.1rem; }
 
 
-/* === WAVE DIVIDER CORRETTO === */
+/* === WAVE DIVIDER CON SOLUZIONE ROBUSTA (CSS MASK) === */
 .wave-divider-bottom {
     position: relative;
-    padding-bottom: 100px; /* Spazio per l'onda, altrimenti viene tagliata */
+    padding-bottom: 100px; 
 }
 
 .wave-divider-bottom::after {
     content: '';
     position: absolute;
-    bottom: -1px;
+    bottom: -1px; 
     left: 0;
     width: 100%;
     height: 100px;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3e%3cpath fill='currentColor' d='M0,192L60,170.7C120,149,240,107,360,112C480,117,600,171,720,197.3C840,224,960,224,1080,202.7C1200,181,1320,139,1380,117.3L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z'%3e%3c/path%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* NESSUN COLORE DI DEFAULT QUI */
+    
+    /* Usiamo la maschera SVG per dare la forma */
+    -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3e%3cpath fill='%23fff' d='M0,192L60,170.7C120,149,240,107,360,112C480,117,600,171,720,197.3C840,224,960,224,1080,202.7C1200,181,1320,139,1380,117.3L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z'%3e%3c/path%3e%3c/svg%3e");
+    mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3e%3cpath fill='%23fff' d='M0,192L60,170.7C120,149,240,107,360,112C480,117,600,171,720,197.3C840,224,960,224,1080,202.7C1200,181,1320,139,1380,117.3L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z'%3e%3c/path%3e%3c/svg%3e");
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
 }
 
-/* REGOLE SPECIFICHE E PIÙ FORTI PER OGNI COLORE */
-.wave-divider-bottom.wave-to-blue::after   { color: var(--light-blue); }
-.wave-divider-bottom.wave-to-gray::after   { color: var(--background-light-gray); }
-.wave-divider-bottom.wave-to-white::after  { color: var(--white-color); }
+/* Ora il colore è dato dal background, non dal testo! */
+.wave-divider-bottom.wave-to-blue::after   { background-color: var(--light-blue); }
+.wave-divider-bottom.wave-to-gray::after   { background-color: var(--background-light-gray); }
+.wave-divider-bottom.wave-to-white::after  { background-color: var(--white-color); }
+/* ======================================================= */
 
 
 #chi-siamo, #servizi, #sedi, #consigli {
-    /* Padding complessivo delle sezioni con onda */
     padding-top: 80px;
-    padding-bottom: 180px; /* 80px di padding + 100px per l'onda */
+    padding-bottom: 180px; 
 }
-/* === FINE WAVE DIVIDER === */
-
 
 .sedi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 .farmacia-card h3 { color: var(--primary-green); font-size: 1.4rem; }
@@ -249,12 +251,20 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
 .about-section { display: grid; grid-template-columns: 1fr 2fr; gap: 50px; align-items: center; }
 .about-image img { width: 100%; border-radius: 50%; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 
-.servizio-card { text-align: center; display: flex; flex-direction: column; }
+
+.servizio-card { 
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 380px; 
+    padding: 30px 25px;
+}
 .servizio-card i { font-size: 3rem; color: var(--primary-green); margin-bottom: 20px; }
 .servizio-card h3 { color: var(--heading-color); font-size: 1.4rem; }
 .servizio-card p { flex-grow: 1; margin-bottom: 20px; }
 .btn-discover { color: var(--primary-green); text-decoration: none; font-weight: 600; margin-top: auto; padding: 10px; border-radius: 5px; transition: background-color 0.3s; }
 .btn-discover:hover { background-color: rgba(46, 139, 87, 0.1); }
+
 .farmacia-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
 .farmacia-img { width: 100%; height: 180px; object-fit: cover; }
 .farmacia-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
@@ -263,32 +273,49 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
 .btn.full-width { display: block; width: 100%; text-align: center; }
 
 
-/* === SLIDER SWIPER CORRETTO === */
+/* === SLIDER SWIPER CORRETTO E DEFINITIVO === */
 .servizi-slider-container {
     position: relative;
-    padding: 0 40px; /* Spazio laterale per le frecce */
+    padding: 0 60px; 
 }
 
-.my-services-slider {
-    padding-bottom: 50px; /* Spazio per la paginazione */
+.my-services-slider.swiper {
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 50px; 
+}
+
+.swiper-horizontal > .swiper-pagination-bullets, 
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: var(--swiper-pagination-bottom, 15px) !important;
 }
 
 .servizi-slider-container .swiper-button-next,
 .servizi-slider-container .swiper-button-prev {
     color: var(--primary-green);
-    top: 50%;
+    top: calc(50% - 20px);
     transform: translateY(-50%);
     z-index: 10;
 }
 
-.servizi-slider-container .swiper-button-next { right: 0; }
-.servizi-slider-container .swiper-button-prev { left: 0; }
+.servizi-slider-container .swiper-button-next { right: 15px; }
+.servizi-slider-container .swiper-button-prev { left: 15px; }
 
-.my-services-slider .swiper-pagination-bullet { background-color: var(--primary-green); opacity: 0.5; }
-.my-services-slider .swiper-pagination-bullet-active { background-color: var(--primary-green); opacity: 1; }
+.my-services-slider .swiper-pagination-bullet { 
+    background-color: var(--primary-green); 
+    opacity: 0.5; 
+}
+.my-services-slider .swiper-pagination-bullet-active { 
+    background-color: var(--primary-green); 
+    opacity: 1; 
+}
 
-.swiper-slide { height: auto; }
-.swiper-slide .servizio-card { height: 100%; }
+.swiper-slide { 
+    height: auto; 
+}
+.swiper-slide .servizio-card {
+    height: 100%;
+}
 
 
 /* --- Media Queries --- */
@@ -306,7 +333,7 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
     
     #chi-siamo, #servizi, #sedi, #consigli {
         padding-top: 60px;
-        padding-bottom: 160px; /* 60px padding + 100px onda */
+        padding-bottom: 160px;
     }
 
     header { z-index: 1001; }
@@ -321,7 +348,11 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
     .dropdown-content { left: 50%; transform: translateX(-50%); max-width: 85vw; }
     
     .servizi-slider-container {
-        padding: 0 10px; /* Riduciamo lo spazio per le frecce su mobile */
+        padding: 0 10px; 
+    }
+
+    .servizio-card {
+        min-height: 340px;
     }
 }
 
@@ -330,7 +361,6 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
     .hero-buttons .btn { margin: 5px 0; display: block; width: 100%; }
     .servizio-card i { font-size: 2.2rem; }
     
-    /* Nascondiamo le frecce su schermi molto piccoli, la paginazione è sufficiente */
     .servizi-slider-container .swiper-button-next,
     .servizi-slider-container .swiper-button-prev {
         display: none;

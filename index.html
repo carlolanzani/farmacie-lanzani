@@ -418,7 +418,7 @@
         });
     });
     </script>
-
+    
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const swiper = new Swiper('.my-services-slider', {
@@ -433,10 +433,31 @@
                     nextEl: '.servizi-slider-container .swiper-button-next',
                     prevEl: '.servizi-slider-container .swiper-button-prev',
                 },
+                // === MODIFICA CHIAVE ===
                 breakpoints: {
-                    320: { slidesPerView: 1, spaceBetween: 10 },
-                    768: { slidesPerView: 2, spaceBetween: 20 },
-                    992: { slidesPerView: 3, spaceBetween: 30 }
+                    // Da 320px in su: 1 slide
+                    320: { 
+                        slidesPerView: 1, 
+                        spaceBetween: 20 
+                    },
+                    // NUOVO BREAKPOINT: Da 576px in su
+                    576: {
+                        slidesPerView: 1.3, // Mostra una card e un pezzetto della successiva
+                        spaceBetween: 20,
+                        centeredSlides: true, // Centra la slide attiva per un effetto migliore
+                    },
+                    // Da 768px in su: 2 slide
+                    768: { 
+                        slidesPerView: 2, 
+                        spaceBetween: 20,
+                        centeredSlides: false, // Disattiviamo il centraggio quando ci sono 2 card
+                    },
+                    // Da 992px in su: 3 slide
+                    992: { 
+                        slidesPerView: 3, 
+                        spaceBetween: 30,
+                        centeredSlides: false,
+                    }
                 }
             });
         });
