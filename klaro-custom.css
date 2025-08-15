@@ -442,7 +442,9 @@ to create a white background.
   top: 0;
   left: 0;
 }
-/* MODIFICA: Sfondo bianco e testo nero per la modale */
+
+/* === BLOCCO MODIFICATO === */
+/* MODIFICA: Sfondo bianco e testo nero per la modale (resa popup su tutti gli schermi) */
 .klaro .cookie-modal .cm-modal.cm-klaro {
   background-color: #fff;
   background-color: var(--white1, #fff);
@@ -450,23 +452,32 @@ to create a white background.
   color: var(--dark1, #333);
   z-index: 1001;
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
-  width: 100%;
+  
+  /* MODIFICA: Imposta la larghezza per creare margini e aggiungi i bordi arrotondati */
+  width: 90vw; /* Usa il 90% della larghezza della finestra */
+  max-width: 500px; /* Limite massimo per schermi piccoli/medi */
+  border-radius: 4px; /* Aggiungi i bordi arrotondati qui */
+  
   max-height: 98%;
+  
+  /* MODIFICA: Centraggio perfetto orizzontale e verticale */
   top: 50%;
-  -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   position: fixed;
   overflow: auto;
 }
+
+/* === BLOCCO MODIFICATO === */
 @media (min-width: 660px) {
   .klaro .cookie-modal .cm-modal.cm-klaro {
-    border-radius: 4px;
-    border-radius: var(--border-radius, 4px);
-    position: relative;
-    margin: 0 auto;
+    /* MODIFICA: Manteniamo la larghezza relativa e aumentiamo solo il max-width */
+    width: 90%;
     max-width: 640px;
-    height: auto;
-    width: auto;
+    
+    /* MODIFICA: Rimuoviamo le regole non più necessarie grazie al nuovo metodo di centraggio */
+    /* Non è più necessario 'position: relative' o 'margin: 0 auto' perché è già centrato dalla regola principale */
   }
 }
 .klaro .cookie-modal .cm-modal .hide {
