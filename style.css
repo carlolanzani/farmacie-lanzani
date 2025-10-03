@@ -252,6 +252,54 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
 .about-image img { width: 100%; border-radius: 50%; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 
 
+/* =============================================== */
+/* MIGLIORAMENTO SEZIONE CONTATTI                  */
+/* =============================================== */
+
+/* 1. Diamo più respiro alla colonna delle informazioni */
+.contatti-info h3 {
+    margin-bottom: 15px;
+}
+
+.contatti-info p {
+    line-height: 1.7; /* Aumentiamo l'interlinea per leggibilità */
+    margin-bottom: 20px; /* Spazio standard tra i paragrafi */
+}
+
+.contatti-info h4 {
+    margin-top: 30px; /* Più spazio prima del titolo "Telefoni" */
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: var(--heading-color);
+}
+
+/* 2. Allineamento perfetto per le icone e il testo */
+.contatti-info p i {
+    font-size: 1.2rem; /* Icone leggermente più grandi */
+    vertical-align: middle; /* Allinea l'icona al centro del testo */
+    margin-right: 12px; /* Un po' più di spazio */
+    width: 20px; /* Diamo una larghezza fissa per allineare tutto */
+    text-align: center;
+}
+
+/* 3. Il dettaglio chiave: allineamento della checkbox privacy */
+.contact-form .form-group input[type="checkbox"] {
+    width: auto; /* La checkbox non deve essere a larghezza piena */
+    margin-right: 10px; /* Spazio tra la checkbox e il testo */
+}
+
+/* Usiamo Flexbox per allineare perfettamente checkbox e label */
+.contact-form .form-group:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.contact-form .form-group label[for="privacy"] {
+    margin-bottom: 0; /* Rimuoviamo il margine di default dalla label della privacy */
+    font-weight: 400; /* Testo non in grassetto per la privacy */
+}
+
 .servizio-card { 
     text-align: center; 
     display: flex; 
