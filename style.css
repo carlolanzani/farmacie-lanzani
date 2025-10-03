@@ -115,7 +115,7 @@ header .container {
 }
 
 .logo img {
-    height: 40px; /* Imposta un'altezza per il logo, la larghezza si adatterà */
+    height: 80px; /* Imposta un'altezza per il logo, la larghezza si adatterà */
     width: auto;
 }
 
