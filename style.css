@@ -374,6 +374,15 @@ footer { background: var(--heading-color); color: var(--white-color); padding: 4
     top: 100px; /* Distanza dal top quando si scrolla (header è 80px circa) */
 }
 
+.content-sidebar .card h4 {
+    margin-bottom: 15px; /* Aggiunge spazio sotto il titolo "Scopri la tua pelle" */
+}
+
+.content-sidebar .card p {
+    line-height: 1.6; /* Aumenta lo spazio tra le righe del testo */
+    margin-bottom: 25px; /* Più spazio tra il testo e il pulsante sottostante */
+}
+
 
 /* 5. Adattabilità per schermi piccoli (tablet e cellulari) */
 @media (max-width: 992px) {
