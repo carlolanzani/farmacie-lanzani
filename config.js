@@ -21,11 +21,11 @@ var klaroConfig = {
     
     // Se 'true', l'utente deve interagire con il banner prima di usare il sito.
     // Questa è la modifica chiave per garantire che una scelta venga sempre fatta.
-    mustConsent: true, 
+    mustConsent: false, 
     
     // Se 'true', il banner viene mostrato come una finestra modale (pop-up) al centro della pagina.
     // È più efficace quando mustConsent è true.
-    noticeAsModal: true, 
+    noticeAsModal: false, 
     
     // Mostra il pulsante "Accetta tutti".
     acceptAll: true, 
