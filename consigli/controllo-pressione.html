@@ -9,17 +9,25 @@
     <meta name="description"
         content="Scopri i consigli pratici per mantenere la pressione arteriosa sotto controllo attraverso stile di vita, alimentazione e monitoraggio regolare.">
 
-    <script data-type="text/plain" 
-            data-klaro-service="google-analytics" 
-            data-src="https://www.googletagmanager.com/gtag/js?id=G-1XMSXFW86E">
-    </script>
+    <script 
+        type="text/plain" 
+        data-type="application/javascript"
+        data-name="google-analytics"
+    >
+        // 1. Caricamento asincrono della libreria gtag.js
+        (function(d,s,id,G_ID){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://www.googletagmanager.com/gtag/js?id=' + G_ID;
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document,'script','google-gtag','G-1XMSXFW86E'));
 
-    <script data-klaro-name="google-analytics" 
-            type="application/javascript">
+        // 2. Configurazione di gtag (viene eseguita dopo il caricamento)
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-1XMSXFW86E'); 
+        gtag('config', 'G-1XMSXFW86E');
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
